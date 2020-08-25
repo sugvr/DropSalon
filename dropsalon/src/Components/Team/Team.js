@@ -1,7 +1,7 @@
 import React from 'react'
 import './Team.css'
 
-import Empleado from './Empleado'
+import Empleado from './Empleado/Empleado'
 
 function Team (){
     return (

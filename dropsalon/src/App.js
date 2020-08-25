@@ -1,9 +1,9 @@
 import React from 'react'
-import Nav from './Nav'
-import Header from './Header'
-import About from './About'
-import Team from './Team'
-import Portfolio from './Portfolio'
+import Nav from './Components/Nav/Nav'
+import Header from './Components/Header/Header'
+import About from './Components/About/About'
+import Team from './Components/Team/Team'
+import Portfolio from './Components/Portfolio/Portfolio'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
