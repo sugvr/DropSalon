@@ -8,9 +8,9 @@ function Team (){
         <div>
             <h1>Nuestro Equipo</h1>
             <div className = "Container">
-            <Empleado img={process.env.PUBLIC_URL + '/images/chrystal.jpg'} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
-            <Empleado img={process.env.PUBLIC_URL + '/images/chrystal.jpg'} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
-            <Empleado img={process.env.PUBLIC_URL + '/images/chrystal.jpg'} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
+            <Empleado image={process.env.PUBLIC_URL + '/images/chrystal.jpg'} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
+            <Empleado image={process.env.PUBLIC_URL + '/images/chrystal.jpg'} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
+            <Empleado image={process.env.PUBLIC_URL + '/images/chrystal.jpg'} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
             </div>
            
 
