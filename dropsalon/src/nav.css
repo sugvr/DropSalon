@@ -1,0 +1,24 @@
+
+ul {
+  background-color: white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+
+  float: left;
+}
+
+li a {
+  background-color: white;
+  display: block;
+  padding: 75px;
+  color: black;
+  font-family: Calligraffitti;
+  font-style: italic;
+  font-weight: bold;
+  
+}
