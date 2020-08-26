@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 import About from '../About/About'
 import Team from '../Team/Team'
 import Portfolio from '../Portfolio/Portfolio'
+import Contact from "../Contact/Contact"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Portfolio />
       <Team />
+      <Contact />
     </div>
    
   );
