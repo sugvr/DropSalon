@@ -9,10 +9,14 @@ function Team (){
     return (
         <div>
             <h1>Nuestro Equipo</h1>
+            <br />
+            <br />
             <div className = "Container">
             <Empleado image={fotoEmpleado} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
             <Empleado image={fotoEmpleado} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
             <Empleado image={fotoEmpleado} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
+            <Empleado image={fotoEmpleado} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
+           
             </div>
            
 

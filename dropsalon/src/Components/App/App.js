@@ -12,10 +12,15 @@ function App() {
   return (
     <div>
       <Nav />
+      
       <Header />
+      <br />
       <About />
+      <br />
       <Portfolio />
+      <br />
       <Team />
+      <br />
       <Contact />
     </div>
 

@@ -10,9 +10,11 @@ function About() {
         <h2>Acerca de Nosotros</h2>
         <p>En Drop Salon queremos resaltar tu belleza, con un ambiente acogedor.
                     Ubicado en Paseo Las colonias en la marginal constancia. Trabajamos una gran variedad de servicios... </p>
-                    <h3>¿Porqué nosotros?</h3>
-        <div className = "box3">
-          
+        <br />
+
+        <h3>¿Porqué nosotros?</h3>
+        <div className="box3">
+
           <div>
             <ul className="list-group">
               <li className="list-group-item">Cras justo odio</li>
