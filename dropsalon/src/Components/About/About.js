@@ -5,24 +5,30 @@ import logo from "../../Assets/Logo.jpg";
 function About() {
   return (
     <div className="container">
-      <div className="box1"> <img src={logo} alt="Logo del salon" /> </div>
-      <div ClassName="box2">
+      <div className=" box1"> <img src={logo} alt="Logo del salon" /> </div>
+      <div ClassName=" box2">
         <h2>Acerca de Nosotros</h2>
         <p>En Drop Salon queremos resaltar tu belleza, con un ambiente acogedor.
                     Ubicado en Paseo Las colonias en la marginal constancia. Trabajamos una gran variedad de servicios... </p>
-        <div ClassName="container2">
-          <h3>¿Porqué nosotros?</h3>
-          <div ClassName="Box3">
-            <ul>
-              <li>Mejores en este campo</li>
-              <li>Te tratamos bien</li>
+                    <h3>¿Porqué nosotros?</h3>
+        <div className = "box3">
+          
+          <div>
+            <ul className="list-group">
+              <li className="list-group-item">Cras justo odio</li>
+              <li className="list-group-item">Dapibus ac facilisis in</li>
+              <li className="list-group-item">Morbi leo risus</li>
+              <li className="list-group-item">Porta ac consectetur ac</li>
+              <li className="list-group-item">Vestibulum at eros</li>
             </ul>
           </div>
-          <div className="Box4">
-            <ul>
-              <li>jteyktk   rhe</li>
-              <li>ejyt5k   ehteht</li>
-              <li>tekjk7  eheh </li>
+          <div>
+            <ul className="list-group">
+              <li className="list-group-item">Cras justo odio</li>
+              <li className="list-group-item">Dapibus ac facilisis in</li>
+              <li className="list-group-item">Morbi leo risus</li>
+              <li className="list-group-item">Porta ac consectetur ac</li>
+              <li className="list-group-item">Vestibulum at eros</li>
             </ul>
           </div>
         </div>
