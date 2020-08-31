@@ -1,12 +1,15 @@
 import React from 'react'
 import './Citas.css'
+import Login from "../../Assets/login.png";
 
 function Citas() {
     return (
         <div className = "login">
               <div className ="caja2">
                 <blockquote>
-                <h5>Les recuerdo, <br/>si aun no tiene una cuenta tiene que comunicarse con nosotros para asi poder crearla. Asi podra sacar su cita.</h5>
+                <h5>Les recuerdo, <br/>si aun no tiene una cuenta tiene que comunicarse con nosotros para asi poder crearla. <br/>
+                De esta manera, usted podrá sacar su cita con los diferentes profesionales. </h5>
+                <img src={Login} alt="Logo del salon" />
                 </blockquote>
                 
             </div>
