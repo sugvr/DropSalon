@@ -1,0 +1,26 @@
+.login{
+    display:flex;
+    flex-direction: row;
+}
+
+.login div{
+    padding: 10px;
+}
+.caja1{
+   
+}
+.caja2{
+    background-color: black;
+    color:white;
+    padding-left: 70px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: #000;
+  color: white;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 30px;
+  background-position: middle left;
+  background-repeat: no-repeat;
+  text-indent: 20px;
+}
