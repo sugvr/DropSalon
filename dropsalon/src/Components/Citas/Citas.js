@@ -9,15 +9,16 @@ function Citas() {
                 <blockquote>
                 <h5>Les recuerdo, <br/>si aun no tiene una cuenta tiene que comunicarse con nosotros para asi poder crearla. <br/>
                 De esta manera, usted podrá sacar su cita con los diferentes profesionales. </h5>
-                <img src={Login} alt="Logo del salon" />
+                
                 </blockquote>
+                <img className = "icono" src={Login} alt="Logo del salon" />
                 
             </div>
             <div className ="caja1">
             <form >
                 <div class="form-group">
-                    <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email" />
+                    <label for="inputEmail">User</label>
+                    <input type="user" class="form-control" id="inputEmail" placeholder="User" />
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Password</label>

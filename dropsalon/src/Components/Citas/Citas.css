@@ -7,14 +7,16 @@
     padding: 10px;
 }
 .caja1{
-   
+   background-color: black;
+   margin: 30px;
+   color: white;
 }
 .caja2{
     color:white;
     padding-left: 70px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color: grey;
+  background-color:#cc9966;
   color: white;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -24,7 +26,7 @@
   text-indent: 20px;
 }
 
-img{
+.icono{
   
-   width: 25%;
+ width: 25%;
 }
