@@ -4,7 +4,8 @@ import Header from '../Header/Header'
 import About from '../About/About'
 import Team from '../Team/Team'
 import Portfolio from '../Portfolio/Portfolio'
-import Contact from "../Contact/Contact"
+import Contact from '../Contact/Contact'
+import Citas from '../Citas/Citas'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -22,6 +23,8 @@ function App() {
       <Team />
       <br />
       <Contact />
+      <br />
+      <Citas />
     </div>
 
   );
