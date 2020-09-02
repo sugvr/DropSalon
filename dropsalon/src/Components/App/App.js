@@ -6,6 +6,7 @@ import Team from '../Team/Team'
 import Portfolio from '../Portfolio/Portfolio'
 import Contact from '../Contact/Contact'
 import Citas from '../Citas/Citas'
+import Separator from '../Separator/Separator'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -15,15 +16,17 @@ function App() {
       <Nav />
       
       <Header />
-      <br />
+      <Separator id='about-section'/>
+      
+      
       <About />
-      <br />
+      <Separator id='portfolio-section'/>
       <Portfolio />
-      <br />
+      <Separator id='team-section'/>
       <Team />
-      <br />
+      <Separator id='contact-section'/>
       <Contact />
-      <br />
+      <Separator id='dates-section'/>
       <Citas />
     </div>
 

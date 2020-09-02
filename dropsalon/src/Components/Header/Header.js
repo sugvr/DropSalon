@@ -5,7 +5,7 @@ function Header() {
    return (
       <>
 
-         <div className="header">
+         <div className="header" id="header-section">
 
             <h1 className="title">Drop Salon</h1>
             <p className="subtext">Resaltando tu belleza</p>
