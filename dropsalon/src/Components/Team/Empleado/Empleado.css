@@ -1,5 +1,5 @@
 .Tarjetas{
-    height: 400px;
+    height: 470px;
     width:300px;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -7,7 +7,14 @@
     border: 1px solid black;
 }
 .photo{
-    
-    width: 40%;
-
+    width: 150px;
+    height: 180px;
+}
+.job{
+    color:grey;
+}
+.name{
+    margin-top: 25px;
+    margin-bottom: 40px;
+    font-family: "Satisfy", sans-serif;
 }
