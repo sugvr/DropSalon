@@ -3,7 +3,10 @@ import './Team.css'
 
 import Empleado from './Empleado/Empleado'
 
-import fotoEmpleado from "../../Assets/chrystal.jpg"
+import fotoEmpleado1 from "../../Assets/chrystal.jpg"
+import fotoEmpleado2 from "../../Assets/lorriel.jpg"
+import fotoEmpleado3 from "../../Assets/Arianna.jpg"
+
 
 function Team (){
     return (
@@ -12,10 +15,12 @@ function Team (){
             <br />
             <br />
             <div className = "team-container">
-            <Empleado image={fotoEmpleado} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
-            <Empleado image={fotoEmpleado} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
-            <Empleado image={fotoEmpleado} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
-            <Empleado image={fotoEmpleado} name="Chrystal Borrero" job="Dueña / profesional" desc="iubdsvbpbfivubvsd;k" />
+            <Empleado className="photo1"image={fotoEmpleado1} name="Chrystal Borrero" job="Dueña / Profesional" desc="✨" li1="-Cosmetologa Certificada"
+            li2="-Maquillista Profesional" li3="-Barbería"/>
+            <Empleado image={fotoEmpleado2} name="Lorriel Galarza" job="Profesional" desc="✨" li1="-Certificacion Técnica de Uñas Avanzada"
+            li2="-Certificacion Manicura Rusa" li3="-Certificacion depilación y Brow tint"/>
+            <Empleado className="photo3" image={fotoEmpleado3} name="Arianna Orta" job="Profesional" desc="✨" li1="-Cosmetologa Certificada "/>
+            
            
             </div>
            
