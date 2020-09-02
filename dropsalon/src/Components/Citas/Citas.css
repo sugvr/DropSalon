@@ -4,7 +4,7 @@
 }
 
 .login div{
-    padding: 10px;
+    padding: 18px;
 }
 .caja1{
    background-color: black;
@@ -12,21 +12,22 @@
    color: white;
 }
 .caja2{
-    color:white;
+   
     padding-left: 70px;
   padding-top: 2px;
   padding-bottom: 2px;
-  background-color:grey;
-  color: white;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  margin: 30px;
-  background-position: middle left;
-  background-repeat: no-repeat;
-  text-indent: 20px;
+  color: black;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  margin: 70px;
+  
+
 }
 
-.icono{
-  
- width: 25%;
+
+.date-title{
+    text-align: center;
+    font-family: "Satisfy",sans-serif;
+    font-size: 4em;
+    margin: 1em 0;
 }
