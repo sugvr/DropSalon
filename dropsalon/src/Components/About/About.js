@@ -7,12 +7,12 @@ function About() {
     <div className="container">
       <div className=" box1"> <img src={logo} alt="Logo del salon" /> </div>
       <div ClassName=" box2">
-        <h2>Acerca de Nosotros</h2>
+        <h2 className="about-title">Acerca de Nosotros</h2>
         <p>En Drop Salon queremos resaltar tu belleza, con un ambiente acogedor.
                     Ubicado en Paseo Las colonias en la marginal constancia. Trabajamos una gran variedad de servicios... </p>
         <br />
 
-        <h3>¿Porqué nosotros?</h3>
+        <h3 className="about-title">¿Porqué nosotros?</h3>
         <div className="box3">
 
           <div>

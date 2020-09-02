@@ -2,3 +2,21 @@ h3{
     text-align: center;
 
 }
+
+.gallery-header{
+    text-align: center;
+    font-family: "Satisfy",sans-serif;
+    font-size: 4em;
+    margin: 1em 0;
+}
+
+.gallery-title{
+    text-align: center;
+    font-family: "Satisfy",sans-serif;
+    font-size: 3em;
+}
+
+.gallery-container{
+    width: 90%;
+    margin: 0 auto;
+}

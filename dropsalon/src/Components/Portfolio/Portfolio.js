@@ -7,20 +7,25 @@ import Dedos from './Gallery/Dedos'
 function Portfolio() {
   return (
 
-      <div>
-      <h1>Galeria de trabajos </h1>
+    <div>
+      <h1 className="gallery-header">Galeria de trabajos </h1>
       <br />
       <br />
-      <h3>Cosmetología</h3>
+      <h3 className="gallery-title">Cosmetología</h3>
       <br />
-      <PhotoGallery />
+      <div className="gallery-container">
+        <PhotoGallery />
+      </div>
+
       <br />
       <br />
       <br />
       <br />
-      <h3>Uñas</h3>
+      <h3 className="gallery-title">Uñas</h3>
       <br />
-      <Dedos />
+      <div className="gallery-container">
+        <Dedos />
+      </div>
     </div>
 
 
