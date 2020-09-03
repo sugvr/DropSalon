@@ -20,3 +20,8 @@
   display: flex;
   flex-direction: row;
 }
+.about-list{
+  text-align: left;
+  padding: 10px;
+  width: 270px;
+}

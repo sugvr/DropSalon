@@ -8,8 +8,10 @@ function About() {
       <div className=" box1"> <img src={logo} alt="Logo del salon" /> </div>
       <div ClassName=" box2">
         <h2 className="about-title">Acerca de Nosotros</h2>
-        <p>En Drop Salon queremos resaltar tu belleza, con un ambiente acogedor.
-                    Ubicado en Paseo Las colonias en la marginal constancia. Trabajamos una gran variedad de servicios... </p>
+        <p>En Drop salon queremos resaltar tu belleza, tenemos una excelente ubicación y 
+          una gran variedad de servicios. Contamos con área de Spa, Barbería y Estilismo. 
+          Trabajamos por cita para su comodidad. Contamos con todas las medidas de seguridad 
+          y protocolo para el control de infecciones. Ubicados en Paseo Las Colonias en Urbanización Constancia.</p>
         <br />
 
         <h3 className="about-title">¿Porqué nosotros?</h3>
@@ -17,20 +19,16 @@ function About() {
 
           <div>
             <ul className="list-group">
-              <li className="list-group-item">Cras justo odio</li>
-              <li className="list-group-item">Dapibus ac facilisis in</li>
-              <li className="list-group-item">Morbi leo risus</li>
-              <li className="list-group-item">Porta ac consectetur ac</li>
-              <li className="list-group-item">Vestibulum at eros</li>
+              <li className="about-list">-Trabajamos solo por cita </li>
+              <li className="about-list">-Ubicación céntrica</li>
+              <li className="about-list">-Profesionalismo y Experiencia</li>
             </ul>
           </div>
           <div>
             <ul className="list-group">
-              <li className="list-group-item">Cras justo odio</li>
-              <li className="list-group-item">Dapibus ac facilisis in</li>
-              <li className="list-group-item">Morbi leo risus</li>
-              <li className="list-group-item">Porta ac consectetur ac</li>
-              <li className="list-group-item">Vestibulum at eros</li>
+              <li className="about-list">-Ambiente acogedor </li>
+              <li className="about-list">-Especialidad en Tonos Rubios y Cenizos</li>
+              <li className="about-list">-Todo lo que necesitas en un solo lugar</li>
             </ul>
           </div>
         </div>
