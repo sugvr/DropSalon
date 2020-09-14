@@ -1,0 +1,22 @@
+.flex{
+    display:flex;
+    flex-direction: row;
+    background-color: black;
+    margin: 30px;
+    color: white;
+    align-content: center;
+}
+
+.flex div{
+    padding: 30px;
+}
+.cajon1{
+
+}
+.cajon2{
+
+}
+.cajon3{
+    margin: 30px;
+    
+}

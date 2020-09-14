@@ -10,27 +10,30 @@ import Separator from '../Separator/Separator'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 function App() {
   return (
     <div>
       <Nav />
-      
       <Header />
-      <Separator id='about-section'/>
-      
-      
+      <Separator id='about-section' />
       <About />
-      <Separator id='portfolio-section'/>
+      <Separator id='portfolio-section' />
       <Portfolio />
-      <Separator id='team-section'/>
+      <Separator id='team-section' />
       <Team />
-      <Separator id='contact-section'/>
+      <Separator id='contact-section' />
       <Contact />
-      <Separator id='dates-section'/>
-      <Citas />
+      <Separator id='dates-section' />
+      <Citas/>
     </div>
 
   );
 }
 
-export default App;
+
+
+
+
+export default App; 
+

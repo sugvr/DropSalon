@@ -1,37 +1,25 @@
 import React from 'react'
 import './Citas.css'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { AuthProvider } from '../Auth'
+import PrivateRoute from '../PrivateRoute';
+import Home from "../Home"
+import Login from '../Login'
+import SignUp from "../SignUp"
 
-
-function Citas() {
+const Citas = () =>{
     return (
-        <div className = "login">
-            <h1 className= "date-title">Saca tu Cita</h1>
-              <div className ="caja2">
-                <blockquote>
-                <h5>Les recuerdo, <br/>si aun no tiene una cuenta tiene que comunicarse con nosotros para asi poder crearla. <br/>
-                De esta manera, usted podrá sacar su cita con los diferentes profesionales. </h5>
-                
-                </blockquote>
-                
-                
-            </div>
-            <div className ="caja1">
-            <form >
-                <div class="form-group">
-                    <label for="inputEmail">User</label>
-                    <input type="user" class="form-control" id="inputEmail" placeholder="User" />
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" />
-                </div>
-               
-                    <button type="submit" class="btn btn-primary">Entrar</button>
-            </form>
-            </div>
-          
+      <AuthProvider>
+        <h1 className ="date-title">Saca tu cita</h1>
+      <Router>
+        <div>
+          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={SignUp} />
         </div>
+      </Router>
+    </AuthProvider>
     )
-}
+  }
 
-export default Citas
+export default Citas;
