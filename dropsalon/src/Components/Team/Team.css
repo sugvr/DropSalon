@@ -1,0 +1,14 @@
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.team-header {
+  text-align: center;
+  font-family: "Satisfy", sans-serif;
+  font-size: 4em;
+  margin: 1em 0;
+}
+

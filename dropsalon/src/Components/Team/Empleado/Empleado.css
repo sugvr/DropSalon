@@ -1,0 +1,20 @@
+.Tarjetas{
+    height: 500px;
+    width:300px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color:white;
+    border: 1px solid black;
+}
+.photo{
+    width: 170px;
+    height: 210px;
+}
+.job{
+    color:grey;
+}
+.name{
+    margin-top: 25px;
+    margin-bottom: 40px;
+    font-family: "Satisfy", sans-serif;
+}
