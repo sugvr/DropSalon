@@ -10,7 +10,7 @@ function Contact() {
             <h3>Si desea una cita, contantese para la creacion de su cuenta</h3>
             <div className="container">
                 <div className="contact-form">
-                    <div classname="box1"><img src={logo} alt="Logo del salon" /> </div>
+                    <div className="box1"><img src={logo} alt="Logo del salon" /> </div>
                     <div>
                         <form id="contact_form" action="#" method="POST" encType="multipart/form-data">
                             <div className="row">

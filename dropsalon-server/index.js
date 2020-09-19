@@ -4,7 +4,7 @@ var sqlite3 = require('sqlite3').verbose()
 var md5 = require('md5')
 var validator = require("email-validator")
 var jwt = require('jsonwebtoken')
-
+var cors = require('cors')
 // Server constants
 const PORT = 4000
 const app = express()
@@ -12,7 +12,7 @@ var db = new sqlite3.Database('./dropsalon.db')
 
 // Configuration
 app.use(express.json({type: "application/json"})) // for parsing application/json
-
+app.use(cors())
 // -- Endpoint handlers --
 /*Rest Api Get Methods*/
 app.get('/', function (req, res) {

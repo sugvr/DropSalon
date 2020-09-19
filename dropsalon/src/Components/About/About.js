@@ -6,7 +6,7 @@ function About() {
   return (
     <div className="container">
       <div className=" box1"> <img src={logo} alt="Logo del salon" /> </div>
-      <div ClassName=" box2">
+      <div className=" box2">
         <h2 className="about-title">Acerca de Nosotros</h2>
         <p>En Drop salon queremos resaltar tu belleza, tenemos una excelente ubicación y 
           una gran variedad de servicios. Contamos con área de Spa, Barbería y Estilismo. 
