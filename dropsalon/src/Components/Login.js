@@ -1,54 +1,31 @@
-import React, { useCallback, useContext } from "react";
-import { withRouter, Redirect } from "react-router";
-import app from "./base.js";
-import { AuthContext } from "./Auth.js";
+import React from "react";
 import './Login.css'
 
-const Login = ({ history }) => {
-  const handleLogin = useCallback(
-    async event => {
-      event.preventDefault();
-      const { email, password } = event.target.elements;
-      try {
-        await app
-          .auth()
-          .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
-      } catch (error) {
-        alert(error);
-      }
-    },
-    [history]
-  );
-
-  const { currentUser } = useContext(AuthContext);
-
-  if (currentUser) {
-    return <Redirect to="/" />;
-  }
-
+function Login() {
   return (
-    <div>
-      <h1>Entra tu cuenta</h1>
-      <form onSubmit={handleLogin} className="flex">
+    <div >
+      <h1>Entra a tu cuenta</h1>
+      <form className="flex">
         <div className="cajon1">
-        <label>
-          Email
+          <label>
+            Email
           <input name="email" type="email" placeholder="Email" />
-        </label>
+          </label>
         </div>
         <div className="cajon2">
-        <label>
-          Password
+          <label>
+            Password
           <input name="password" type="password" placeholder="Password" />
-        </label>
+          </label>
         </div>
         <div className="cajon3">
-        <button type="submit">Entra</button>
+          <button type="submit">Entra</button>
         </div>
       </form>
     </div>
   );
 };
 
-export default withRouter(Login);
+
+
+export default Login;

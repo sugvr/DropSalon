@@ -26,9 +26,15 @@ function Nav() {
             <li className="nav-item">
               <a className="nav-link" href="#contact-section">Contactanos</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#dates-section">Saca cita</a>
+
+            <li className="login-separator">
+              <a className="nav-link" href="#dates-section">Saca tu cita</a>
             </li>
+            <li >
+              <a className="nav-link" href="#signup-section">Registrate</a>
+            </li>
+
+
 
           </ul>
 

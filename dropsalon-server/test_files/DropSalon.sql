@@ -21,8 +21,8 @@ CREATE TABLE citas (
   "user_FK" INTEGER,
   "employee_FK" INTEGER,
   "serviceType" INTEGER,
-  FOREIGN KEY(user_FK) REFERENCES user(id),
-  FOREIGN KEY(employee_FK) REFERENCES user(id),
+  FOREIGN KEY(user_FK) REFERENCES users(id),
+  FOREIGN KEY(employee_FK) REFERENCES users(id),
   FOREIGN KEY(serviceType) REFERENCES services(id)
 );
 

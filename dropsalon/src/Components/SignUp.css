@@ -1,0 +1,9 @@
+.SingUp-containt{
+    display: flex;
+  flex-direction: row;
+  flex-direction: column;
+}
+
+.labels{
+    padding: 30px;
+}

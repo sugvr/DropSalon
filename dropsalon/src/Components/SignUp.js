@@ -1,37 +1,30 @@
-import React, {useCallback} from "react"
-import { withRouter } from "react-router"
-import app from "./base"
+import React from "react"
+import './SignUp.css'
 
-const SignUp = ({ history }) => {
-    const handleSignUp = useCallback(async event => {
-      event.preventDefault();
-      const { email, password } = event.target.elements;
-      try {
-        await app
-          .auth()
-          .createUserWithEmailAndPassword(email.value, password.value);
-        history.push("/");
-      } catch (error) {
-        alert(error);
-      }
-    }, [history]);
-  
-    return (
-      <div>
-        <h1>Sign up</h1>
-        <form onSubmit={handleSignUp}>
-          <label>
-            Email
-            <input name="email" type="email" placeholder="Email" />
-          </label>
-          <label>
-            Password
-            <input name="password" type="password" placeholder="Password" />
-          </label>
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
-    );
-  };
-  
-  export default withRouter(SignUp);
+function SignUp(){
+  return (
+    <div>
+      <h1>Registrate</h1>
+      <form classname="SingUp-containt">
+        <label className="labels">
+          Nombre
+          <input name="name" type="name" placeholder="Nombre" />
+        </label>
+        <label className="labels">
+          Apellido
+          <input name="Lastname" type="Lastname" placeholder="Apellido" />
+        </label>
+        <label className="labels">
+          Email
+          <input name="Email" type="Email" placeholder="Email" />
+        </label>
+        <label className="labels">
+         Password
+          <input name="Password" type="Password" placeholder="Password" />
+        </label>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  );
+}
+  export default SignUp;
