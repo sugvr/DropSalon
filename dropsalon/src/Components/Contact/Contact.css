@@ -68,3 +68,7 @@ textarea {
     margin-top: 0;
   }
 }
+.map{
+  width: 600px;
+  height: 450px;
+}

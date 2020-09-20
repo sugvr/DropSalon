@@ -30,10 +30,7 @@ function Nav() {
             <li className="login-separator">
               <a className="nav-link" href="#dates-section">Saca tu cita</a>
             </li>
-            <li >
-              <a className="nav-link" href="#signup-section">Registrate</a>
-            </li>
-
+         
 
 
           </ul>

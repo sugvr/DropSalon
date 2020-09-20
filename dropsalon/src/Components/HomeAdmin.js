@@ -7,7 +7,10 @@ function HomeAdmin(){
         <h2>Calendarios de empleados</h2>
         <p>Aqui se muestra el calendario de todos los empleados</p>
         <button>Sacar citas</button>
+        <h2>Registrar nuevo empleado</h2>
+        <h2>registrar nuevo servicio</h2>
         <h3>Registrar a un usuario</h3>
+        <h2>reporte semanal</h2>
         <SingUp />
         </>
     )
