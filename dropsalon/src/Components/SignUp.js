@@ -32,7 +32,7 @@ class SignUp extends React.Component {
   }
   render(){
     return (
-      <div>
+      <div style={{display:this.props.visible}}>
         <h1>Registrate</h1>
         <form className="SingUp-containt" onSubmit={this.handleSubmit}>
           <label className="labels">

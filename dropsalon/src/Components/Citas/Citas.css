@@ -12,8 +12,7 @@
    color: white;
 }
 .caja2{
-   
-    padding-left: 70px;
+  padding-left: 70px;
   padding-top: 10px;
   padding-bottom: 2px;
   margin-top: 100px;
@@ -26,4 +25,8 @@
     font-family: "Satisfy",sans-serif;
     font-size: 4em;
     margin: 1em 0;
+}
+
+.toggle{
+    text-align: center;
 }

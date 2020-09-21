@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './Citas.css'
 import Login from '../Login'
-import SignUp from "../SignUp"
+//import SignUp from "../SignUp"
 
 export default class Citas extends Component {
   state = {
@@ -15,11 +15,13 @@ export default class Citas extends Component {
   render() {
     return (
       <div>
-        <Login/>
+        <Login/> 
+        {/* <div className="toggle">
         {this.state.on && (
-          <SignUp/>
+         // <SignUp/>
         )}
         <button onClick={this.toggle}>Registra tu cuenta</button>
+        </div> */}
       </div>
     )
   }
