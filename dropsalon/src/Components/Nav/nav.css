@@ -19,6 +19,8 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-size: 17px;
+ 
 }
 
 li {
@@ -32,4 +34,6 @@ li a {
 }
 .login-separator{
   margin-left: 470px;
+  font-family: "Satisfy", sans-serif;
+  font-size: 30px;
 }

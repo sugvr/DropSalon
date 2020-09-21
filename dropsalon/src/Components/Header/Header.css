@@ -3,8 +3,9 @@
   background-image: url("../../Assets/cover.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: black;
   font-family: "Satisfy", sans-serif;
-  color: black;
+  color: white;
   padding: 300px;
   height: 950px;
   display: flex;

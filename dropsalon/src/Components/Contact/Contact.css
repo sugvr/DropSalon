@@ -49,18 +49,12 @@ textarea {
   padding: 10px;
 }
 .box1 {
-}
-.box2 {
+ margin-left: 50px;
 }
 
 
-.contact-form{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: auto;
-  justify-content: center;
-}
+
+
 @media screen and (max-width: 600px) {
   .column,
   input[type="submit"] {
@@ -68,7 +62,4 @@ textarea {
     margin-top: 0;
   }
 }
-.map{
-  width: 600px;
-  height: 450px;
-}
+
