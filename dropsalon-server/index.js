@@ -5,7 +5,9 @@ var md5 = require('md5')
 var validator = require("email-validator")
 var jwt = require('jsonwebtoken')
 var cors = require('cors')
+
 // Server constants
+const JWT_SECRET = 's3cr3t'
 const PORT = 4000
 const app = express()
 var db = new sqlite3.Database('./dropsalon.db')
@@ -13,6 +15,7 @@ var db = new sqlite3.Database('./dropsalon.db')
 // Configuration
 app.use(express.json({type: "application/json"})) // for parsing application/json
 app.use(cors())
+
 // -- Endpoint handlers --
 /*Rest Api Get Methods*/
 app.get('/', function (req, res) {
@@ -55,7 +58,7 @@ app.get('/servivios', function (req, res) {
 /*Rest Api Post Methods*/
 app.post('/signup', function (req, res) {
     if (req.body.name === "" || req.body.last_name === "" || req.body.email === "" || req.body.password === "" || !validator.validate(req.body.email)) {
-        res.sendStatus(400)
+        res.status(400).send({error: 'Fields cannot be empty'})
     } else {
         db.run(
             "INSERT INTO users (name, last_name, created_at, email, password, role) VALUES ($name, $last_name, CURRENT_TIMESTAMP, $email, $password, 3);",
@@ -93,9 +96,8 @@ app.post('/login', function (req, res) {
                 } else {
                     if (row.email === req.body.email && row.password === md5(req.body.password)) {
                         // Sign token and send
-                        var token = jwt.sign({name: row.name , last_name: row.last_name, role: row.role}, 's3cr3t', {expiresIn: '1d'})
-                        // Expires after 24 hours
-                        res.status(200).cookie('jwt', token, { expires: new Date(Date.now() + 86,400,000), httpOnly: true }).send()
+                        var token = jwt.sign({name: row.name , last_name: row.last_name, role: row.role}, JWT_SECRET, {expiresIn: '1d'})
+                        res.status(200).send({jwt: token})
                     } else {
                         res.status(400).send({error: 'Wrong credentials'})
                     }

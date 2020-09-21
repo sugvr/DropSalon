@@ -28,15 +28,20 @@ class Login extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
-    axios({
-      method: 'post',
-      url: 'http://localhost:4000/login',
-      data: {
+    axios.post('http://localhost:4000/login', {
         email: this.state.valueEmail,
         password: this.state.valuePassword
-      }
+    }).then(function (response){
+        //If the response is 2xx the set cookie and redirect
+        sessionStorage.setItem('jwt', response.data.jwt)
+        //this.handleRedirect()
+    }).catch(function (reason) {
+        //Set msg to user from the following response 
+        if (reason) {
+          console.log(reason)
+          console.log(reason.response.data.error)
+        }
     })
 
   }
