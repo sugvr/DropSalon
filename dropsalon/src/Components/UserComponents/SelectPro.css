@@ -1,7 +1,7 @@
 .SelectView{
    
     margin-left: 200px;
-    margin-right: 200px;
+    margin-right: 190px;
     margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
@@ -9,4 +9,16 @@
     font-size: 20px;
     text-align: center;
 
+}
+
+.SelectView2{
+    
+    margin-left: 215px;
+    margin-right: 190px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    text-align: center;
 }
