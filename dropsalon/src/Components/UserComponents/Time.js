@@ -8,9 +8,9 @@ export default function Time() {
     <form className="TimeView" noValidate>
       <TextField
         id="time"
-        label="Alarm clock"
+        label="Time"
         type="time"
-        defaultValue="07:30"
+        defaultValue="09:00"
         className="textField"
         InputLabelProps={{
           shrink: true,

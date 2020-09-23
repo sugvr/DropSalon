@@ -10,10 +10,12 @@ import './HomeUser.css'
         <div>
             <TitleUser/>
             <SelectPage/>
+            <h3>Selecione Fecha:</h3>
             <div className="DatesView">
             <Date/>
             <Time/>
             </div>
+            
         </div>
     )
  }

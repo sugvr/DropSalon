@@ -4,7 +4,7 @@ import './SelectPro.css'
 class SelectPage extends Component {
   render () {
     return(
-      <div>
+      <div className="SelectContainer">
  <div className= "SelectView">
           <h3>Selecciona el profesional: </h3>
         <select className="browser-default custom-select">
@@ -14,7 +14,7 @@ class SelectPage extends Component {
           <option value="3">Option 3</option>
         </select>
       </div>
-       <div className= "SelectView2">
+       <div className= "SelectView2" >
        <h3>Selecciona el trabajo: </h3>
      <select className="browser-default custom-select">
        <option>Choose your option</option>
