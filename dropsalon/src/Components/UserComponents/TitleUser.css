@@ -1,0 +1,9 @@
+.Title-user{
+    
+    font-family: "Satisfy", sans-serif;
+    background-color: darkgray;
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}

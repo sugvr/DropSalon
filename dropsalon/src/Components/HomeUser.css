@@ -1,0 +1,8 @@
+.DatesView{
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+.DatesView div{
+    padding: 10px;
+}

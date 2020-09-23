@@ -1,13 +1,17 @@
 import React from 'react'
+import Agenda from './EmployeeComponents/Agenda'
 
-function HomeEmployee(){
-    return(
-        <>
-        <h1>Hola, aquí tu calendario</h1>
-        <p>(se muestra calendario)</p>
-        <button>Sacar cita</button>
-        </>
-    )
+class HomeEmployee extends React.Component{
+  
+    render() {
+        return (
+            <div>
+             <h1>Agenda (Employee Role)</h1>
+            <Agenda/>
+            </div>
+            
+        )
+    }
 }
 
 export default HomeEmployee

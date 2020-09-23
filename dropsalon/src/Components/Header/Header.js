@@ -6,9 +6,11 @@ function Header() {
       <>
 
          <div className="header" id="header-section">
-
+            <div>
             <h1 className="title">Drop Salon</h1>
             <p className="subtext">Resaltando tu belleza</p>
+            </div>
+            
 
             <a href="#about-section">
                <div className="arrow">

@@ -8,7 +8,8 @@ import Contact from '../Contact/Contact'
 import Citas from '../Citas/Citas'
 import Separator from '../Separator/Separator'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import HomeUser from '../HomeUser'
+import HomeEmployee from '../HomeEmployee'
 
 
 function App() {
@@ -22,10 +23,12 @@ function App() {
       <Portfolio />
       <Separator id='team-section' />
       <Team />
-      <Separator id='contact-section' />
-      <Contact />
       <Separator id='dates-section' />
       <Citas/>
+      <Separator id='contact-section' />
+      <Contact />
+      <HomeUser/>
+      <HomeEmployee/>
     </div>
 
   );
