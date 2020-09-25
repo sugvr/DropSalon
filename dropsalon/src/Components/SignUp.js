@@ -1,60 +1,68 @@
-import React from "react"
+import React, { useState } from "react"
 import './SignUp.css'
 import axios from 'axios'
 
-class SignUp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { valueName: '' , valueLastname: '', valueEmail: '', valuePassword: ''};
+const SignUp = (props) => {
+  const [valueName, setValueName] = useState('')
+  const [valueLastName, setValueLastName] = useState('')
+  const [valueEmail, setValueEmail] = useState('')
+  const [valuePassword, setValuePassword] = useState('')
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  function handleChangeName(e) {
+    setValueName(e.target.value)
   }
 
-  handleChange(event) {
-    const name = event.target.name;
-    this.setState({ [name]: event.target.value });
+  function handleChangeLastName(e) {
+    setValueLastName(e.target.value)
   }
 
-  handleSubmit(event) {
+  function handleChangeEmail(e) {
+      setValueEmail(e.target.value)
+  }
+
+  function handleChangePassword(e) {
+    setValuePassword(e.target.value)
+  }
+
+  function handleSubmit(e) {
     alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
+    e.preventDefault();
     axios({
       method: 'post',
       url: 'http://localhost:4000/signup',
       data: {
-        name: this.state.valueName,
-        last_name: this.state.valueLastname,
-        email: this.state.valueEmail,
-        password:this.state.valuePassword
+        name: valueName,
+        last_name: valueLastName,
+        email: valueEmail,
+        password: valuePassword
       }
     })
   }
-  render(){
-    return (
-      <div style={{display:this.props.visible}}>
-        <h1>Registrate</h1>
-        <form className="SingUp-containt" onSubmit={this.handleSubmit}>
-          <label className="labels">
-            Nombre
-          <input name="valueName" type="name" placeholder="Nombre" onChange={this.handleChange}/>
-          </label>
-          <label className="labels">
-            Apellido
-          <input name="valueLastname" type="Lastname" placeholder="Apellido" onChange={this.handleChange}/>
-          </label>
-          <label className="labels">
-            Email
-          <input name="valueEmail" type="Email" placeholder="Email" onChange={this.handleChange}/>
-          </label>
-          <label className="labels">
-            Password
-          <input name="valuePassword" type="Password" placeholder="Password" onChange={this.handleChange}/>
-          </label>
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
-    );
-  }
+
+  return (
+    <div style={{display: props.visible}}>
+      <h1>Registrate</h1>
+      <form className="SingUp-containt" onSubmit={handleSubmit}>
+        <label className="labels">
+          Nombre
+        <input name="valueName" type="name" placeholder="Nombre" onChange={handleChangeName}/>
+        </label>
+        <label className="labels">
+          Apellido
+        <input name="valueLastname" type="Lastname" placeholder="Apellido" onChange={handleChangeLastName}/>
+        </label>
+        <label className="labels">
+          Email
+        <input name="valueEmail" type="Email" placeholder="Email" onChange={handleChangeEmail}/>
+        </label>
+        <label className="labels">
+          Password
+        <input name="valuePassword" type="Password" placeholder="Password" onChange={handleChangePassword}/>
+        </label>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  )
 }
-  export default SignUp;
+
+export default SignUp

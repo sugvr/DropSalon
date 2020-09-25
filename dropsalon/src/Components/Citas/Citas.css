@@ -1,3 +1,12 @@
+.flex{
+    display:flex;
+    flex-direction: row;
+    background-color: black;
+    margin: 30px;
+    color: white;
+    align-content: center;
+}
+
 .login{
     display:flex;
     flex-direction: row;
