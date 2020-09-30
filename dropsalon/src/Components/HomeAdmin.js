@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import SingUp from './SignUp'
 import Agenda from './EmployeeComponents/Agenda'
 import Nav from './AdminComponents/AdminNav'
@@ -6,7 +6,7 @@ import Nav from './AdminComponents/AdminNav'
 function HomeAdmin(){
     const [name, setName] = useState('')
     const jwt = sessionStorage.getItem('jwt')
-
+    const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
     useEffect(() => {
         if (jwt === '' || jwt === null) {
             window.location.href = '/'
