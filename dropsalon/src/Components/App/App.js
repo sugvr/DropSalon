@@ -3,8 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
 
 import Nav from '../Nav/Nav'
@@ -17,6 +16,7 @@ import Citas from '../Citas/Citas'
 import Separator from '../Separator/Separator'
 import HomeUser from '../HomeUser'
 import HomeEmployee from '../HomeEmployee'
+import HomeAdmin from '../HomeAdmin'
 
 function App() {
   return (
@@ -30,6 +30,10 @@ function App() {
           {/* Employee web app */}
           <Route path="/homeemployee">
             <HomeEmployee/>
+          </Route>
+          {/* Employee web app */}
+          <Route path="/homeadmin">
+            <HomeAdmin/>
           </Route>
           {/* Default app */}
           <Route path="/">

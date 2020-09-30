@@ -16,13 +16,14 @@ const Login = (props) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // Hardcoded link BAD PRACTICE
     axios.post('http://localhost:4000/login', {
       email: valueEmail,
       password: valuePassword
     }).then(function (response) {
       //If the response is 2xx the set cookie and redirect
       sessionStorage.setItem('jwt', response.data.jwt)
-      //this.handleRedirect()
+      handleLogin(response.data.jwt)
     }).catch(function (reason) {
       //Set msg to user from the following response 
       if (reason) {
@@ -30,6 +31,21 @@ const Login = (props) => {
         console.log(reason.response.data.error)
       }
     })
+  }
+
+  function handleLogin(jwt){
+    let payload = jwt.split('.')[1]
+    // Decode Base64Url
+    let payloadData = JSON.parse(window.atob(payload))
+    //console.log(payloadData)
+    //console.log(payloadData.role)
+    if (payloadData.role === 3) {
+      window.location.href = '/homeuser'
+    } else if (payloadData.role === 2) {
+      window.location.href = '/homeemployee'
+    } else if (payloadData.role === 1) {
+      window.location.href = '/homeadmin'
+    }
   }
 
   return (
@@ -49,7 +65,7 @@ const Login = (props) => {
           </label>
         </div>
         <div className="cajon3">
-          <button type="submit">Entra</button>
+          <button type="submit">Log In</button>
         </div>
       </form>
     </div>
