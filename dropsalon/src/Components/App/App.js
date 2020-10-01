@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom'
 
 import Nav from '../Nav/Nav'
@@ -18,23 +19,32 @@ import HomeUser from '../HomeUser'
 import HomeEmployee from '../HomeEmployee'
 import HomeAdmin from '../HomeAdmin'
 
+function PrivateRoute({ children, ...rest }) {
+  return (
+    <Route
+      {...rest}
+      render={ ({ location }) => sessionStorage.getItem('jwt') ? children : (<Redirect to={{ pathname: "/", state: { from: location }}}/>) }
+    />
+  )
+}
+
 function App() {
   return (
     <div>
       <Router>
         <Switch>
           {/* User web app */}
-          <Route path="/homeuser">
+          <PrivateRoute path="/homeuser">
             <HomeUser/>
-          </Route>
+          </PrivateRoute>
           {/* Employee web app */}
-          <Route path="/homeemployee">
+          <PrivateRoute path="/homeemployee">
             <HomeEmployee/>
-          </Route>
+          </PrivateRoute>
           {/* Employee web app */}
-          <Route path="/homeadmin">
+          <PrivateRoute path="/homeadmin">
             <HomeAdmin/>
-          </Route>
+          </PrivateRoute>
           {/* Default app */}
           <Route path="/">
             <Nav />

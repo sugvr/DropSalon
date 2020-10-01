@@ -106,6 +106,18 @@ app.post('/login', function (req, res) {
         })
     }
 })
+app.post('/verify', function(req, res) {
+    if (req.body.jwt === "") {
+        res.sendStatus(400)
+    } else {
+        try {
+            jwt.verify(req.body.jwt, JWT_SECRET)
+            res.sendStatus(200)
+        } catch (error) {
+            res.sendStatus(403)
+        }
+    }
+})
 // -- End of Endpoint handlers --
 
 // Server start
