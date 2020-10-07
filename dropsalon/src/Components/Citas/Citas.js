@@ -25,9 +25,14 @@ function Citas() {
 
   return (
     <div className="flex">
+      <div>
       <Login visible={login}/>
       <SignUp visible={signUp} />
-      <button onClick={toggle}>{buttonValue}</button>
+      </div>
+      <div>
+      <button className="toggle" onClick={toggle}>{buttonValue}</button>
+      </div>
+      
     </div>
   )
 }

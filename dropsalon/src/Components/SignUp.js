@@ -59,7 +59,7 @@ const SignUp = (props) => {
           Password
         <input name="valuePassword" type="Password" placeholder="Password" onChange={handleChangePassword}/>
         </label>
-        <button type="submit">Sign Up</button>
+        <button className="submit-sigup"type="submit">Registrarte</button>
       </form>
     </div>
   )

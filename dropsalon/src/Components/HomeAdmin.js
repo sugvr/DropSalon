@@ -33,7 +33,7 @@ function HomeAdmin(){
     return(
         <>
         <h1>Bienvenido de vuelta Administardor {name}</h1>
-        <Nav />
+     
         <Agenda id="Agenda-Admin"/>
         <SingUp id="AdminSignup"/>
         </>

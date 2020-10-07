@@ -1,6 +1,7 @@
 .navbar {
   height: 80px;
   display: flex;
+
   justify-content: space-between;
 }
 
@@ -8,7 +9,7 @@
   font-family: "Satisfy", sans-serif;
   font-size: 2em;
   color: black;
-  margin: 0 30px;
+  margin-right: 30px;
 }
 .nav-logo:hover {
   text-decoration: none;
@@ -16,7 +17,7 @@
 }
 ul {
   list-style-type: none;
-  margin: 0;
+  margin-top: 15px;
   padding: 0;
   overflow: hidden;
   font-size: 17px;
@@ -24,7 +25,7 @@ ul {
 }
 
 li {
-  /* float: right; */
+  float: right; 
 }
 
 li a {

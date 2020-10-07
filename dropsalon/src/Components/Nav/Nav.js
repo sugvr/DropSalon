@@ -5,7 +5,7 @@ import './nav.css'
 
 function Nav() {
   return (
-    <>
+    <div className="navbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a href="#header-section" className="nav-logo">Drop Salon</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@ function Nav() {
 
         </div>
       </nav>
-    </>
+    </div>
   );
 
 }

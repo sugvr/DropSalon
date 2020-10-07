@@ -51,7 +51,7 @@ const Login = (props) => {
   return (
     <div style={{display: props.visible}}>
       <h1>Entra a tu cuenta</h1>
-      <form className="" onSubmit={handleSubmit}>
+      <form className="flex-login" onSubmit={handleSubmit}>
         <div className="cajon1">
           <label>
             Email
@@ -65,11 +65,10 @@ const Login = (props) => {
           </label>
         </div>
         <div className="cajon3">
-          <button type="submit">Log In</button>
+          <button className="Submit-login" type="submit">Entrar</button>
         </div>
       </form>
     </div>
   )
 }
-
 export default Login

@@ -1,4 +1,4 @@
-.flex{
+.flex-login{
     display:flex;
     flex-direction: row;
     background-color: black;
@@ -24,4 +24,8 @@
 }
 .toggle{
     margin-left: 20px;
+}
+.Submit-login{
+    text-align: center;
+    padding: 10px;
 }
