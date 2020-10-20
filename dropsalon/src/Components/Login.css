@@ -6,6 +6,11 @@
     color: white;
     align-content: center;
 }
+.inputemail{
+        width: 325px;
+        margin-left: 10px;
+       
+}
 
 .flex div{
     padding: 30px;
@@ -23,7 +28,7 @@
     
 }
 .toggle{
-    margin-left: 20px;
+   
 }
 .Submit-login{
     text-align: center;

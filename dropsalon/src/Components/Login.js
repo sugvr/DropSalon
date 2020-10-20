@@ -55,13 +55,13 @@ const Login = (props) => {
         <div className="cajon1">
           <label>
             Email
-        <input name="valueEmail" type="email" placeholder="Email" onChange={handleChangeEmail} />
+        <input className= "inputemail" name="valueEmail" type="email" placeholder="Email" onChange={handleChangeEmail} />
           </label>
         </div>
         <div className="cajon2">
           <label>
             Password
-        <input name="valuePassword" type="password" placeholder="Password" onChange={handleChangePassword} />
+        <input className="inputemail" name="valuePassword" type="password" placeholder="Password" onChange={handleChangePassword} />
           </label>
         </div>
         <div className="cajon3">
@@ -70,5 +70,5 @@ const Login = (props) => {
       </form>
     </div>
   )
-}
+} 
 export default Login

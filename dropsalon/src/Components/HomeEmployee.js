@@ -10,7 +10,7 @@ const HomeEmployee = (props) => {
     useEffect(() => {
         if (jwt === '' || jwt === null) {
             window.location.href = '/'
-        } else if (jwtPayload.role != 2) {
+        } else if (jwtPayload.role !== 2) {
             sessionStorage.removeItem('jwt')
             window.location.href = '/'
         } else {

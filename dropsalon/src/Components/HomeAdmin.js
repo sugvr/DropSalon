@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
-import SingUp from './SignUp'
-import Agenda from './EmployeeComponents/Agenda'
-import Nav from './AdminComponents/AdminNav'
+import AdminHeader from './AdminComponents/AdminHeader'
+
+
 import axios from 'axios'
 
 function HomeAdmin(){
@@ -12,7 +12,7 @@ function HomeAdmin(){
     useEffect(() => {
         if (jwt === '' || jwt === null) {
             window.location.href = '/'
-        } else if (jwtPayload.role != 1) {
+        } else if (jwtPayload.role !== 1) {
             sessionStorage.removeItem('jwt')
             window.location.href = '/'
         } else {
@@ -33,9 +33,8 @@ function HomeAdmin(){
     return(
         <>
         <h1>Bienvenido de vuelta Administardor {name}</h1>
-     
-        <Agenda id="Agenda-Admin"/>
-        <SingUp id="AdminSignup"/>
+        <AdminHeader/>
+        
         </>
     )
 }

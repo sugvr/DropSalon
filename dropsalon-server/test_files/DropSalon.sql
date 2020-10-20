@@ -29,6 +29,7 @@ CREATE TABLE citas (
 CREATE TABLE services (
   "id" INTEGER PRIMARY KEY,
   "service_name" TEXT,
+  "employee_name" TEXT,
   "service_description" TEXT,
   "duration" INTEGER,
   "price" REAL

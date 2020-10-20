@@ -1,1 +1,1 @@
-UPDATE users SET role = 3 WHERE id = 4;
+UPDATE users SET role = 1 WHERE id = 8;

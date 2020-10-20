@@ -18,3 +18,11 @@
     margin-bottom: 40px;
     font-family: "Satisfy", sans-serif;
 }
+.ListTeam{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
