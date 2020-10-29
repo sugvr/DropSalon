@@ -1,16 +1,16 @@
-.ClientesSpace{
+.ServicesSpace{
     margin-left:400px;
 }
 
-.ClientesTitle{
+.ServicesTitle{
     font-family: "Satisfy", sans-serif;
 }
-.Clientes-title{
+.Services-title{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     text-align: center;
 }
-.Clientes-title div{
+.Services-title div{
     padding: 50px;
 }

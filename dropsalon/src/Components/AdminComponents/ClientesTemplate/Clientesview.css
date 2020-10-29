@@ -1,0 +1,30 @@
+.TableClients{
+    height: 100px;
+    width:850px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: -100px;
+}
+.TableClients div{
+    padding: 50px;
+}
+.nameUser{
+   
+    font-family: "Satisfy", sans-serif;
+}
+.lastnameUser{
+
+    font-family: "Satisfy", sans-serif;
+}
+.Username{
+
+    font-family: "Satisfy", sans-serif;
+}
+.Role{
+
+    font-family: "Satisfy", sans-serif;
+}

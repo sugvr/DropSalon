@@ -3,9 +3,8 @@ import './HomeAdmin.css'
 import AdminHeader from './AdminComponents/AdminHeader'
 import EmpleadoViewAdmin from './AdminComponents/EmpleadosViewAdmin'
 import CalendarioAdminView from './AdminComponents/calendarioAdminview'
-
-
-import axios from 'axios'
+import ClientesViewAdmin from './AdminComponents/ClientesViewAdmin'
+import ServiceList from './AdminComponents/ServicesList'
 
 function HomeAdmin() {
 
@@ -19,8 +18,9 @@ function HomeAdmin() {
                 <div className="separador">
                     <CalendarioAdminView />
                 </div>
-
             </div>
+            <ClientesViewAdmin />
+            <ServiceList/>
         </>
     )
 }
