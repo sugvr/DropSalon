@@ -13,7 +13,7 @@ const app = express()
 var db = new sqlite3.Database('./dropsalon.db')
 
 // Configuration
-app.use(express.json({type: "application/json"})) // for parsing application/json
+app.use(express.json({ type: "application/json" })) // for parsing application/json
 app.use(cors())
 
 // -- Endpoint handlers --
@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
     res.send('Test')
 })
 app.get('/user', function (req, res) {
-    db.all("SELECT * FROM users;",function(err, row){
+    db.all("SELECT * FROM users;", function (err, row) {
         if (err) {
             console.error(err.message)
             res.sendStatus(500)
@@ -37,7 +37,7 @@ app.get('/user', function (req, res) {
     })
 })
 app.get('/user/:userID', function (req, res) {
-    db.get("SELECT name, last_name, created_at, email, role FROM users WHERE id = ?;", [req.params.userID] ,function(err, row){
+    db.get("SELECT name, last_name, created_at, email, role FROM users WHERE id = ?;", [req.params.userID], function (err, row) {
         if (err) {
             console.error(err.message)
             res.sendStatus(500)
@@ -46,11 +46,43 @@ app.get('/user/:userID', function (req, res) {
                 res.sendStatus(404)
             } else {
                 console.log(row)
-                res.status(200).send({name: row.name, last_name: row.last_name, created_at: row.created_at ,email: row.email, role: row.role})
+                res.status(200).send({ name: row.name, last_name: row.last_name, created_at: row.created_at, email: row.email, role: row.role })
             }
         }
     })
 })
+
+app.put('/user/role/:userID', function (req, res) {
+    if (!req.headers.authorization) {
+        return res.json({ error: 'No credentials sent!' });
+    }
+    else {
+        jwt.verify(req.headers.authorization.split(' ')[1], JWT_SECRET, function (err, decoded) {
+            if (err) {
+                res.sendStatus(403)
+            }
+            else {
+                console.log(decoded)
+                if (decoded.role == 1) {
+                    db.run("UPDATE users SET role = ? WHERE id = ?", req.body.role, req.params.userID, function (err, row) {
+                        if (err) {
+                            console.error(err.message)
+                            res.sendStatus(500)
+                        } else {
+                            if (row === []) {
+                                res.sendStatus(404)
+                            } else {
+                                console.log(row)
+                                res.sendStatus(200)
+                            }
+                        }
+                    })
+                }
+            }
+        })
+    }
+})
+
 app.get('/servivios', function (req, res) {
     res.send('Lista de servicios')
 })
@@ -58,7 +90,7 @@ app.get('/servivios', function (req, res) {
 /*Rest Api Post Methods*/
 app.post('/signup', function (req, res) {
     if (req.body.name === "" || req.body.last_name === "" || req.body.email === "" || req.body.password === "" || !validator.validate(req.body.email)) {
-        res.status(400).send({error: 'Fields cannot be empty'})
+        res.status(400).send({ error: 'Fields cannot be empty' })
     } else {
         db.run(
             "INSERT INTO users (name, last_name, created_at, email, password, role) VALUES ($name, $last_name, CURRENT_TIMESTAMP, $email, $password, 3);",
@@ -82,31 +114,31 @@ app.post('/signup', function (req, res) {
 })
 app.post('/login', function (req, res) {
     if (req.body.email === "" || req.body.password === "") {
-        res.status(400).send({error: 'Credential fields cannot be empty'})
+        res.status(400).send({ error: 'Credential fields cannot be empty' })
     } else if (!validator.validate(req.body.email)) {
-        res.status(400).send({error: 'Wrong email address format'})
+        res.status(400).send({ error: 'Wrong email address format' })
     } else {
-        db.get("SELECT name, last_name, email, password, role FROM users WHERE email = ?;", [req.body.email] ,function(err, row){
+        db.get("SELECT name, last_name, email, password, role FROM users WHERE email = ?;", [req.body.email], function (err, row) {
             if (err) {
                 console.error(err.message)
                 res.sendStatus(500)
             } else {
                 if (row === undefined) {
-                    res.status(400).send({error: 'Wrong credentials'})
+                    res.status(400).send({ error: 'Wrong credentials' })
                 } else {
                     if (row.email === req.body.email && row.password === md5(req.body.password)) {
                         // Sign token and send
-                        var token = jwt.sign({name: row.name , last_name: row.last_name, role: row.role}, JWT_SECRET, {expiresIn: '1d'})
-                        res.status(200).send({jwt: token})
+                        var token = jwt.sign({ name: row.name, last_name: row.last_name, role: row.role }, JWT_SECRET, { expiresIn: '1d' })
+                        res.status(200).send({ jwt: token })
                     } else {
-                        res.status(400).send({error: 'Wrong credentials'})
+                        res.status(400).send({ error: 'Wrong credentials' })
                     }
                 }
             }
         })
     }
 })
-app.post('/verify', function(req, res) {
+app.post('/verify', function (req, res) {
     if (req.body.jwt === "") {
         res.sendStatus(400)
     } else {

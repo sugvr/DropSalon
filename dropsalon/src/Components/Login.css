@@ -15,22 +15,17 @@
 .flex div{
     padding: 30px;
 }
-.cajon1{
 
-}
-.cajon2{
-
-}
 .cajon3{
     display:flex;
     flex-direction: row;
-    margin: 30px;
     
 }
-.toggle{
-   
-}
+
 .Submit-login{
+    margin-top: 25px;
     text-align: center;
+    height: 70px;
+    width: 100px;
     padding: 10px;
 }

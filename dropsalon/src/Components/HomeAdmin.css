@@ -1,0 +1,12 @@
+.Admin-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Admin-container div{
+    padding: 10px;
+}
+.separador{
+    margin-left:100px;
+}

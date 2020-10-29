@@ -11,5 +11,9 @@
 }
 
 .submit-sigup{
+  margin-top: 25px;
+  text-align: center;
+  height: 70px;
+  width: 100px;
   padding: 10px;
 }

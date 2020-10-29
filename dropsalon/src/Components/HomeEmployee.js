@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Agenda from './EmployeeComponents/Agenda'
 import axios from 'axios'
+import './HomeEmployee.css'
 
 const HomeEmployee = (props) => {
     const [name, setName] = useState('')
@@ -16,11 +17,11 @@ const HomeEmployee = (props) => {
         } else {
             //Send token to verify
             axios.post('http://localhost:4000/verify', { jwt: jwt })
-                .catch(function (reason){
+                .catch(function (reason) {
                     console.log(reason)
                     sessionStorage.removeItem('jwt')
                     window.location.href = '/'
-            })
+                })
             setName(jwtPayload.name)
             console.log('JWT available')
             console.log(jwtPayload)
@@ -30,8 +31,18 @@ const HomeEmployee = (props) => {
 
     return (
         <div>
-            <h1>Hello {name}</h1>
-            <h1>Agenda (Employee Role)</h1>
+            <div className="Employee-header">
+                <div className="EmployeeHeader-left">
+                    <h1>DropSalon</h1>
+                </div>
+                <div className="EmployeeHeader-middle">
+                    <h3>Aquí Puedes ver tu Agenda</h3>
+                </div>
+                <div className="EmployeeHeaderHeader-right">
+                    <h1>Hola {name}</h1>
+                </div>
+
+            </div>
             <Agenda />
         </div>
 
