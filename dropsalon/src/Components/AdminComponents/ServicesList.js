@@ -12,7 +12,10 @@ function ServicesList(){
                     <button>Editar</button>
                 </div>
             </div>
-         <ListadeServicio servicio="Servicio" Precio="Precio" Duracion="Duracion"/>
+            <div>
+            <ListadeServicio servicio="Servicio" Precio="Precio" Duracion="Duracion"/>
+            </div>
+        
         </div>
     )
 }

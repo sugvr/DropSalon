@@ -1,10 +1,10 @@
 .ServicesSpace{
-    margin-left:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.ServicesTitle{
-    font-family: "Satisfy", sans-serif;
-}
 .Services-title{
     display: flex;
     flex-wrap: wrap;

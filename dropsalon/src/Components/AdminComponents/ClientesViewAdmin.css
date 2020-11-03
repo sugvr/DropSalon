@@ -1,10 +1,11 @@
 .ClientesSpace{
-    margin-left:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.ClientesTitle{
-    font-family: "Satisfy", sans-serif;
-}
+
 .Clientes-title{
     display: flex;
     flex-wrap: wrap;
