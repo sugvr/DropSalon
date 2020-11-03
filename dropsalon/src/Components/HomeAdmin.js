@@ -5,12 +5,14 @@ import EmpleadoViewAdmin from './AdminComponents/EmpleadosViewAdmin'
 import CalendarioAdminView from './AdminComponents/calendarioAdminview'
 import ClientesViewAdmin from './AdminComponents/ClientesViewAdmin'
 import ServiceList from './AdminComponents/ServicesList'
+import FormReports from './AdminComponents/FormReports'
 
 function HomeAdmin() {
 
     return (
         <>
-            <AdminHeader />
+        <div className="AdminPage">
+        <AdminHeader />
             <div className="Admin-container">
                 <div>
                     <EmpleadoViewAdmin />
@@ -21,6 +23,9 @@ function HomeAdmin() {
             </div>
             <ClientesViewAdmin />
             <ServiceList/>
+            <FormReports />
+        </div>
+            
         </>
     )
 }
