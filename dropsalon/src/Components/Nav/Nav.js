@@ -23,13 +23,13 @@ function Nav() {
             <li className="nav-item">
               <a className="nav-link" href="#team-section">Equipo de trabajo</a>
             </li>
+            <li className="login-separator">
+              <a className="nav-link" href="#dates-section">Saca tu cita</a>
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="#contact-section">Contactanos</a>
             </li>
 
-            <li className="login-separator">
-              <a className="nav-link" href="#dates-section">Saca tu cita</a>
-            </li>
          
 
 

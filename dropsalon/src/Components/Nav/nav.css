@@ -34,7 +34,8 @@ li a {
   color: black;
 }
 .login-separator{
-  margin-left: 470px;
-  font-family: "Satisfy", sans-serif;
-  font-size: 30px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
