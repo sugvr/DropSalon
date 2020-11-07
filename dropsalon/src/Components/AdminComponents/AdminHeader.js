@@ -6,8 +6,7 @@ function AdminHeader() {
     const [name, setName] = useState('')
     const jwt = sessionStorage.getItem('jwt')
     const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
-
-
+    
     useEffect(() => {
         if (jwt === '' || jwt === null) {
             window.location.href = '/'
@@ -29,6 +28,7 @@ function AdminHeader() {
         }
     }, [])
 
+
     return <div className="Admin-header">
         <div className="AdminHeader-left">
             <h1>Drop Salon</h1>
@@ -38,7 +38,7 @@ function AdminHeader() {
             <h1>Bienvenido de vuelta Administardor {name}</h1>
         </div>
         <div className="AdminHeader-right">
-           
+       
         </div>
     </div>
 }

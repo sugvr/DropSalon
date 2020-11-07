@@ -1,4 +1,4 @@
-.AdminPAge{
+.AdminPage{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -8,7 +8,6 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-
 .Admin-container div{
     padding: 10px;
 }

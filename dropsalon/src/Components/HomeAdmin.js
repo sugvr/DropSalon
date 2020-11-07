@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './HomeAdmin.css'
 import AdminHeader from './AdminComponents/AdminHeader'
 import EmpleadoViewAdmin from './AdminComponents/EmpleadosViewAdmin'
@@ -7,8 +7,9 @@ import ClientesViewAdmin from './AdminComponents/ClientesViewAdmin'
 import ServiceList from './AdminComponents/ServicesList'
 import FormReports from './AdminComponents/FormReports'
 
-function HomeAdmin() {
 
+function HomeAdmin() {
+  
     return (
         <>
         <div className="AdminPage">
