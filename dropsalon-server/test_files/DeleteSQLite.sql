@@ -1,1 +1,2 @@
-DELETE FROM users WHERE name = 'Content';
+DELETE FROM users
+WHERE name = 'Test';

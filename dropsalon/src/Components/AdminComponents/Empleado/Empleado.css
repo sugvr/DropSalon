@@ -1,0 +1,28 @@
+.Tarjetas3{
+    height: 150px;
+    width:400px;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color:white;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+.Tarjetas2 div{
+  padding: 10px;
+}
+
+.photo2{
+    width: 100px;
+    height: 120px;
+    margin-left: 10px;
+   
+}
+
+.name2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: "Satisfy", sans-serif;
+}

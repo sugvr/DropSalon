@@ -1,9 +1,6 @@
 -- DROP TABLE users;
-
 -- DROP TABLE citas;
-
 -- DROP TABLE services;
-
 CREATE TABLE users (
   "id" INTEGER PRIMARY KEY AUTOINCREMENT,
   "name" TEXT,
@@ -13,7 +10,6 @@ CREATE TABLE users (
   "password" TEXT,
   "role" INTEGER
 );
-
 CREATE TABLE citas (
   "id" INTEGER PRIMARY KEY,
   "date_rsvp" TEXT,
@@ -25,7 +21,6 @@ CREATE TABLE citas (
   FOREIGN KEY(employee_FK) REFERENCES users(id),
   FOREIGN KEY(serviceType) REFERENCES services(id)
 );
-
 CREATE TABLE services (
   "id" INTEGER PRIMARY KEY,
   "service_name" TEXT,

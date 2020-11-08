@@ -1,14 +1,17 @@
 .flex-login{
-    display:flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
     background-color: black;
     margin: 30px;
     color: white;
-    align-content: center;
 }
 .inputemail{
-        width: 325px;
-        margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
        
 }
 
@@ -16,21 +19,26 @@
     padding: 30px;
 }
 .cajon1{
-
-}
-.cajon2{
-
-}
-.cajon3{
-    display:flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: row;
-    margin: 30px;
+}
+
+.cajon3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     
 }
-.toggle{
-   
-}
+
 .Submit-login{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70px;
+    width: 100px;
     padding: 10px;
 }

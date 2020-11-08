@@ -1,28 +1,29 @@
-.Tarjetas{
-    height: 550px;
-    width:300px;
+.Tarjetas2{
+    height: 700px;
+    width:320px;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
     background-color:white;
     border: 1px solid black;
+    
 }
-.photo{
-    width: 190px;
-    height: 210px;
-}
-.job{
-    color:grey;
-}
-.name{
-    margin-top: 25px;
-    margin-bottom: 40px;
+.day{
     font-family: "Satisfy", sans-serif;
+    background-color: black;
+    color:white;
+    padding: 50px;
 }
-.ListTeam{
+
+.title{
+   font-size: 25px;
+   margin: 20px;
+   font-style: oblique;
+}
+.ListTeam2{
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
+    font-size: 30px;
     
 }

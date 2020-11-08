@@ -1,0 +1,16 @@
+.ServicesSpace{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Services-title{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+}
+.Services-title div{
+    padding: 50px;
+}

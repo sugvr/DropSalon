@@ -1,0 +1,8 @@
+.ViewEmpleados{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 800px;
+    width: 350px;
+    margin-left: 2px;
+}

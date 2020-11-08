@@ -1,0 +1,17 @@
+.ClientesSpace{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.Clientes-title{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+}
+.Clientes-title div{
+    padding: 50px;
+}

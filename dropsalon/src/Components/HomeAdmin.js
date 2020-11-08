@@ -1,40 +1,32 @@
-import React, {useState,useEffect} from 'react'
+import React from 'react'
+import './HomeAdmin.css'
 import AdminHeader from './AdminComponents/AdminHeader'
+import EmpleadoViewAdmin from './AdminComponents/EmpleadosViewAdmin'
+import CalendarioAdminView from './AdminComponents/calendarioAdminview'
+import ClientesViewAdmin from './AdminComponents/ClientesViewAdmin'
+import ServiceList from './AdminComponents/ServicesList'
+import FormReports from './AdminComponents/FormReports'
 
 
-import axios from 'axios'
-
-function HomeAdmin(){
-    const [name, setName] = useState('')
-    const jwt = sessionStorage.getItem('jwt')
-    const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
-    
-    useEffect(() => {
-        if (jwt === '' || jwt === null) {
-            window.location.href = '/'
-        } else if (jwtPayload.role !== 1) {
-            sessionStorage.removeItem('jwt')
-            window.location.href = '/'
-        } else {
-            //Send token to verify
-            axios.post('http://localhost:4000/verify', { jwt: jwt })
-                .catch(function (reason){
-                    console.log(reason)
-                    sessionStorage.removeItem('jwt')
-                    window.location.href = '/'
-            })
-            setName(jwtPayload.name)
-            console.log('JWT available')
-            console.log(jwtPayload)
-            console.log(jwtPayload.name)
-        }
-    }, [])
-
-    return(
+function HomeAdmin() {
+  
+    return (
         <>
-        <h1>Bienvenido de vuelta Administardor {name}</h1>
-        <AdminHeader/>
-        
+        <div className="AdminPage">
+        <AdminHeader />
+            <div className="Admin-container">
+                <div>
+                    <EmpleadoViewAdmin />
+                </div>
+                <div className="separador">
+                    <CalendarioAdminView />
+                </div>
+            </div>
+            <ClientesViewAdmin />
+            <ServiceList/>
+            <FormReports />
+        </div>
+            
         </>
     )
 }

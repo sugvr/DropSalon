@@ -1,8 +1,9 @@
 .SingUp-containt{
-    display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
-  flex-direction: column;
-  display: block;
+
 
 }
 
@@ -10,6 +11,12 @@
     padding: 30px;
 }
 
-.submit-sigup{
+.submit-signup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 70px;
+  width: 100px;
   padding: 10px;
 }
