@@ -17,7 +17,7 @@ import Citas from '../Citas/Citas'
 import Separator from '../Separator/Separator'
 import HomeUser from '../HomeUser'
 import HomeEmployee from '../HomeEmployee'
-import HomeAdmin from '../HomeAdmin'
+import HomeAdmin from '../Admin/HomeAdmin'
 
 function PrivateRoute({ children, ...rest }) {
   return (
