@@ -13,9 +13,6 @@ function CalendarioAdminView() {
                 <div>
                 <Calendar day="23 de octubre" title="trabajos para hoy" li1="tal cosa" li2="la otra cosa" />
                 </div>
-                <div>
-                <Calendar day="24 de octubre" title="trabajos para hoy" li1="tal cosa" li2="mira no se"/>
-                </div>
             </div>
         </div>
 

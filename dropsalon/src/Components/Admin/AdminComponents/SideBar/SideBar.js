@@ -1,11 +1,6 @@
 import React from 'react'
 import './SideBar.css'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
-  } from 'react-router-dom'
+
 
 function SideBar() {
 
@@ -15,27 +10,27 @@ function SideBar() {
                 <div className="pt-3" className="sidebar-sticky">
                     <ul className="nav flex-column">
                         <li className="nav-item">
-                            <a className="nav-link active" href="/dashboard">
+                            <a className="nav-link active" href="#">
                                 Dashboard
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/calendarios">
+                            <a className="nav-link" href="#Calendarios">
                                 Calendarios
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/Usuarios">
+                            <a className="nav-link" href="#Usuarios">
                                 Usuarios
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="Servicios">
+                            <a className="nav-link" href="#Servicios">
                                 Servicios
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="Reportes">
+                            <a className="nav-link" href="#Reportes">
                                 Reportes
                             </a>
                         </li>

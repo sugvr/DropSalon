@@ -7,6 +7,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 200px;
+}
+.Centercontent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 200px;
 }
 .Admin-container div{
     padding: 10px;
