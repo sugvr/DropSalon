@@ -44,7 +44,7 @@ const Login = (props) => {
     } else if (payloadData.role === 2) {
       window.location.href = '/homeemployee'
     } else if (payloadData.role === 1) {
-      window.location.href = '/homeadmin'
+      window.location.href = '/homeadmin/dashboard'
     }
   }
 

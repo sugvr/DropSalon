@@ -1,11 +1,6 @@
 import React from 'react'
 import './SideBar.css'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
-  } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 function SideBar() {
 
@@ -15,29 +10,29 @@ function SideBar() {
                 <div className="pt-3" className="sidebar-sticky">
                     <ul className="nav flex-column">
                         <li className="nav-item">
-                            <a className="nav-link active" href="/dashboard">
+                            <Link className="nav-link" to="/homeadmin/dashboard">
                                 Dashboard
-                            </a>
+                            </Link>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <a className="nav-link" href="/calendarios">
                                 Calendarios
                             </a>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
-                            <a className="nav-link" href="/Usuarios">
+                            <Link className="nav-link" to="/homeadmin/usuarios">
                                 Usuarios
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="Servicios">
+                            <Link className="nav-link" to="/homeadmin/servicios">
                                 Servicios
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="Reportes">
+                            <Link className="nav-link" to="/homeadmins/reportes">
                                 Reportes
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>

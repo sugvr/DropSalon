@@ -1,7 +1,15 @@
 import React from 'react'
 import './DashboardNav.css'
+import {useHistory, useLocation} from 'react-router-dom'
 
 function DashboradNav() {
+    let history = useHistory()
+    let loc = useLocation()
+
+    const handleLogout = () => {
+        sessionStorage.clear()
+        history.push("/")
+    }
 
     return (
         <>
@@ -11,9 +19,9 @@ function DashboradNav() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 {/* <input className="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search" /> */}
-                <ul className="navbar-nav px-3">
+                <ul className="navbar-nav px-3 mt-0">
                     <li className="nav-item text-nowrap">
-                        <a className="nav-link" href="#">Sign out</a>
+                        <button onClick={ () => handleLogout() } className="btn btn-danger">Sign out</button>
                     </li>
                 </ul>
                 
