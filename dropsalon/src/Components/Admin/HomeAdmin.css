@@ -7,13 +7,21 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 200px;
+    margin-left: 250px;
 }
 .Centercontent{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-left: 200px;
+    margin-left: 100px;
+}
+.Centercontent2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-left: 250px;
 }
 .Admin-container div{
     padding: 10px;

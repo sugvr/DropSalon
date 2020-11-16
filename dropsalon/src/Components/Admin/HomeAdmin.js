@@ -86,7 +86,7 @@ function HomeAdmin() {
                             <div className="Centercontent" id ="Usuarios">
                             <ClientesViewAdmin />
                             </div>
-                            <div className="Centercontent" id ="Servicios">
+                            <div className="Centercontent2" id ="Servicios">
                             <ServiceList />
                             </div>
                             <div id ="Reportes">
