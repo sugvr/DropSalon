@@ -2,10 +2,10 @@ import React from 'react'
 import Empleado2 from './Empleado/Empleado'
 import './EmpleadoViewAdmin.css'
 
-import fotoEmpleado1 from "../../Assets/chrystal.jpg"
-import fotoEmpleado2 from "../../Assets/lorriel.jpg"
-import fotoEmpleado3 from "../../Assets/Arianna.jpg"
-import fotoEmpleado4 from "../../Assets/wilnelis.jpg"
+import fotoEmpleado1 from "../../../Assets/chrystal.jpg"
+import fotoEmpleado2 from "../../../Assets/lorriel.jpg"
+import fotoEmpleado3 from "../../../Assets/Arianna.jpg"
+import fotoEmpleado4 from "../../../Assets/wilnelis.jpg"
 
 
 function EmpleadoViewAdmin(){

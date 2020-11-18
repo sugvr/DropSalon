@@ -1,8 +1,8 @@
 import React from 'react'
 import './HomeAdmin.css'
 // import AdminHeader from './AdminComponents/AdminHeader'
-// import EmpleadoViewAdmin from './AdminComponents/EmpleadosViewAdmin'
-// import CalendarioAdminView from './AdminComponents/calendarioAdminview'
+import EmpleadoViewAdmin from './AdminComponents/EmpleadosViewAdmin'
+import CalendarioAdminView from './AdminComponents/calendarioAdminview'
 import ClientesViewAdmin from './AdminComponents/ClientesViewAdmin'
 import ServiceList from './AdminComponents/ServicesList'
 import FormReports from './AdminComponents/FormReports'
@@ -14,7 +14,7 @@ import {
     Switch,
     Route,
     Redirect
-  } from 'react-router-dom'
+} from 'react-router-dom'
 
 
 function HomeAdmin() {
@@ -27,21 +27,31 @@ function HomeAdmin() {
                     <Router>
                         <SideBar></SideBar>
                         <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                                <Switch>
-                                    <Route path="/homeadmin/dashboard">
-                                        <DashboardContent></DashboardContent>
-                                    </Route>
-                                    <Route path="/homeadmin/usuarios">
-                                        <ClientesViewAdmin/>
-                                    </Route>
-                                    <Route path="/homeadmin/servicios">
-                                        <ServiceList/>
-                                    </Route>
-                                    <Route path="/homeadmin/reportes">
-                                        <FormReports/>
-                                    </Route>
-                                </Switch>
-                            </main>
+                            <Switch>
+                                <Route path="/homeadmin/dashboard">
+                                    <DashboardContent></DashboardContent>
+                                </Route>
+                                <Route path="/homeadmin/calendarios">
+                                    <div className="Empleado-container">
+                                        <div>
+                                            <EmpleadoViewAdmin />
+                                        </div>
+                                        <div className="separador">
+                                            <CalendarioAdminView />
+                                        </div>
+                                    </div>
+                                </Route>
+                                <Route path="/homeadmin/usuarios">
+                                    <ClientesViewAdmin />
+                                </Route>
+                                <Route path="/homeadmin/servicios">
+                                    <ServiceList />
+                                </Route>
+                                <Route path="/homeadmin/reportes">
+                                    <FormReports />
+                                </Route>
+                            </Switch>
+                        </main>
                     </Router>
                 </div>
             </div>

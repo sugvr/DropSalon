@@ -14,11 +14,11 @@ function SideBar() {
                                 Dashboard
                             </Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <a className="nav-link" href="/calendarios">
+                        <li className="nav-item">
+                            <Link className="nav-link" to = "/homeadmin/calendarios">
                                 Calendarios
-                            </a>
-                        </li> */}
+                            </Link>
+                        </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/homeadmin/usuarios">
                                 Usuarios
