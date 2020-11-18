@@ -42,7 +42,7 @@ function App() {
             <HomeEmployee/>
           </PrivateRoute>
           {/* Employee web app */}
-          <PrivateRoute path="/homeadmin">
+          <PrivateRoute path="/homeadmin/dashboard">
             <HomeAdmin/>
           </PrivateRoute>
           {/* Default app */}

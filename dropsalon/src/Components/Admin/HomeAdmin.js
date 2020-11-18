@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-dom"
+import React from 'react'
 import './HomeAdmin.css'
-import AdminHeader from './AdminComponents/AdminHeader'
+// import AdminHeader from './AdminComponents/AdminHeader'
 import EmpleadoViewAdmin from './AdminComponents/EmpleadosViewAdmin'
 import CalendarioAdminView from './AdminComponents/calendarioAdminview'
 import ClientesViewAdmin from './AdminComponents/ClientesViewAdmin'
@@ -10,93 +9,68 @@ import FormReports from './AdminComponents/FormReports'
 import DashboardNav from './AdminComponents/DashboardNav/DashboardNav'
 import SideBar from './AdminComponents/SideBar/SideBar'
 import DashboardContent from './AdminComponents/DashboardContent/DashboardContent'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect
+} from 'react-router-dom'
 
-
-
-// function HomeAdmin() {
-//     return (
-//         <div>
-//             <DashboardNav></DashboardNav>
-//             <Router>
-//                 <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block sidebar bg-light collapse">
-//                     <div className="pt-3" className="sidebar-sticky">
-//                         <ul className="nav flex-column">
-//                             <li className="nav-item">
-//                                 <a className="nav-link active" href="dashborad">
-//                                     <Link to="/dashboard" >Dashboard </Link>
-//                                 </a>
-//                             </li>
-//                             <li className="nav-item">
-//                                 <a className="nav-link" href="">
-//                                     <Link to="/calendarios" >Calendarios </Link>
-//                                 </a>
-//                             </li>
-//                             <li className="nav-item">
-//                                 <a className="nav-link" href="">
-//                                     Usuarios
-//                             </a>
-//                             </li>
-//                             <li className="nav-item">
-//                                 <a className="nav-link" href="">
-//                                     Servicios
-//                             </a>
-//                             </li>
-//                             <li className="nav-item">
-//                                 <a className="nav-link" href="">
-//                                     Reportes
-//                             </a>
-//                             </li>
-//                         </ul>
-//                     </div>
-//                 </nav>
-//                 <Route path="dashboard" exact component={DashboardContent} />
-//                 <Route path="calendarios" exact component={CalendarioAdminView} />
-//             </Router>
-//         </div>
-
-//     )
-// }
 
 function HomeAdmin() {
 
     return (
         <>
-            {/* <DashboardNav></DashboardNav>
-            <div class="container-fluid">
-                <div class="row">
-                    <SideBar> </SideBar>
-                    <DashboardContent></DashboardContent>
-                </div>
-            </div> */}
-
-            <div className="AdminPage">
-                {/* //         <AdminHeader /> */}
-                <DashboardNav></DashboardNav>
-                <div class="container-fluid">
-                    <div class="row">
-                        <SideBar> </SideBar>
-                        <DashboardContent id="Dashboard" />
-                        <div className="Admin-container" id="Calendarios">
-                            <div>
-                                <EmpleadoViewAdmin />
-                            </div>
-                            <div className="separador">
-                                <CalendarioAdminView />
-                            </div>
-                            <div className="Centercontent" id ="Usuarios">
-                            <ClientesViewAdmin />
-                            </div>
-                            <div className="Centercontent2" id ="Servicios">
-                            <ServiceList />
-                            </div>
-                            <div id ="Reportes">
-                            <FormReports />
-                            </div>
-                        
-                        </div>
-                    </div>
+            <DashboardNav></DashboardNav>
+            <div className="container-fluid">
+                <div className="row">
+                    <Router>
+                        <SideBar></SideBar>
+                        <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                            <Switch>
+                                <Route path="/homeadmin/dashboard">
+                                    <DashboardContent></DashboardContent>
+                                </Route>
+                                <Route path="/homeadmin/calendarios">
+                                    <div className="Empleado-container">
+                                        <div>
+                                            <EmpleadoViewAdmin />
+                                        </div>
+                                        <div className="separador">
+                                            <CalendarioAdminView />
+                                        </div>
+                                    </div>
+                                </Route>
+                                <Route path="/homeadmin/usuarios">
+                                    <ClientesViewAdmin />
+                                </Route>
+                                <Route path="/homeadmin/servicios">
+                                    <ServiceList />
+                                </Route>
+                                <Route path="/homeadmin/reportes">
+                                    <FormReports />
+                                </Route>
+                            </Switch>
+                        </main>
+                    </Router>
                 </div>
             </div>
+
+            {/* <div classNameName="AdminPage">
+        <AdminHeader />
+            <div classNameName="Admin-container">
+                <div>
+                    <EmpleadoViewAdmin />
+                </div>
+                <div classNameName="separador">
+                    <CalendarioAdminView />
+                </div>
+            </div>
+            <ClientesViewAdmin />
+            <ServiceList/>
+            <FormReports />
+        </div> */}
+
         </>
     )
 }
