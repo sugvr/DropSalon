@@ -12,7 +12,6 @@ function DashboardContent() {
                     </div>
                 </div>
             </div>
-
             <h2>Citas</h2>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
