@@ -1,10 +1,6 @@
 import React from 'react'
 import './SideBar.css'
-<<<<<<< HEAD
-
-=======
 import {Link} from 'react-router-dom'
->>>>>>> ej
 
 function SideBar() {
 
@@ -14,31 +10,6 @@ function SideBar() {
                 <div className="pt-3" className="sidebar-sticky">
                     <ul className="nav flex-column">
                         <li className="nav-item">
-<<<<<<< HEAD
-                            <a className="nav-link active" href="#">
-                                Dashboard
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#Calendarios">
-                                Calendarios
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#Usuarios">
-                                Usuarios
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#Servicios">
-                                Servicios
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#Reportes">
-                                Reportes
-                            </a>
-=======
                             <Link className="nav-link" to="/homeadmin/dashboard">
                                 Dashboard
                             </Link>
@@ -62,7 +33,6 @@ function SideBar() {
                             <Link className="nav-link" to="/homeadmins/reportes">
                                 Reportes
                             </Link>
->>>>>>> ej
                         </li>
                     </ul>
                 </div>

@@ -100,6 +100,7 @@ app.post('/signup', function (req, res) {
                 $email: req.body.email,
                 $password: md5(req.body.password)
             },
+            
             function (err) {
                 if (err) {
                     console.error(err.message)
