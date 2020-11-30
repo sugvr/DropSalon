@@ -1,5 +1,5 @@
 .TableClients{
-    height: 100px;
+    height: 100%;
     width:850px;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -27,4 +27,9 @@
 .Role{
 
     font-family: "Satisfy", sans-serif;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }

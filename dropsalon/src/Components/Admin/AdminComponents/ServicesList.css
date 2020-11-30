@@ -14,3 +14,28 @@
 .Services-title div{
     padding: 50px;
 }
+.servicePost-containt{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    margin: 100px;
+
+    justify-content: space-around;
+  
+  
+  }
+  
+  .labels{
+      padding: 30px;
+  }
+  
+  .submit-service{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 70px;
+    width: 100px;
+    padding: 10px;
+  }

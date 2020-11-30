@@ -1,4 +1,4 @@
-PUT http://localhost:4000/user/role/6 HTTP/1.1
+PUT http://localhost:4000/user/role/21 HTTP/1.1
 Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDM0NzU2NzgsImV4cCI6MTYwMzU2MjA3OH0.5wpKA3qBJbkWBozOrs1cm99HslOQlcaQ-5-ZCSrtb28
 Content-Type: application/json
 Content-Length: 11
