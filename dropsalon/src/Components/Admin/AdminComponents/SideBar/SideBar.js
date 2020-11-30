@@ -30,7 +30,7 @@ function SideBar() {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/homeadmins/reportes">
+                            <Link className="nav-link" to="/homeadmin/reportes">
                                 Reportes
                             </Link>
                         </li>

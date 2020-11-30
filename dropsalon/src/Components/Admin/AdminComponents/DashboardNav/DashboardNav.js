@@ -1,10 +1,10 @@
 import React from 'react'
 import './DashboardNav.css'
-import {useHistory, useLocation} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 function DashboradNav() {
     let history = useHistory()
-    let loc = useLocation()
+    
 
     const handleLogout = () => {
         sessionStorage.clear()

@@ -1,2 +1,1 @@
-DELETE FROM users
-WHERE name = 'Test';
+DELETE FROM users;

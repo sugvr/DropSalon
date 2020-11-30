@@ -20,21 +20,11 @@ ul {
   padding: 0;
   overflow: hidden;
   font-size: 17px;
- 
 }
 
-li {
-  float: right; 
-}
 
 li a {
   display: block;
   padding: 75px;
   color: black;
-}
-.login-separator{
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    
 }

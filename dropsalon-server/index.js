@@ -36,6 +36,7 @@ app.get("/user", function (req, res) {
   });
 });
 
+
 app.get("/user/:userID", function (req, res) {
   db.get(
     "SELECT name, last_name, created_at, email, role FROM users WHERE id = ?;",
@@ -61,7 +62,7 @@ app.get("/user/:userID", function (req, res) {
     }
   );
 });
-app.get("/services1", function (req, res) {
+app.get("/services", function (req, res) {
   if (!req.headers.authorization) {
     return res.json({ error: "No credentials sent!" });
   } else {
@@ -92,6 +93,30 @@ app.get("/services1", function (req, res) {
       }
     );
   }
+});
+app.get("/services/:servicesID", function (req, res) {
+  db.get(
+    "SELECT name, last_name, created_at, email, role FROM users WHERE id = ?;",
+    [req.params.servicesID],
+    function (err, row) {
+      if (err) {
+        console.error(err.message);
+        res.sendStatus(500);
+      } else {
+        if (row === undefined) {
+          res.sendStatus(404);
+        } else {
+          console.log(row);
+          res.status(200).send({
+            service_name: row.service_name,
+            service_description: row. service_description,
+           duration: row.duration,
+            price: row.price,
+          });
+        }
+      }
+    }
+  );
 });
 
 /*Rest Api Post Methods*/

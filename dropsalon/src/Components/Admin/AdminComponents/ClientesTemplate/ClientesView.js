@@ -121,7 +121,7 @@ export default ClientesView
 
 
 
-{/* // function ClientesView(props) {
+/* // function ClientesView(props) {
 //     return (
 //         <div className="TableClients">
 //             <div>
@@ -140,4 +140,4 @@ export default ClientesView
 //     )
 // }
 
-// export default ClientesView; */}
+// export default ClientesView; */

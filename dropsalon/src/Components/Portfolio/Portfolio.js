@@ -19,10 +19,9 @@ function Portfolio() {
 
       <br />
       <br />
-      <br />
-      <br />
+     
       <h3 className="gallery-title">Uñas</h3>
-      <br />
+
       <div className="gallery-container">
         <Dedos />
       </div>

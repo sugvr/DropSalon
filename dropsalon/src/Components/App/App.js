@@ -49,14 +49,14 @@ function App() {
           <Route path="/">
             <Nav />
             <Header />
+            <Separator id='dates-section' />
+            <Citas/>
             <Separator id='about-section' />
             <About />
             <Separator id='portfolio-section' />
             <Portfolio />
             <Separator id='team-section' />
             <Team />
-            <Separator id='dates-section' />
-            <Citas/>
             <Separator id='contact-section' />
             <Contact />
           </Route>

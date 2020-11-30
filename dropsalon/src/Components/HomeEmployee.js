@@ -23,11 +23,13 @@ const HomeEmployee = (props) => {
                     window.location.href = '/'
                 })
             setName(jwtPayload.name)
-            console.log('JWT available')
-            console.log(jwtPayload)
-            console.log(jwtPayload.name)
+                console.log('JWT available')
+                console.log(jwtPayload)
+                console.log(jwtPayload.name)
+            
+         
         }
-    }, [])
+    })
 
     return (
         <div>

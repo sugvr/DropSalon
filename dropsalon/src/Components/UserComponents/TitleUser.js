@@ -26,7 +26,7 @@ function TitleUser() {
             console.log(jwtPayload)
             console.log(jwtPayload.name)
         }
-    }, [])
+    }, )
     return (
         <div className="Title-user">
             <div className="divUserTitle">

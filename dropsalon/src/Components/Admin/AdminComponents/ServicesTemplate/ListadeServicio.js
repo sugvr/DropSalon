@@ -1,32 +1,73 @@
-import React, {Component} from 'react';
+import React, {useState,useEffect}  from 'react';
 import axios from 'axios';
 // import {StyleSheet, Text, View, TextInput, Button, FlatList} from 'react';
 import './ListadeServicio.css'
 
 
+const URL = 'http://localhost:4000/services'
 
-export default class ListadeServicio extends React.Component {
-  state = {
-    service_name: []
-    
-  }
+const ListadeServicio = () => {
+    const [services, setService] = useState([])
 
-  componentDidMount() {
-    axios.get(`http://localhost:4000/services1`)
-      .then(res => {
-        const service_name = res.data;
-        this.setState({ service_name });
-      })
-  }
+    useEffect(() => {
+        getData()
+    }, []) 
 
-  render() {
+    const getData = async () => {
+
+        const response = await axios.get(URL)
+        setService(response.data)
+    }
+
+    const removeData = (id) => {
+
+        axios.delete(`${URL}/${id}`).then(res => {
+            const del = services.filter(services => id !== services.id)
+            setService(del)
+        })
+    }
+
+    const renderHeader = () => {
+        let headerElement = ['id', 'Servicio', 'Descripcion', 'Duracion', 'price']
+
+        return headerElement.map((key, index) => {
+            return <th key={index}>{key.toUpperCase()}</th>
+        })
+    }
+   
+    const renderBody = () => {
+        return services && services.map (({ id, service_name, service_description, duration, price }) => {
+            return (
+                <tr key={id}>
+                    <td>{id}</td>
+                    <td>{service_name}</td>
+                    <td>{service_description}</td>
+                    <td>{duration}</td>
+                    <td>{price}</td>
+                    <td className='opration'>
+                        <button className='button' onClick={() => removeData(id)}>Delete</button>
+                    </td>
+                </tr>
+            )
+        })
+    }
+
     return (
-      <ul>
-        { this.state.service_name.map(service => <li>{service.name}</li>)}
-      </ul>
+        <div className="TableServices">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>{renderHeader()}</tr>
+                </thead>
+                <tbody>
+                    {renderBody()}
+                </tbody>
+            </table>
+        </div>
     )
-  }
 }
+
+
+ export default ListadeServicio
 
 // const serverURL ='http://localhost:4000/services';
 // const http = axios.create({
