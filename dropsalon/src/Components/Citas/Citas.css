@@ -1,39 +1,11 @@
-.flex{
+.citas-flex{
     display:flex;
     flex-direction: row;
-    background-color: black;
-    margin: 30px;
-    color: white;
-    align-content: center;
-}
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px;
+  
 
-.login{
-    display:flex;
-    flex-direction: row;
-}
-
-.login div{
-    padding: 20px;
-}
-.caja1{
-   background-color: black;
-   margin: 30px;
-   color: white;
-}
-.caja2{
-  padding-left: 70px;
-  padding-top: 10px;
-  padding-bottom: 2px;
-  margin-top: 100px;
-
-}
-
-
-.date-title{
-    text-align: center;
-    font-family: "Satisfy",sans-serif;
-    font-size: 4em;
-    margin: 1em 0;
 }
 
 .toggle{

@@ -1,28 +1,40 @@
-.container {
+.container-about {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  position: relative;
+  flex-wrap: wrap;
+  padding: 100px;
+ 
 }
-.about-title {
+.about-title1 {
+  text-align: center;
+  font-family: "Satisfy", sans-serif;
+  font-size: 4em;
+  margin: 1em 0;
+}
+.about-title2 {
   font-family: "Satisfy", sans-serif;
   font-size: 1.8em;
+  margin: 1em 0;
+  text-align: center;
+
 }
 .container div {
-  padding: 10px;
+  padding: 20px;
 }
-.box1 {
-}
-.box2 {
-}
-
-.box3 {
+.about-caja1{
   display: flex;
   justify-content: center;
   flex-direction: row;
-  position: relative;
+  flex-wrap: wrap;
+  text-align: center;
+
+}
+.about-caja1 img{
+   height: 50%;
+  
 }
 .about-list{
   padding: 10px;
-  width: 270px;
+  text-align: center;
 }

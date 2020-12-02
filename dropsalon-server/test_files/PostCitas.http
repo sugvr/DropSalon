@@ -1,0 +1,11 @@
+POST http://localhost:4000/citas HTTP/1.1
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY2xpZW50ZSIsImxhc3RfbmFtZSI6InBydWViYSIsInJvbGUiOjMsImlhdCI6MTYwNjkxOTE0OCwiZXhwIjoxNjA3MDA1NTQ4fQ.8zYBmrnj5EPWopOGS1wdH6sB45tpRYo433ZyXIDaGac
+
+{
+    "date_rsvp": "20-dic-2020",
+    "comments": "pintura en el pelo",
+    "user_FK": 25,
+    "employee_FK": 24,
+    "serviceType": 2
+   
+}

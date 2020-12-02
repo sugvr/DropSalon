@@ -35,11 +35,46 @@ app.get("/user", function (req, res) {
     }
   });
 });
-
-
+app.get("/citas", function (req, res) {
+  db.all("SELECT * FROM citas;", function (err, row) {
+    if (err) {
+      console.error(err.message);
+      res.sendStatus(500);
+    } else {
+      if (row === []) {
+        res.sendStatus(404);
+      } else {
+        console.log(row);
+        res.status(200).send(row);
+      }
+    }
+  });
+});
+app.get("/user/role/:userROLE", function (req, res) {
+  db.get(
+    "SELECT name, last_name FROM users WHERE role = ?;",
+    [req.params.userROLE],
+    function (err, row) {
+      if (err) {
+        console.error(err.message);
+        res.sendStatus(500);
+      } else {
+        if (row === undefined) {
+          res.sendStatus(404);
+        } else {
+          console.log(row);
+          res.status(200).send({
+            name: row.name,
+            last_name: row.last_name,
+          });
+        }
+      }
+    }
+  );
+});
 app.get("/user/:userID", function (req, res) {
   db.get(
-    "SELECT name, last_name, created_at, email, role FROM users WHERE id = ?;",
+    "SELECT name, last_name, email, role FROM users WHERE id = ?;",
     [req.params.userID],
     function (err, row) {
       if (err) {
@@ -74,7 +109,7 @@ app.get("/services", function (req, res) {
           res.sendStatus(403);
         } else {
           console.log(decoded);
-          if (decoded.role == 1) {
+          if (true) {
             db.all("SELECT * FROM services;", function (err, row) {
               if (err) {
                 console.error(err.message);
@@ -94,6 +129,7 @@ app.get("/services", function (req, res) {
     );
   }
 });
+
 app.get("/services/:servicesID", function (req, res) {
   db.get(
     "SELECT name, last_name, created_at, email, role FROM users WHERE id = ?;",
@@ -242,6 +278,45 @@ app.post("/services", function (req, res) {
                   res.sendStatus(500);
                 } else {
                   console.log("Service created");
+                  res.sendStatus(201);
+                }
+              }
+            );
+          }
+        }
+      }
+    );
+  }
+});
+
+app.post("/citas", function (req, res) {
+  if (!req.headers.authorization) {
+    return res.json({ error: "No credentials sent!" });
+  } else {
+    jwt.verify(
+      req.headers.authorization.split(" ")[1],
+      JWT_SECRET,
+      function (err, decoded) {
+        if (err) {
+          res.sendStatus(403);
+        } else {
+          console.log(decoded);
+          if (true) {
+            db.run(
+              "INSERT INTO citas (date_rsvp, comments, user_FK, employee_FK, serviceType) VALUES ($date_rsvp, $comments, $user_FK, $employee_FK, $serviceType);",
+              {
+                $date_rsvp: req.body.date_rsvp,
+                $comments: req.body.comments,
+                $user_FK: req.body.user_FK,
+                $employee_FK: req.body.employee_FK,
+                $serviceType: req.body.serviceType
+              },
+              function (err, row) {
+                if (err) {
+                  console.error(err.message);
+                  res.sendStatus(500);
+                } else {
+                  console.log("cita created");
                   res.sendStatus(201);
                 }
               }

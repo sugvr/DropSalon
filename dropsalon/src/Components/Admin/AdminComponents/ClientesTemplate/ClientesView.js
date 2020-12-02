@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import './Clientesview.css'
 import axios from 'axios';
-
+import SignUp from './../../../SignUp'
 const URL = 'http://localhost:4000/user'
 
 const ClientesView = () => {
@@ -51,6 +51,9 @@ const ClientesView = () => {
     }
 
     return (
+
+
+   
         <div className="TableClients">
             <table class="table table-striped table-sm">
                 <thead>
@@ -60,7 +63,10 @@ const ClientesView = () => {
                     {renderBody()}
                 </tbody>
             </table>
+          
         </div>
+
+        
     )
 }
 

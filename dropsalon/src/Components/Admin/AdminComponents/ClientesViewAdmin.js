@@ -7,7 +7,7 @@ function ClientesViewAdmin() {
         <div className="ClientesSpace">
             <div className="Clientes-title">
                 <div className="ClientesTitle">
-                    <h3>Clientes</h3>
+                    <h3>Usuarios</h3>
                 </div>
                 <div>
                     <button>Editar</button>

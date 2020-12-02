@@ -17,7 +17,7 @@ const SignUp = (props) => {
   }
 
   function handleChangeEmail(e) {
-      setValueEmail(e.target.value)
+    setValueEmail(e.target.value)
   }
 
   function handleChangePassword(e) {
@@ -40,26 +40,41 @@ const SignUp = (props) => {
   }
 
   return (
-    <div style={{display: props.visible}}>
-      <h1>Registrate</h1>
+    <div style={{ display: props.visible }}>
+      <h1 className="signup-title">Registrate</h1>
       <form className="SingUp-containt" onSubmit={handleSubmit}>
-        <label className="labels">
-          Nombre
-        <input name="valueName" type="name" placeholder="Nombre" onChange={handleChangeName}/>
-        </label>
-        <label className="labels">
-          Apellido
-        <input name="valueLastname" type="Lastname" placeholder="Apellido" onChange={handleChangeLastName}/>
-        </label>
-        <label className="labels">
-          Email
-        <input name="valueEmail" type="Email" placeholder="Email" onChange={handleChangeEmail}/>
-        </label>
-        <label className="labels">
-          Password
-        <input name="valuePassword" type="Password" placeholder="Password" onChange={handleChangePassword}/>
-        </label>
-        <button className="submit-signup"type="submit">Registrarte</button>
+        <div>
+          <label>
+            Nombre
+        <input  className= "inputemail" name="valueName" type="name" placeholder="Nombre" onChange={handleChangeName} />
+          </label>
+        </div>
+
+        <div>
+          <label >
+            Apellido
+        <input  className= "inputemail" name="valueLastname" type="Lastname" placeholder="Apellido" onChange={handleChangeLastName} />
+          </label>
+        </div>
+
+        <div>
+          <label >
+            Email
+        <input  className= "inputemail" className= "inputemail" name="valueEmail" type="Email" placeholder="Email" onChange={handleChangeEmail} />
+          </label>
+        </div>
+
+        <div>
+          <label >
+            Password
+        <input  className= "inputemail"name="valuePassword" type="Password" placeholder="Password" onChange={handleChangePassword} />
+          </label>
+        </div>
+
+        <div>
+          <button className="submit-signup" type="submit">Registrarte</button>
+        </div>
+
       </form>
     </div>
   )

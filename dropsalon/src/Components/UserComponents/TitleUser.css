@@ -1,21 +1,23 @@
 .Title-user{
     background-color: black;
     color: white;
-    padding: 10px;
-    margin: 15px;
     display: flex;
-    flex-direction: row;
-    text-align: center;  
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+   
 }
 
 .Title-user div{
-    margin-top: 25px;
-    margin-right: 200px;
+   padding: 35px;
 }
 
 .divUserTitle h1{
     font-size: 70px;
-    margin-right: 80px;
-    margin-left: 45px;
+    font-family: "Satisfy", sans-serif;
+}
+.hello h1{
+    font-size: 60px;
     font-family: "Satisfy", sans-serif;
 }

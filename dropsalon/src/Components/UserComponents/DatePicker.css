@@ -1,5 +1,14 @@
 .CalendarContainer{
-  margin-left: 275px;
-  margin-top: 25px;
-  margin-bottom: 50px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+
+}
+.CalendarContainer div{
+  padding: 15px;
+}
+.TimeView{
+  display: 'flex';
+  flex-wrap: 'wrap';
+
 }

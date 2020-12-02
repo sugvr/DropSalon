@@ -2,33 +2,24 @@ import React, { useState, useEffect } from 'react';
 import './SelectPro.css'
 import axios from 'axios';
 
-const URL = 'http://localhost:4000/services1'
+const URL = 'http://localhost:4000/services'
 
 const SelectPage = () => {
-  const [name, setService] = useState([])
+  const [services, setService] = useState([])
 
   useEffect(() => {
-    getData()
-  }, [])
+      getData()
+  }, []) 
 
   const getData = async () => {
-
-    const response = await axios.get(URL)
-    setService(response.data)
+      const response = await axios.get(URL, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
+      setService(response.data)
   }
 
-
   const renderBody = () => {
-    return name && name.map(({ service_name, price }) => {
+    return services.map(({service_name, price }) => {
       return (
-       
-        <select className="browser-default custom-select">
-        <option>Choose your option</option>
-        <option>{service_name}</option>
-      </select>
-        
-       
-        
+       <option>{service_name}</option>
       )
     })
   }
@@ -36,7 +27,10 @@ const SelectPage = () => {
     <div className="SelectContainer">
       <div className="SelectView2" >
         <h3>Selecciona el trabajo: </h3>
+        <select className="browser-default custom-select">
+        <option>Choose your option</option>
          {renderBody()}
+         </select>
       </div>
     </div>
 

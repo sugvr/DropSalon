@@ -6,6 +6,7 @@ function TitleUser() {
     const jwt = sessionStorage.getItem('jwt')
     const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
     const [name, setName] = useState('')
+    const [last_name, setLastName] = useState('')
 
     useEffect(() => {
         if (jwt === '' || jwt === null) {
@@ -22,9 +23,11 @@ function TitleUser() {
                     window.location.href = '/'
                 })
             setName(jwtPayload.name)
+            setLastName(jwtPayload.last_name)
             console.log('JWT available')
             console.log(jwtPayload)
             console.log(jwtPayload.name)
+            console.log(jwtPayload.last_name)
         }
     }, )
     return (
@@ -32,11 +35,8 @@ function TitleUser() {
             <div className="divUserTitle">
                 <h1>DropSalon</h1>
             </div>
-            <div>
-                <h1>Saca tu cita</h1>
-            </div>
-            <div>
-                <h1>Hola, {name}</h1>
+            <div className="hello">
+                <h1>Hola, {name} {last_name}</h1>
             </div>
 
         </div>
