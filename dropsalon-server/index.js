@@ -291,6 +291,43 @@ app.delete("/services/:serviceID", function (req, res) {
   }
 });
 
+app.delete("/user/:serviceID", function (req, res) {
+  if (!req.headers.authorization) {
+    return res.json({ error: "No credentials sent!" });
+  } else {
+    jwt.verify(
+      req.headers.authorization.split(" ")[1],
+      JWT_SECRET,
+      function (err, decoded) {
+        if (err) {
+          res.sendStatus(403);
+        } else {
+          console.log(decoded);
+          if (decoded.role == 1) {
+            db.run(
+              "DELETE FROM users WHERE id = ?",
+              req.params.servicesID,
+              function (err, row) {
+                if (err) {
+                  console.error(err.message);
+                  res.sendStatus(500);
+                } else {
+                  if (row === []) {
+                    res.sendStatus(404);
+                  } else {
+                    console.log(row);
+                    res.sendStatus(200);
+                  }
+                }
+              }
+            );
+          }
+        }
+      }
+    );
+  }
+});
+
 /*Rest Api Put Methods*/
 app.put("/user/role/:userID", function (req, res) {
   if (!req.headers.authorization) {

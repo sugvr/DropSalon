@@ -3,7 +3,6 @@ import axios from 'axios';
 // import {StyleSheet, Text, View, TextInput, Button, FlatList} from 'react';
 import './ListadeServicio.css'
 
-
 const URL = 'http://localhost:4000/services'
 
 const ListadeServicio = () => {
@@ -14,13 +13,11 @@ const ListadeServicio = () => {
     }, []) 
 
     const getData = async () => {
-
-        const response = await axios.get(URL)
+        const response = await axios.get(URL, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
         setService(response.data)
     }
 
     const removeData = (id) => {
-
         axios.delete(`${URL}/${id}`).then(res => {
             const del = services.filter(services => id !== services.id)
             setService(del)
@@ -36,8 +33,7 @@ const ListadeServicio = () => {
     }
    
     const renderBody = () => {
-        return services && services.map (({ id, service_name, service_description, duration, price }) => {
-            return (
+        return services.map(({ id, service_name, service_description, duration, price }) =>
                 <tr key={id}>
                     <td>{id}</td>
                     <td>{service_name}</td>
@@ -49,7 +45,6 @@ const ListadeServicio = () => {
                     </td>
                 </tr>
             )
-        })
     }
 
     return (
