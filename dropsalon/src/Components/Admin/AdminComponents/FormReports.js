@@ -7,33 +7,33 @@ function FormReports() {
         <div className="FormReports">
             <h1>Reportar</h1>
             <form className="Reports-containt">
-                <label className="Reportslabels">
+                <label>
                     Nombre de cliente
-        <input name="" type="name" placeholder="Nombre de cliente" />
+        <input className="ReportsInput" name="" type="name" placeholder="Nombre de cliente" />
                 </label>
-                <label className="Reportslabels">
+                <label>
                     Servicio
-        <input name="" type="name" placeholder="Servicio" />
+                    <input className="ReportsInput" name="" type="name" placeholder="Servicio" />
                 </label>
-                <label className="Reportslabels">
+                <label>
                     Costo de servicio
-        <input name="" type="number" placeholder="Costo de servicio" />
+                    <input className="ReportsInput" name="" type="number" placeholder="Costo de servicio" />
                 </label>
-                <label className="Reportslabels">
+                <label>
                     Comentarios
-        <input name="" type="text" placeholder="Comentarios" />
+                     <input className="ReportsInput" name="" type="text" placeholder="Comentarios" />
                 </label>
-                <label className="Reportslabels">
+                <label>
                     Tipo de pago
-        <input name="" type="name" placeholder="Tipo de pago" />
+                     <input className="ReportsInput" name="" type="name" placeholder="Tipo de pago" />
                 </label>
-                <label className="Reportslabels">
+                <label>
                     Propina
-        <input name="" type="number" placeholder="Propina" />
+                     <input className="ReportsInput" name="" type="number" placeholder="Propina" />
                 </label>
-                <label className="Reportslabels">
+                <label>
                     Empleado que atendió
-                        <input name="" type="name" placeholder="Empleado que atendió" />
+                        <input className="ReportsInput" name="" type="name" placeholder="Empleado que atendió" />
                 </label>
 
                 <button className="submit-Report" type="submit">Registrar</button>

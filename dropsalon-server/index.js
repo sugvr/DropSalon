@@ -327,6 +327,44 @@ app.post("/citas", function (req, res) {
     );
   }
 });
+app.post("/reportes", function (req, res) {
+  if (!req.headers.authorization) {
+    return res.json({ error: "No credentials sent!" });
+  } else {
+    jwt.verify(
+      req.headers.authorization.split(" ")[1],
+      JWT_SECRET,
+      function (err, decoded) {
+        if (err) {
+          res.sendStatus(403);
+        } else {
+          console.log(decoded);
+          if (true) {
+            db.run(
+              "INSERT INTO reportes (service_name, cost_service, comments, descripcion, employee_FK) VALUES ($service_name, $cost_service, $comments, $descripcion, $employee_FK);",
+              {
+                $service_name: req.body.service_name,
+                $cost_service: req.body.cost_service,
+                $comments: req.body.comments,
+                $descripcion: req.body.descripcion,
+                $employee_FK: req.body.employee_FK
+              },
+              function (err, row) {
+                if (err) {
+                  console.error(err.message);
+                  res.sendStatus(500);
+                } else {
+                  console.log("report created");
+                  res.sendStatus(201);
+                }
+              }
+            );
+          }
+        }
+      }
+    );
+  }
+});
 
 /*Rest Api Delete Methods*/
 app.delete("/services/:serviceID", function (req, res) {

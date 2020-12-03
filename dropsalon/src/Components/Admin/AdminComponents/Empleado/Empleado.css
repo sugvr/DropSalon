@@ -1,6 +1,5 @@
 .Tarjetas3{
-    height: 150px;
-    width:400px;
+    width:80%;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
     background-color:white;
@@ -8,6 +7,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
 
 }
 .Tarjetas2 div{
@@ -15,14 +15,10 @@
 }
 
 .photo2{
-    width: 100px;
-    height: 120px;
-    margin-left: 10px;
+    width: 60%;
    
 }
 
 .name2{
-    margin-top: 50px;
-    margin-bottom: 50px;
     font-family: "Satisfy", sans-serif;
 }

@@ -14,9 +14,9 @@ function ClientesViewAdmin() {
                 </div>
             </div>
             <div>
-            <ClientesView nameUser="Name" lastnameUser="Lastname" Username="Username" Role="Role"/>
+                <ClientesView nameUser="Name" lastnameUser="Lastname" Username="Username" Role="Role" />
             </div>
-            
+
         </div>
     )
 }

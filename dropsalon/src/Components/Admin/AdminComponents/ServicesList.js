@@ -99,8 +99,10 @@ export default class PostRequest extends React.Component {
               
             </div>
          
-            <form className="servicePost-containt" onSubmit={this.handleSubmit}>
+
             <h1>Añadir servicio</h1>
+            <form className="servicePost-containt" onSubmit={this.handleSubmit}>
+           
                 <label className="labels">
                     Servicio
         <input name="valueService" type="name" placeholder="Nombre" onChange={this.handleChangeService_name} />

@@ -1,6 +1,6 @@
 .TableServices{
     height: 100%;
-    width:600px;
+    width:100%;
     box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
     text-align: center;
     border: 1px solid black;
@@ -8,19 +8,4 @@
     flex-wrap: wrap;
     flex-direction: row;
 
-}
-.TableServices div{
-    padding: 40px;
-}
-.Servicio{
-   
-    font-family: "Satisfy", sans-serif;
-}
-.Precio{
-
-    font-family: "Satisfy", sans-serif;
-}
-.Duracion{
-
-    font-family: "Satisfy", sans-serif;
 }

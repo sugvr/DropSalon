@@ -4,7 +4,6 @@
   background: url(./../../Assets/cover.jpg);
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   font-family: "Satisfy", sans-serif;
   height: 600px;
   display: flex;

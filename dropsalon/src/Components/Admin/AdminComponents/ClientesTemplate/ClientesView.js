@@ -51,10 +51,8 @@ const ClientesView = () => {
     }
 
     return (
-
-
-   
-        <div className="TableClients">
+       
+            <div className="TableClients">
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>{renderHeader()}</tr>
@@ -62,9 +60,11 @@ const ClientesView = () => {
                 <tbody>
                     {renderBody()}
                 </tbody>
-            </table>
-          
+            </table> 
         </div>
+        
+
+        
 
         
     )
