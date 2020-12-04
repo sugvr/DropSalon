@@ -1,1 +1,1 @@
-DELETE FROM users WHERE name = 'Content';
+DELETE FROM citas;

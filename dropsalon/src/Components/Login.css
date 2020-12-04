@@ -1,36 +1,36 @@
 .flex-login{
-    display:flex;
+    display: flex;
+    justify-content: center;
     flex-direction: row;
-    background-color: black;
-    margin: 30px;
-    color: white;
-    align-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+}
+.login-title{
+    font-family: "Satisfy", sans-serif;
+    font-size: 1.8em;
+    margin: 1em 0;
 }
 .inputemail{
-        width: 325px;
-        margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 50px;
        
 }
 
-.flex div{
+.flex-login div{
     padding: 30px;
 }
-.cajon1{
 
-}
-.cajon2{
-
-}
-.cajon3{
-    display:flex;
-    flex-direction: row;
-    margin: 30px;
-    
-}
-.toggle{
-   
-}
 .Submit-login{
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70px;
+    width: 100px;
     padding: 10px;
 }

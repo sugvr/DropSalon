@@ -1,7 +1,4 @@
-h3{
-    text-align: center;
 
-}
 
 .gallery-header{
     text-align: center;
@@ -20,6 +17,7 @@ h3{
 }
 
 .gallery-container{
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
+ 
 }

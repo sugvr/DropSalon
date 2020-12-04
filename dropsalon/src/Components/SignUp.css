@@ -1,15 +1,30 @@
 .SingUp-containt{
-    display: flex;
+  display: flex;
+  justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+
+}
+
+.SingUp-containt div{
+  padding: 10px;
+}
+.signup-title{
+  font-family: "Satisfy", sans-serif;
+  font-size: 1.8em;
+  margin: 1em 0;
+
+}
+
+.submit-signup{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  display: block;
-
-}
-
-.labels{
-    padding: 30px;
-}
-
-.submit-sigup{
+  height: 70px;
+  width: 100px;
   padding: 10px;
 }

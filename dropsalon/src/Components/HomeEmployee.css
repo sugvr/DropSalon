@@ -1,0 +1,25 @@
+.Employee-header{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;  
+    font-family: "Satisfy", sans-serif;
+}
+.Employee-header div{
+    padding: 10px;
+}
+.EmployeeHeader-right{
+    margin-right: 100px;
+    margin-left: 20px;
+}
+.EmployeeHeader-middle{
+    margin-right: 380px;
+    margin-left: 280px;
+}
+
+.EmployeeHeader-left{
+    margin-right: 10px;
+}

@@ -1,0 +1,43 @@
+.ServicesSpace{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.Services-title{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+.Services-title div{
+    padding: 50px;
+}
+.servicePost-containt{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 10%;
+    color: white;
+    background-color: black;
+
+  }
+  
+  .labels{
+      padding: 40px;
+  }
+  .labels input{
+    margin: 10px;
+    height: 80%;
+    width: 100%;
+}
+  
+  .submit-service{
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+  }

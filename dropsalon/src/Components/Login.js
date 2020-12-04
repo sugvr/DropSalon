@@ -44,27 +44,27 @@ const Login = (props) => {
     } else if (payloadData.role === 2) {
       window.location.href = '/homeemployee'
     } else if (payloadData.role === 1) {
-      window.location.href = '/homeadmin'
+      window.location.href = '/homeadmin/dashboard'
     }
   }
 
   return (
     <div style={{display: props.visible}}>
-      <h1>Entra a tu cuenta</h1>
+      <h1 className = "login-title">Entra a tu cuenta</h1>
       <form className="flex-login" onSubmit={handleSubmit}>
-        <div className="cajon1">
+        <div >
           <label>
             Email
         <input className= "inputemail" name="valueEmail" type="email" placeholder="Email" onChange={handleChangeEmail} />
           </label>
         </div>
-        <div className="cajon2">
+        <div >
           <label>
             Password
         <input className="inputemail" name="valuePassword" type="password" placeholder="Password" onChange={handleChangePassword} />
           </label>
         </div>
-        <div className="cajon3">
+        <div >
           <button className="Submit-login" type="submit">Entrar</button>
         </div>
       </form>

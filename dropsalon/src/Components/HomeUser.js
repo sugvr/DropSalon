@@ -2,7 +2,6 @@ import React from 'react'
 import TitleUser from './UserComponents/TitleUser'
 import Date from './UserComponents/DatePicker'
 import SelectPage from './UserComponents/SelectPro'
-import Time from './UserComponents/Time'
 import './HomeUser.css'
 
 function HomeUser() {
@@ -11,11 +10,10 @@ function HomeUser() {
     return (
         <div>
             <TitleUser />
+            <div className="user-container">
             <SelectPage />
             <h3>Selecione Fecha:</h3>
-            <div className="DatesView">
                 <Date />
-                <Time />
             </div>
         </div>
     )

@@ -1,10 +1,10 @@
-.navbar {
+.main-navbar {
   height: 80px;
   display: flex;
-
   justify-content: space-between;
-}
+  
 
+}
 .nav-logo {
   font-family: "Satisfy", sans-serif;
   font-size: 2em;
@@ -21,20 +21,11 @@ ul {
   padding: 0;
   overflow: hidden;
   font-size: 17px;
- 
 }
 
-li {
-  float: right; 
-}
 
 li a {
   display: block;
   padding: 75px;
   color: black;
-}
-.login-separator{
-  margin-left: 470px;
-  font-family: "Satisfy", sans-serif;
-  font-size: 30px;
 }

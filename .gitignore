@@ -11,7 +11,8 @@ dropsalon-server/.pnp
 /coverage
 
 # production
-/build
+dropsalon/build
+dropsalon-server/build
 
 # misc
 .DS_Store

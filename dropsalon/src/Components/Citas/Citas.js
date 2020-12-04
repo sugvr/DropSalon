@@ -10,6 +10,7 @@ function Citas() {
   let buttonIndex = false
   const buttonValue0 = "Registrate"
   const buttonValue1 = "Entrar"
+  const buttonValue2 = "Registrarte"
 
   function toggle() {
     let temp = login
@@ -24,14 +25,14 @@ function Citas() {
   }
 
   return (
-    <div className="flex">
-      <div>
+    <div className="citas-flex">
+
       <Login visible={login}/>
       <SignUp visible={signUp} />
-      </div>
-      <div>
+    
+
       <button className="toggle" onClick={toggle}>{buttonValue}</button>
-      </div>
+  
       
     </div>
   )

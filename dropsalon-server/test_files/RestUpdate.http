@@ -1,0 +1,6 @@
+PUT http://localhost:4000/user/role/22 HTTP/1.1
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDY3MDg3NDAsImV4cCI6MTYwNjc5NTE0MH0.C5O36j15yQ-oPzNuWEXN6Q4pILCBrDAKXnmIq9m8oV4
+Content-Type: application/json
+Content-Length: 11
+
+{"role": 2}

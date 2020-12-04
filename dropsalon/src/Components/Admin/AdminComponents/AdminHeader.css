@@ -1,0 +1,21 @@
+.Admin-header{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;  
+    font-family: "Satisfy", sans-serif;
+}
+.Admin-header div{
+    padding: 10px;
+}
+.AdminHeader-left{
+    margin-right: 150px;
+   
+}
+.AdminHeader-right{
+    margin-right: 10px;
+   
+}

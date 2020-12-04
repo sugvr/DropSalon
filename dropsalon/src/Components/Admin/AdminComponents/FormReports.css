@@ -1,0 +1,38 @@
+.FormReports{
+    margin: 25px;
+}
+
+
+.Reports-containt{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 10%;
+    color: white;
+    background-color: black;
+
+
+}
+.Reports-containt label{
+    padding: 40px;
+}
+.Reports-containt label .ReportsInput{
+    margin: 10px;
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.ReportsInput{
+    height: 100%; 
+    width: 50%;
+}
+
+.submit-Report{
+  text-align: center;
+  height: 100%;
+  width: 50%;
+  padding: 10px;
+}

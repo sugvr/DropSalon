@@ -4,6 +4,12 @@
     font-size: 20px;
 }
 .DatesView div{
-   
     padding: 10px;
+}
+.user-container{
+ 
+    display: flex;
+    flex-direction:column;
+    justify-content:left;
+    flex-wrap: wrap;
 }

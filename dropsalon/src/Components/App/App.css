@@ -1,0 +1,47 @@
+.footer{
+    padding-top: .5em;
+      padding-bottom: .5em;
+      border: 1px solid #a2a2a2;
+      background-color: #f4f4f4;
+      -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+    text-align:center;
+  }
+  .footer-container{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer-container div{
+    padding: 10px;
+  }
+  
+  .footerh1{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .sloganh1{
+    font-size:18px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  
+  .copyh1{
+    font-size: 15px;
+    font-style: italic;
+  }
+  .footer2-container{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+
+  }
+  
+ 
