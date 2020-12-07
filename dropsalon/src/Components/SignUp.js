@@ -1,83 +1,94 @@
-import React, { useState } from "react"
+import React, { Component, useState } from "react"
 import './SignUp.css'
 import axios from 'axios'
 
-const SignUp = (props) => {
-  const [valueName, setValueName] = useState('')
-  const [valueLastName, setValueLastName] = useState('')
-  const [valueEmail, setValueEmail] = useState('')
-  const [valuePassword, setValuePassword] = useState('')
 
-  function handleChangeName(e) {
-    setValueName(e.target.value)
-  }
+class SignUp extends Component {
+  state = {
+    name: "",
+   last_name: "",
+   email: "",
+   password:""
+   
+  };
 
-  function handleChangeLastName(e) {
-    setValueLastName(e.target.value)
-  }
 
-  function handleChangeEmail(e) {
-    setValueEmail(e.target.value)
-  }
+  onNameChange = e => {
+    this.setState({
+      name: e.target.value
+    });
+  };
 
-  function handleChangePassword(e) {
-    setValuePassword(e.target.value)
-  }
-
-  function handleSubmit(e) {
-    alert('A name was submitted: ' + this.state.value);
+  onLastNameChange = e => {
+    this.setState({
+      last_name: e.target.value
+    });
+  };
+  onEmailChange = e => {
+    this.setState({
+      email: e.target.value
+    });
+  };
+  onPasswordChange = e => {
+    this.setState({
+      password: e.target.value
+    });
+  };
+  handleSubmit = e => {
     e.preventDefault();
-    axios({
-      method: 'post',
-      url: 'http://localhost:4000/signup',
-      data: {
-        name: valueName,
-        last_name: valueLastName,
-        email: valueEmail,
-        password: valuePassword
-      }
-    })
-  }
+    const data = {
+     name: this.state.name,
+     last_name: this.state.last_name,
+     email: this.state.email,
+     password:this.state.password
 
+    };
+    axios
+      .post("http://localhost:4000/signup", data)
+      .then(res => console.log(res))
+      .catch(err => alert(err));
+  };
+
+  render() {
   return (
-    <div style={{ display: props.visible }}>
+    <div>
       <h1 className="signup-title">Registrate</h1>
-      <form className="SingUp-containt" onSubmit={handleSubmit}>
+      <form className="SingUp-containt" onSubmit={this.handleSubmit}>
         <div>
           <label>
             Nombre
-        <input  className= "inputemail" name="valueName" type="name" placeholder="Nombre" onChange={handleChangeName} />
+        <input  className= "inputemail" name="valueName" type="name" placeholder="Nombre" onChange={this.onNameChange} />
           </label>
         </div>
 
         <div>
           <label >
             Apellido
-        <input  className= "inputemail" name="valueLastname" type="Lastname" placeholder="Apellido" onChange={handleChangeLastName} />
+        <input  className= "inputemail" name="valueLastname" type="Lastname" placeholder="Apellido" onChange={this.onLastNameChange} />
           </label>
         </div>
 
         <div>
           <label >
             Email
-        <input  className= "inputemail" className= "inputemail" name="valueEmail" type="Email" placeholder="Email" onChange={handleChangeEmail} />
+        <input  className= "inputemail" className= "inputemail" name="valueEmail" type="Email" placeholder="Email" onChange={this.onEmailChange} />
           </label>
         </div>
 
         <div>
           <label >
             Password
-        <input  className= "inputemail"name="valuePassword" type="Password" placeholder="Password" onChange={handleChangePassword} />
+        <input  className= "inputemail"name="valuePassword" type="Password" placeholder="Password" onChange={this.onPasswordChange} />
           </label>
         </div>
 
         <div>
-          <button className="submit-signup" type="submit">Registrarte</button>
+          <button className="submit-signup" type="submit">Registrarse</button>
         </div>
 
       </form>
     </div>
   )
 }
-
+}
 export default SignUp

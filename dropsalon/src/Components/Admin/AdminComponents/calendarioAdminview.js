@@ -11,8 +11,7 @@ const CalendarioAdminView = () => {
     }, [])
 
     const getData = async () => {
-
-        const response = await axios.get(URL)
+        const response = await axios.get(URL, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
         setCita(response.data)
     }
 
@@ -25,7 +24,7 @@ const CalendarioAdminView = () => {
     }
 
     const renderHeader = () => {
-        let headerElement = ['id', 'Fecha', 'Comentarios', 'Usuario ID', 'Empleado ID', 'Tipo de Servicio']
+        let headerElement = ['id', 'Fecha', 'Comentarios', 'Nombre de Cliente', 'Nombre de empleado', 'Tipo de Servicio']
 
         return headerElement.map((key, index) => {
             return <th key={index}>{key.toUpperCase()}</th>
@@ -33,14 +32,14 @@ const CalendarioAdminView = () => {
     }
 
     const renderBody = () => {
-        return cita.map(({ id, date_rsvp, comments, user_FK, employee_FK, serviceType }) => {
+        return cita.map(({ id, date_rsvp, comments, user_name, employee_name, serviceType }) => {
             return (
                 <tr key={id}>
                     <td>{id}</td>
                     <td>{date_rsvp}</td>
                     <td>{comments}</td>
-                    <td>{user_FK}</td>
-                    <td>{employee_FK}</td>
+                    <td>{user_name}</td>
+                    <td>{employee_name}</td>
                     <td>{serviceType}</td>
                     <td className='opration'>
                         <button className='button' onClick={() => removeData(id)}>Delete</button>
@@ -60,9 +59,9 @@ const CalendarioAdminView = () => {
                     <tr>{renderHeader()}</tr>
                     </thead>
                     <tbody>
-                        <tr>
+                    
                         {renderBody()}
-                        </tr>
+                      
                        
                     </tbody>
                 </table>

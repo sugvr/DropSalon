@@ -35,24 +35,62 @@ app.get("/user", function (req, res) {
     }
   });
 });
+
 app.get("/citas", function (req, res) {
-  db.all("SELECT * FROM citas;", function (err, row) {
-    if (err) {
-      console.error(err.message);
-      res.sendStatus(500);
-    } else {
-      if (row === []) {
-        res.sendStatus(404);
-      } else {
-        console.log(row);
-        res.status(200).send(row);
+  if (!req.headers.authorization) {
+    return res.json({ error: "No credentials sent!" });
+  } else {
+    jwt.verify(
+      req.headers.authorization.split(" ")[1],
+      JWT_SECRET,
+      function (err, decoded) {
+        if (err) {
+          res.sendStatus(403);
+        } else {
+          console.log(decoded);
+          if (decoded.role == 1) {
+            db.all("SELECT * FROM citas;", function (err, row) {
+              if (err) {
+                console.error(err.message);
+                res.sendStatus(500);
+              } else {
+                if (row === []) {
+                  res.sendStatus(404);
+                } else {
+                  console.log(row);
+                  res.status(200).send(row);
+                }
+              }
+            });
+          }
+          else if (decoded.role == 2) {
+            let name = decoded.name
+            db.all("SELECT * FROM citas WHERE employee_name = ?;", 
+              [name],
+                function (err, row) {
+                  if (err) {
+                    console.error(err.message);
+                    res.sendStatus(500);
+                  } else {
+                    if (row === []) {
+                      res.sendStatus(404);
+                    } else {
+                      console.log(row);
+                      res.status(200).send(row);
+                    }
+                  }
+                }
+            );
+          }
+        }
       }
-    }
-  });
+    );
+  }
+
 });
-app.get("/user/role/:userROLE", function (req, res) {
-  db.get(
-    "SELECT name, last_name FROM users WHERE role = ?;",
+app.get("/user/role/employee", function (req, res) {
+  db.all(
+    "SELECT name, last_name FROM users WHERE role NOT IN (1, 3);",
     [req.params.userROLE],
     function (err, row) {
       if (err) {
@@ -63,10 +101,9 @@ app.get("/user/role/:userROLE", function (req, res) {
           res.sendStatus(404);
         } else {
           console.log(row);
-          res.status(200).send({
-            name: row.name,
-            last_name: row.last_name,
-          });
+          res.status(200).send(
+            row
+          );
         }
       }
     }
@@ -145,8 +182,8 @@ app.get("/services/:servicesID", function (req, res) {
           console.log(row);
           res.status(200).send({
             service_name: row.service_name,
-            service_description: row. service_description,
-           duration: row.duration,
+            service_description: row.service_description,
+            duration: row.duration,
             price: row.price,
           });
         }
@@ -303,12 +340,12 @@ app.post("/citas", function (req, res) {
           console.log(decoded);
           if (true) {
             db.run(
-              "INSERT INTO citas (date_rsvp, comments, user_FK, employee_FK, serviceType) VALUES ($date_rsvp, $comments, $user_FK, $employee_FK, $serviceType);",
+              "INSERT INTO citas (date_rsvp, comments, user_name, employee_name, serviceType) VALUES ($date_rsvp, $comments, $user_name, $employee_name, $serviceType);",
               {
                 $date_rsvp: req.body.date_rsvp,
                 $comments: req.body.comments,
-                $user_FK: req.body.user_FK,
-                $employee_FK: req.body.employee_FK,
+                $user_name: req.body.user_name,
+                $employee_name: req.body.employee_name,
                 $serviceType: req.body.serviceType
               },
               function (err, row) {
@@ -341,13 +378,13 @@ app.post("/reportes", function (req, res) {
           console.log(decoded);
           if (true) {
             db.run(
-              "INSERT INTO reportes (service_name, cost_service, comments, descripcion, employee_FK) VALUES ($service_name, $cost_service, $comments, $descripcion, $employee_FK);",
+              "INSERT INTO reportes (employee_name, service_total, gains_employee, gains_salon, gains_admin) VALUES ($employee_name, $service_total, $gains_employee, $gains_salon, $gains_admin);",
               {
-                $service_name: req.body.service_name,
-                $cost_service: req.body.cost_service,
-                $comments: req.body.comments,
-                $descripcion: req.body.descripcion,
-                $employee_FK: req.body.employee_FK
+                $employee_name: req.body.employee_name,
+                $service_total: req.body.service_total,
+                $gains_employee: req.body.gains_employee,
+                $gains_salon: req.body.gains_salon,
+                $gains_admin: req.body.gains_admin
               },
               function (err, row) {
                 if (err) {
@@ -479,6 +516,7 @@ app.put("/user/role/:userID", function (req, res) {
     );
   }
 });
+
 
 // Server start
 console.log("Running on port " + PORT);

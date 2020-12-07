@@ -8,32 +8,24 @@ function FormReports() {
             <h1>Reportar</h1>
             <form className="Reports-containt">
                 <label>
-                    Nombre de cliente
+                    Nombre de empleado
         <input className="ReportsInput" name="" type="name" placeholder="Nombre de cliente" />
                 </label>
                 <label>
-                    Servicio
+                    Total de los servicios
                     <input className="ReportsInput" name="" type="name" placeholder="Servicio" />
                 </label>
                 <label>
-                    Costo de servicio
+                    Ganancias de empleado
                     <input className="ReportsInput" name="" type="number" placeholder="Costo de servicio" />
                 </label>
                 <label>
-                    Comentarios
+                    Ganancias del salon
                      <input className="ReportsInput" name="" type="text" placeholder="Comentarios" />
                 </label>
                 <label>
-                    Tipo de pago
+                   Ganancias del administrador
                      <input className="ReportsInput" name="" type="name" placeholder="Tipo de pago" />
-                </label>
-                <label>
-                    Propina
-                     <input className="ReportsInput" name="" type="number" placeholder="Propina" />
-                </label>
-                <label>
-                    Empleado que atendió
-                        <input className="ReportsInput" name="" type="name" placeholder="Empleado que atendió" />
                 </label>
 
                 <button className="submit-Report" type="submit">Registrar</button>

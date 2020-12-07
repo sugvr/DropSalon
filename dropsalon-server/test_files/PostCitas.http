@@ -1,10 +1,11 @@
 POST http://localhost:4000/citas HTTP/1.1
-Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiY2xpZW50ZSIsImxhc3RfbmFtZSI6InBydWViYSIsInJvbGUiOjMsImlhdCI6MTYwNzAyMjQ3MCwiZXhwIjoxNjA3MTA4ODcwfQ.qs60_eFxN32p8vVrIW4HC1UH82sjMFs_WLKV2DTIHjE
+Content-Type: application/json
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDczMDMxMTgsImV4cCI6MTYwNzM4OTUxOH0.-gJEtinpdDSEAvWcd_HORMzsP2CbWcT0yMR-fG4PEWs
 
 {
-    "date_rsvp": "20-dic-2020",
-    "comments": "pintura en el pelo",
-    "user_FK": 25,
-    "employee_FK": 24,
-    "serviceType": 2
+    "date_rsvp": "31-dic-2020",
+    "comments": "lindas",
+    "user_name": "yolanda mejias",
+    "employee_name": "empleado",
+    "serviceType": "uñas"
 }

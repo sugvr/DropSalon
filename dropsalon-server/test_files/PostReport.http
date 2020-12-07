@@ -1,10 +1,11 @@
 POST http://localhost:4000/reportes HTTP/1.1
 Content-Type: application/json
-Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDcwMjQyMDQsImV4cCI6MTYwNzExMDYwNH0.7KyPHYL9YluYfitz69e_G1hv6zRmxTAmXh7zLKXIbNY
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDcyOTQyOTUsImV4cCI6MTYwNzM4MDY5NX0.IueGI_568tGLuC6qM4zz1gnWxagsvRn7bLCDrJ0cXbA
+
 {
-    "service_name": "balyage",
-    "cost_service": 100,
-    "comments": "pintura en el pelo",
-    "descripcion": "dejo tanto de propina para tal persona",
-    "employee_FK": 24
+    "employee_name": "Chrystal Borrero",
+    "service_total": 100,
+    "gains_employee": 50,
+    "gains_salon": 25,
+    "gains_admin": 25
 }

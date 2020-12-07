@@ -28,7 +28,7 @@ const Login = (props) => {
       //Set msg to user from the following response 
       if (reason) {
         console.log(reason)
-        console.log(reason.response.data.error)
+        alert(reason.response.data.error)
       }
     })
   }

@@ -1,11 +1,13 @@
 .Title-user{
     background-color: black;
     color: white;
+    padding: 20px;
+    margin: 15px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     flex-wrap: wrap;
-    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    font-family: "Satisfy", sans-serif;
    
 }
 
@@ -20,4 +22,5 @@
 .hello h1{
     font-size: 60px;
     font-family: "Satisfy", sans-serif;
+    text-align: center;
 }

@@ -1,6 +1,6 @@
-PUT http://localhost:4000/user/role/22 HTTP/1.1
-Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDY3MDg3NDAsImV4cCI6MTYwNjc5NTE0MH0.C5O36j15yQ-oPzNuWEXN6Q4pILCBrDAKXnmIq9m8oV4
+PUT http://localhost:4000/user/role/update HTTP/1.1
+Authorization: jwt yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDczMTE4NTIsImV4cCI6MTYwNzM5ODI1Mn0.Qiwc3t0arGE8ljjqlP6W-XJvfRQhVZKHq5wVYebyElo
 Content-Type: application/json
-Content-Length: 11
 
-{"role": 2}
+
+{"id": 40, "role": 2}

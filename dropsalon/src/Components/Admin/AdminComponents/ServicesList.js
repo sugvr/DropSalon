@@ -1,97 +1,59 @@
-import React, { useState } from 'react'
+import React, { Component,useState } from 'react'
 import ListadeServicio from './ServicesTemplate/ListadeServicio'
 import './ServicesList.css'
 import axios from 'axios'
 
-export default class PostRequest extends React.Component {
-    state = {
-      service_name: '',
-      service_description: '',
-      duration: '',
-      price: '',
+class ServicesList extends Component {
+  state = {
+    service_name: "",
+   service_description: "",
+   duration: "",
+   price:""
+   
+  };
 
-    }
-  
-    handleChangeService_name = event => {
-      this.setState({ service_name: event.target.value });
-    }
-    handleChangeService_description = event => {
-        this.setState({ service_description: event.target.value });
-      }
-      handleChangeDuration= event => {
-        this.setState({ duration: event.target.value });
-      }
-      handleChangePrice = event => {
-        this.setState({ price: event.target.value });
-      }
-    handleSubmit = event => {
-      event.preventDefault();
-  
-      const service_name = {
-        service_name: this.state.service_name
-      };
-      const service_description = {
-        service_name: this.state.service_description
-      };
-      const duration = {
-        service_name: this.state.duration
-      };
-      const price = {
-        service_name: this.state.price
-      };
-  
-      axios.post(`http://localhost:4000/services`, { service_name, service_description, duration, price })
-        .then(res => {
-          console.log(res);
-          console.log(res.data);
-        })
-    }
-  render(){
-// const ServicesList = (props) => {
-//     const [valueService, setValueService] = useState('')
-//     const [ValueDescr, setValueDescr] = useState('')
-//     const [valueDuration, setValueDuration] = useState('')
-//     const [valuePrice, setValuePrice] = useState('')
+  onServiceChange = e => {
+    this.setState({
+      service_name: e.target.value
+    });
+  };
 
+  onDescrChange = e => {
+    this.setState({
+      service_description: e.target.value
+    });
+  };
+  onDurationChange = e => {
+    this.setState({
+      duration: e.target.value
+    });
+  };
+  onPriceChange = e => {
+    this.setState({
+      price: e.target.value
+    });
+  };
+  handleSubmit = e => {
+    e.preventDefault();
+    const data = {
+     service_name: this.state.service_name,
+     service_description: this.state.service_description,
+     durationl: this.state.duration,
+     price:this.state.price
 
-//     function handleChangeService(e) {
-//         setValueService(e.target.value)
-//     }
+    };
+    axios
+      .post("http://localhost:4000/services", data )
+      .then(res => console.log(res))
+      .catch(err => alert(err));
+  };
+  render () {
 
-//     function handleChangeDescr(e) {
-//         setValueDescr(e.target.value)
-//     }
-//     function handleChangeDuration(e) {
-//         setValueDuration(e.target.value)
-//     }
-
-//     function handleChangePrice(e) {
-//         setValuePrice(e.target.value)
-//     }
-
-//     function handleSubmit(e) {
-//         alert('A service was submitted: ' + this.state.value);
-//         e.preventDefault();
-//         axios({
-//             method: 'post',
-//             url: 'http://localhost:4000/services',
-//             data: {
-//                 service_name: valueService,
-//                 service_description: ValueDescr,
-//                 duration: valueDuration,
-//                 price: valuePrice,
-
-//             }
-//         })
-//     }
     return (
         <div className="ServicesSpace">
             <div className="Services-title">
                 <div className="ServicesTitle">
                     <h3>Servicios</h3>
-                </div>
-                <div>
-                    <button>Editar</button>
                 </div>
             </div>
             <ListadeServicio/>
@@ -105,19 +67,19 @@ export default class PostRequest extends React.Component {
            
                 <label className="labels">
                     Servicio
-        <input name="valueService" type="name" placeholder="Nombre" onChange={this.handleChangeService_name} />
+        <input name="service_name" type="name" placeholder="Nombre de servicio" onChange={this.onServiceChange} />
                 </label>
                 <label className="labels">
                     Descripcion
-        <input name="valueDescr" type="name" placeholder="Nombre" onChange={this.handleChangeService_description} />
+        <input name="service_description" type="name" placeholder="Descripcion" onChange={this.onDescrChange} />
                 </label>
                 <label className="labels">
                     Precio
-        <input name="valueDuration" type="Lastname" placeholder="Apellido" onChange={this.handleChangeDuration} />
+        <input name="price" type="number" placeholder="Precio" onChange={this.onPriceChange} />
                 </label>
                 <label className="labels">
                     Duracion
-        <input name="valuePrice" type="number" placeholder="Email" onChange={this.handleChangePrice} />
+        <input name="duration" type="number" placeholder="Duracion" onChange={this.onDurationChange} />
                 </label>
 
                 <button className="submit-service" type="submit">Añadir servicio</button>
@@ -130,4 +92,4 @@ export default class PostRequest extends React.Component {
 }
 
 
-// export default ServicesList 
+export default ServicesList 

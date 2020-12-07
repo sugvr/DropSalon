@@ -9,9 +9,6 @@ function ClientesViewAdmin() {
                 <div className="ClientesTitle">
                     <h3>Usuarios</h3>
                 </div>
-                <div>
-                    <button>Editar</button>
-                </div>
             </div>
             <div>
                 <ClientesView nameUser="Name" lastnameUser="Lastname" Username="Username" Role="Role" />

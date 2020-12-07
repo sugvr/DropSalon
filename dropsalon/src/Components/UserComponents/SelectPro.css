@@ -1,24 +1,24 @@
-.SelectView{
-   
-    margin-left: 200px;
-    margin-right: 190px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: flex;
-  
-
-}
-
 .SelectView2{
-    
-   
-    margin-top: 50px;
-    margin-bottom: 50px;
+
     display: flex;
-   
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  
 }
+
 .SelectContainer{
-      flex-direction: row;
-    font-size: 20px;
-    text-align: center;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.SelectContainer div{
+    padding: 15px;
+}
+.submitCita{
+    width: 40%;
+    height: 50%;
 }

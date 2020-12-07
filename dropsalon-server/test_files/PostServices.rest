@@ -1,6 +1,6 @@
 POST http://localhost:4000/services HTTP/1.1
 Content-Type: application/json
-Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDcwMjQyMDQsImV4cCI6MTYwNzExMDYwNH0.7KyPHYL9YluYfitz69e_G1hv6zRmxTAmXh7zLKXIbNY
+Authorization: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNhaSIsImxhc3RfbmFtZSI6IkRlbGdhZG8iLCJyb2xlIjoxLCJpYXQiOjE2MDczMDc4NTgsImV4cCI6MTYwNzM5NDI1OH0.QuZfPot2HrlfEPVZL4qMCcVruPCBlEzwNW7FyW_qvCU
 
 {
     "service_name": "balyage",

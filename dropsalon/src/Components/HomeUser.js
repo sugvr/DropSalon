@@ -10,11 +10,9 @@ function HomeUser() {
     return (
         <div>
             <TitleUser />
-            <div className="user-container">
+        
             <SelectPage />
-            <h3>Selecione Fecha:</h3>
-                <Date />
-            </div>
+           
         </div>
     )
 }

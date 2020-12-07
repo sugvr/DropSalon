@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 import './TitleUser.css'
 
 function TitleUser() {
@@ -30,6 +31,11 @@ function TitleUser() {
             console.log(jwtPayload.last_name)
         }
     }, )
+    let history = useHistory()
+    const handleLogout = () => {
+        sessionStorage.clear()
+        history.push("/")
+    }
     return (
         <div className="Title-user">
             <div className="divUserTitle">
@@ -38,6 +44,12 @@ function TitleUser() {
             <div className="hello">
                 <h1>Hola, {name} {last_name}</h1>
             </div>
+
+            <ul className="navbar-nav px-3 mt-0">
+                    <li className="nav-item text-nowrap">
+                        <button className="buttonlogout" onClick={ () => handleLogout() } className="btn btn-danger">Sign out</button>
+                    </li>
+                </ul>
 
         </div>
     )
