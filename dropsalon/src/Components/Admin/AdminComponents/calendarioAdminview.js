@@ -1,10 +1,13 @@
-import React, {useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import './CalendarioAdminView.css'
 
 const URL = 'http://localhost:4000/citas'
+const URL2 = 'http://localhost:4000/user/role/employee'
 
 const CalendarioAdminView = () => {
     const [cita, setCita] = useState([])
+    const [name, setName] = useState([])
 
     useEffect(() => {
         getData()
@@ -13,6 +16,14 @@ const CalendarioAdminView = () => {
     const getData = async () => {
         const response = await axios.get(URL, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
         setCita(response.data)
+    }
+    useEffect(() => {
+        getData2()
+    }, [])
+
+    const getData2 = async () => {
+        const response = await axios.get(URL2, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
+        setName(response.data)
     }
 
     const removeData = (id) => {
@@ -48,25 +59,41 @@ const CalendarioAdminView = () => {
             )
         })
     }
+    const renderBody2 = () => {
+        return name.map(({ name, last_name }) => {
+            return (
+                <>
+                     <option>{name} </option>
+                </>
+            )
+        })
+    }
 
     return (
         <>
-          
-            <h2>Calendario Empleados</h2>
-            <div className="Calendars-Container">
+        <h3>Empleados</h3>
+        <div className="SelectView2" >
+          <h3>Selecciona el empleado: </h3>
+          <select name="ServiceType" className="browser-default custom-select">
+            <option>Choose your option</option>
+            {renderBody2()}
+          </select>
+        </div>
+            <div>
+                <h2>Calendario Empleados</h2>
                 <table class="table table-striped table-sm">
                     <thead>
-                    <tr>{renderHeader()}</tr>
+                        <tr>{renderHeader()}</tr>
                     </thead>
                     <tbody>
-                    
+
                         {renderBody()}
-                      
-                       
+
                     </tbody>
                 </table>
             </div>
         </>
+        
     )
 }
 

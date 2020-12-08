@@ -49,7 +49,7 @@ const Login = (props) => {
   }
 
   return (
-    <div style={{display: props.visible}}>
+    <div >
       <h1 className = "login-title">Entra a tu cuenta</h1>
       <form className="flex-login" onSubmit={handleSubmit}>
         <div >

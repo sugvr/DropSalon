@@ -1,9 +1,10 @@
 .ViewEmpleados{
     display: flex;
     flex-direction: row;
-    justify-content: right;
+    justify-content: center;
+    flex-wrap:wrap;
     width: 100%;
 }
 .ViewEmpleados div{
-
+  padding: 10px;
 }

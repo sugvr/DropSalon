@@ -35,6 +35,21 @@ app.get("/user", function (req, res) {
     }
   });
 });
+app.get("/reportes", function (req, res) {
+  db.all("SELECT * FROM reportes ORDER BY employee_name;", function (err, row) {
+    if (err) {
+      console.error(err.message);
+      res.sendStatus(500);
+    } else {
+      if (row === []) {
+        res.sendStatus(404);
+      } else {
+        console.log(row);
+        res.status(200).send(row);
+      }
+    }
+  });
+});
 
 app.get("/citas", function (req, res) {
   if (!req.headers.authorization) {
@@ -65,29 +80,55 @@ app.get("/citas", function (req, res) {
           }
           else if (decoded.role == 2) {
             let name = decoded.name
-            db.all("SELECT * FROM citas WHERE employee_name = ?;", 
+            db.all("SELECT * FROM citas WHERE employee_name = ?;",
               [name],
-                function (err, row) {
-                  if (err) {
-                    console.error(err.message);
-                    res.sendStatus(500);
+              function (err, row) {
+                if (err) {
+                  console.error(err.message);
+                  res.sendStatus(500);
+                } else {
+                  if (row === []) {
+                    res.sendStatus(404);
                   } else {
-                    if (row === []) {
-                      res.sendStatus(404);
-                    } else {
-                      console.log(row);
-                      res.status(200).send(row);
-                    }
+                    console.log(row);
+                    res.status(200).send(row);
                   }
                 }
+              }
             );
           }
         }
       }
     );
   }
-
 });
+
+app.get("/citas/:EmployeeName", function (req, res) {
+  db.all(
+    "SELECT * FROM citas WHERE employee_name = ?;",
+    [req.params.EmployeeName],
+    function (err, row) {
+      if (err) {
+        console.error(err.message);
+        res.sendStatus(500);
+      } else {
+        if (row === undefined) {
+          res.sendStatus(404);
+        } else {
+          console.log(row);
+          res.status(200).send({
+            date_rsvp: row.role,
+            comments: row.created_at,
+            user_name: row.name,
+            employee_name: row.last_name,
+            serviceType: row.email
+          });
+        }
+      }
+    }
+  );
+});
+
 app.get("/user/role/employee", function (req, res) {
   db.all(
     "SELECT name, last_name FROM users WHERE role NOT IN (1, 3);",
@@ -122,31 +163,16 @@ app.get("/user/:userID", function (req, res) {
           res.sendStatus(404);
         } else {
           console.log(row);
-          res.status(200).send({
-            name: row.name,
-            last_name: row.last_name,
-            created_at: row.created_at,
-            email: row.email,
-            role: row.role,
-          });
+          res.status(200).send(
+            row
+          );
         }
       }
     }
   );
 });
 app.get("/services", function (req, res) {
-  if (!req.headers.authorization) {
-    return res.json({ error: "No credentials sent!" });
-  } else {
-    jwt.verify(
-      req.headers.authorization.split(" ")[1],
-      JWT_SECRET,
-      function (err, decoded) {
-        if (err) {
-          res.sendStatus(403);
-        } else {
-          console.log(decoded);
-          if (true) {
+ 
             db.all("SELECT * FROM services;", function (err, row) {
               if (err) {
                 console.error(err.message);
@@ -160,11 +186,7 @@ app.get("/services", function (req, res) {
                 }
               }
             });
-          }
-        }
-      }
-    );
-  }
+          
 });
 
 app.get("/services/:servicesID", function (req, res) {
@@ -289,118 +311,72 @@ app.post("/verify", function (req, res) {
   }
 });
 app.post("/services", function (req, res) {
-  if (!req.headers.authorization) {
-    return res.json({ error: "No credentials sent!" });
-  } else {
-    jwt.verify(
-      req.headers.authorization.split(" ")[1],
-      JWT_SECRET,
-      function (err, decoded) {
-        if (err) {
-          res.sendStatus(403);
-        } else {
-          console.log(decoded);
-          if (decoded.role == 1) {
-            db.run(
-              "INSERT INTO services (service_name, service_description, duration, price) VALUES ($service_name, $service_description, $duration, $price);",
-              {
-                $service_name: req.body.service_name,
-                $service_description: req.body.service_description,
-                $duration: req.body.duration,
-                $price: req.body.duration,
-              },
-              function (err, row) {
-                if (err) {
-                  console.error(err.message);
-                  res.sendStatus(500);
-                } else {
-                  console.log("Service created");
-                  res.sendStatus(201);
-                }
-              }
-            );
-          }
-        }
+
+  db.run(
+    "INSERT INTO services (service_name, service_description, duration, price) VALUES ($service_name, $service_description, $duration, $price);",
+    {
+      $service_name: req.body.service_name,
+      $service_description: req.body.service_description,
+      $duration: req.body.duration,
+      $price: req.body.duration,
+    },
+    function (err, row) {
+      if (err) {
+        console.error(err.message);
+        res.sendStatus(500);
+      } else {
+        console.log("Service created");
+        res.sendStatus(201);
       }
-    );
-  }
+    }
+  );
+
 });
 
 app.post("/citas", function (req, res) {
-  if (!req.headers.authorization) {
-    return res.json({ error: "No credentials sent!" });
-  } else {
-    jwt.verify(
-      req.headers.authorization.split(" ")[1],
-      JWT_SECRET,
-      function (err, decoded) {
-        if (err) {
-          res.sendStatus(403);
-        } else {
-          console.log(decoded);
-          if (true) {
-            db.run(
-              "INSERT INTO citas (date_rsvp, comments, user_name, employee_name, serviceType) VALUES ($date_rsvp, $comments, $user_name, $employee_name, $serviceType);",
-              {
-                $date_rsvp: req.body.date_rsvp,
-                $comments: req.body.comments,
-                $user_name: req.body.user_name,
-                $employee_name: req.body.employee_name,
-                $serviceType: req.body.serviceType
-              },
-              function (err, row) {
-                if (err) {
-                  console.error(err.message);
-                  res.sendStatus(500);
-                } else {
-                  console.log("cita created");
-                  res.sendStatus(201);
-                }
-              }
-            );
-          }
-        }
+
+  db.run(
+    "INSERT INTO citas (date_rsvp, comments, user_name, employee_name, serviceType) VALUES ($date_rsvp, $comments, $user_name, $employee_name, $serviceType);",
+    {
+      $date_rsvp: req.body.date_rsvp,
+      $comments: req.body.comments,
+      $user_name: req.body.user_name,
+      $employee_name: req.body.employee_name,
+      $serviceType: req.body.serviceType
+    },
+    function (err, row) {
+      if (err) {
+        console.error(err.message);
+        res.sendStatus(500);
+      } else {
+        console.log("cita created");
+        res.sendStatus(201);
       }
-    );
-  }
+    }
+  );
+
 });
 app.post("/reportes", function (req, res) {
-  if (!req.headers.authorization) {
-    return res.json({ error: "No credentials sent!" });
-  } else {
-    jwt.verify(
-      req.headers.authorization.split(" ")[1],
-      JWT_SECRET,
-      function (err, decoded) {
-        if (err) {
-          res.sendStatus(403);
-        } else {
-          console.log(decoded);
-          if (true) {
-            db.run(
-              "INSERT INTO reportes (employee_name, service_total, gains_employee, gains_salon, gains_admin) VALUES ($employee_name, $service_total, $gains_employee, $gains_salon, $gains_admin);",
-              {
-                $employee_name: req.body.employee_name,
-                $service_total: req.body.service_total,
-                $gains_employee: req.body.gains_employee,
-                $gains_salon: req.body.gains_salon,
-                $gains_admin: req.body.gains_admin
-              },
-              function (err, row) {
-                if (err) {
-                  console.error(err.message);
-                  res.sendStatus(500);
-                } else {
-                  console.log("report created");
-                  res.sendStatus(201);
-                }
-              }
-            );
-          }
-        }
+  db.run(
+    "INSERT INTO reportes (employee_name, service_total, gains_employee, gains_salon, gains_admin) VALUES ($employee_name, $service_total, $gains_employee, $gains_salon, $gains_admin);",
+    {
+      $employee_name: req.body.employee_name,
+      $service_total: req.body.service_total,
+      $gains_employee: req.body.gains_employee,
+      $gains_salon: req.body.gains_salon,
+      $gains_admin: req.body.gains_admin
+    },
+    function (err, row) {
+      if (err) {
+        console.error(err.message);
+        res.sendStatus(500);
+      } else {
+        console.log("report created");
+        res.sendStatus(201);
       }
-    );
-  }
+    }
+  );
+
 });
 
 /*Rest Api Delete Methods*/
@@ -441,7 +417,7 @@ app.delete("/services/:serviceID", function (req, res) {
   }
 });
 
-app.delete("/user/:serviceID", function (req, res) {
+app.delete("/user/:userID", function (req, res) {
   if (!req.headers.authorization) {
     return res.json({ error: "No credentials sent!" });
   } else {
@@ -456,7 +432,7 @@ app.delete("/user/:serviceID", function (req, res) {
           if (decoded.role == 1) {
             db.run(
               "DELETE FROM users WHERE id = ?",
-              req.params.servicesID,
+              req.params.userID,
               function (err, row) {
                 if (err) {
                   console.error(err.message);
@@ -476,6 +452,26 @@ app.delete("/user/:serviceID", function (req, res) {
       }
     );
   }
+});
+app.delete("/citas/:citaID", function (req, res) {
+  db.run(
+    "DELETE FROM users WHERE id = ?",
+    req.params.citaID,
+    function (err, row) {
+      if (err) {
+        console.error(err.message);
+        res.sendStatus(500);
+      } else {
+        if (row === []) {
+          res.sendStatus(404);
+        } else {
+          console.log(row);
+          res.sendStatus(200);
+        }
+      }
+    }
+  );
+
 });
 
 /*Rest Api Put Methods*/

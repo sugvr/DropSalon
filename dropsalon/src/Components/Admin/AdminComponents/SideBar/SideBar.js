@@ -31,7 +31,12 @@ function SideBar() {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/homeadmin/reportes">
-                                Reportes
+                                Reportar
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/homeadmin/seereports">
+                                Ver Reportes
                             </Link>
                         </li>
                     </ul>

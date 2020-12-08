@@ -19,9 +19,10 @@ const ClientesView = () => {
 
     const removeData = (id) => {
 
-        axios.delete(`${URL}/${id}`).then(res => {
+        axios.delete(`http://localhost:4000/user/${id}`).then(res => {
             const del = user.filter(user => id !== user.id)
             setUser(del)
+            console.log(res)
         })
     }
 
@@ -34,7 +35,7 @@ const ClientesView = () => {
     }
 
     const renderBody = () => {
-        return user && user.map(({ id, name, last_name, email, role }) => {
+        return user.map(({ id, name, last_name, email, role }) => {
             return (
                 <tr key={id}>
                     <td>{id}</td>

@@ -43,11 +43,23 @@ class SignUp extends Component {
      password:this.state.password
 
     };
+  
     axios
       .post("http://localhost:4000/signup", data)
-      .then(res => console.log(res))
-      .catch(err => alert(err));
+      .then(function (res) {
+      //If the response is 2xx the set cookie and redirect
+      sessionStorage.setItem('jwt', res.data.jwt)
+      console.log(res)
+      alert(res.data)
+    }).catch(function (err) {
+      //Set msg to user from the following response 
+      if (err) {
+        console.log(err)
+        alert(err)
+      }
+    })
   };
+ 
 
   render() {
   return (

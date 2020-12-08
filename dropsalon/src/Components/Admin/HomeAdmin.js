@@ -8,6 +8,7 @@ import ServiceList from './AdminComponents/ServicesList'
 import FormReports from './AdminComponents/FormReports'
 import DashboardNav from './AdminComponents/DashboardNav/DashboardNav'
 import SideBar from './AdminComponents/SideBar/SideBar'
+import SeeReports from './AdminComponents/SeeReports'
 import DashboardContent from './AdminComponents/DashboardContent/DashboardContent'
 import {
     BrowserRouter as Router,
@@ -31,14 +32,7 @@ function HomeAdmin() {
                                     <DashboardContent></DashboardContent>
                                 </Route>
                                 <Route path="/homeadmin/calendarios">
-                                    <div className="Empleado-container">
-                                        <div>
-                                            <EmpleadoViewAdmin />
-                                        </div>
-                                        <div className="separador">
-                                            <CalendarioAdminView />
-                                        </div>
-                                    </div>
+                                    <CalendarioAdminView />
                                 </Route>
                                 <Route path="/homeadmin/usuarios">
                                     <ClientesViewAdmin />
@@ -48,6 +42,9 @@ function HomeAdmin() {
                                 </Route>
                                 <Route path="/homeadmin/reportes">
                                     <FormReports />
+                                </Route>
+                                <Route path="/homeadmin/seereports">
+                                    <SeeReports />
                                 </Route>
                             </Switch>
                         </main>

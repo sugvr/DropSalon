@@ -11,26 +11,26 @@ import fotoEmpleado4 from "../../../Assets/wilnelis.jpg"
 function EmpleadoViewAdmin() {
     return (
         <div>
-            <h3>Empleados</h3>
+            {/* <h3>Empleados</h3>
             <div className="ViewEmpleados">
                 <div>
-                    <a href="#about-section"><Empleado2 className="empleado1" image={fotoEmpleado1} name="Chrystal Borrero" /></a>
+                    <a ><Empleado2 className="empleado1" image={fotoEmpleado1} name="Chrystal Borrero" /></a>
                 </div>
 
                 <div>
-                    <a href="#about-section" ><Empleado2 className="empleado1" image={fotoEmpleado2} name="Lorriel Galarza" /></a>
+                    <a  ><Empleado2 className="empleado1" image={fotoEmpleado2} name="Lorriel Galarza" /></a>
                 </div>
 
                 <div>
-                    <a href="#about-section"><Empleado2 className="empleado1" image={fotoEmpleado3} name="Arianna Orta" /></a>
+                    <a ><Empleado2 className="empleado1" image={fotoEmpleado3} name="Arianna Orta" /></a>
                 </div>
 
                 <div>
-                    <a href="#about-section"><Empleado2 className="empleado1" image={fotoEmpleado4} name="Wilnelis Daris" /></a>
+                    <a><Empleado2 className="empleado1" image={fotoEmpleado4} name="Wilnelis Daris" /></a>
                 </div>
 
 
-            </div>
+            </div> */}
         </div>
     )
 }
