@@ -32,7 +32,7 @@ const HomeEmployee = (props) => {
                 console.log(jwtPayload.last_name)
 
         }
-    })
+    }, [jwt, jwtPayload])
     let history = useHistory()
     const handleLogout = () => {
         sessionStorage.clear()

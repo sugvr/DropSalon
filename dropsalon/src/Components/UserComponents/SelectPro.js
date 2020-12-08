@@ -16,37 +16,37 @@ const SelectPage = () => {
   const [comments, setComments] = useState('')
   const [serviceType, setServiceType] = useState('')
 
-  const jwt = sessionStorage.getItem('jwt') //for the load name and lastname for the input in client name
-  const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
-  
-  const [name2, setName2] = useState('')
-  const [last_name, setLastName] = useState('')
+  // const jwt = sessionStorage.getItem('jwt') //for the load name and lastname for the input in client name
+  // const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
+
+  // const [name2, setName2] = useState('')
+  // const [last_name, setLastName] = useState('')
 
   //load the name and last name for the client
-    useEffect(() => {
-        if (jwt === '' || jwt === null) {
-            window.location.href = '/'
-        } else if (jwtPayload.role !== 3) {
-            sessionStorage.removeItem('jwt')
-            window.location.href = '/'
-        } else {
-            //Send token to verify
-            axios.post('http://localhost:4000/verify', { jwt: jwt })
-                .catch(function (reason) {
-                    console.log(reason)
-                    sessionStorage.removeItem('jwt')
-                    window.location.href = '/'
-                })
-            setName2(jwtPayload.name)
-            setLastName(jwtPayload.last_name)
-            console.log('JWT available')
-            console.log(jwtPayload)
-            console.log(jwtPayload.name)
-            console.log(jwtPayload.last_name)
-        }
-    }, )
+  // useEffect(() => {
+  //     if (jwt === '' || jwt === null) {
+  //         window.location.href = '/'
+  //     } else if (jwtPayload.role !== 3) {
+  //         sessionStorage.removeItem('jwt')
+  //         window.location.href = '/'
+  //     } else {
+  //         //Send token to verify
+  //         axios.post('http://localhost:4000/verify', { jwt: jwt })
+  //             .catch(function (reason) {
+  //                 console.log(reason)
+  //                 sessionStorage.removeItem('jwt')
+  //                 window.location.href = '/'
+  //             })
+  //         setName2(jwtPayload.name)
+  //         setLastName(jwtPayload.last_name)
+  //         console.log('JWT available')
+  //         console.log(jwtPayload)
+  //         console.log(jwtPayload.name)
+  //         console.log(jwtPayload.last_name)
+  //     }
+  // }, )
 
-    //handle the post 
+  //handle the post 
   function handleChangeUsername(e) {
     setUsername(e.target.value)
   }
@@ -66,37 +66,37 @@ const SelectPage = () => {
     setServiceType(e.target.value)
   }
 
-  function handleSubmit (e){
+  function handleSubmit(e) {
     e.preventDefault();
     const data = {
-     user_name: user_name,
-     employee_name: employee_name,
-     date_rsvp: date_rsvp,
-     comments: comments,
-     serviceType: serviceType
+      user_name: user_name,
+      employee_name: employee_name,
+      date_rsvp: date_rsvp,
+      comments: comments,
+      serviceType: serviceType
 
     };
-   
-  axios({
-    method: "post",
-    url: "http://localhost:4000/citas",
-    data,
-    headers: {
-      "Content-Type": "application/json"
-    }
-  }) .then(function (res) {
-    //If the response is 2xx the set cookie and redirect
-    sessionStorage.setItem('jwt', res.data.jwt)
-    console.log(res)
-    alert(res.data)
-  }).catch(function (err) {
-    //Set msg to user from the following response 
-    if (err) {
-      console.log(err)
-      alert(err)
-    }
-  })
-}
+
+    axios({ //do the request to post 
+      method: "post",
+      url: "http://localhost:4000/citas",
+      data,
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(function (res) {
+      //If the response is 2xx the set cookie and redirect
+      sessionStorage.setItem('jwt', res.data.jwt)
+      console.log(res)
+      alert(res.data)
+    }).catch(function (err) {
+      //Set msg to user from the following response 
+      if (err) {
+        console.log(err)
+        alert(err)
+      }
+    })
+  }
 
   //load the name and service name
   useEffect(() => {
@@ -106,11 +106,11 @@ const SelectPage = () => {
     getData2()
   }, [])
 
-  const getData = async () => {
+  const getData = async () => { //read the axios /services
     const response = await axios.get(URL, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
     setService(response.data)
   }
-  const getData2 = async () => {
+  const getData2 = async () => { //read the axios /users/employee
     const response = await axios.get(URL2, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
     setName(response.data)
   }
@@ -135,7 +135,7 @@ const SelectPage = () => {
       <form onSubmit={handleSubmit}>
         <div className="SelectView2" >
           <label> Escribe tu nombre
-      <input className="inputemail" name="user_name" type="name"  onChange={handleChangeUsername} />
+      <input className="inputemail" name="user_name" type="name" onChange={handleChangeUsername} />
           </label>
         </div>
 
@@ -157,13 +157,13 @@ const SelectPage = () => {
 
         <div className="SelectView2" >
           <label> Comentarios
-      <input className="inputemail" name="comments" type="text" placeholder="Comentarios" onChange={handleChangeComments}/>
+      <input className="inputemail" name="comments" type="text" placeholder="Comentarios" onChange={handleChangeComments} />
           </label>
         </div>
 
         <div className="SelectView2" >
           <label> Seleccione la fecha
-      <input className="inputemail" name="date_rsvp" type="date" onChange={handleChangeDate}/>
+      <input className="inputemail" name="date_rsvp" type="date" onChange={handleChangeDate} />
           </label>
         </div>
 

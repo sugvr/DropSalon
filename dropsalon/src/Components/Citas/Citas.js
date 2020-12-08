@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Citas.css'
 import Login from '../Login'
 import SignUp from '../SignUp'

@@ -7,7 +7,7 @@ function SideBar() {
     return (
         <>
             <nav id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block sidebar bg-light collapse">
-                <div className="pt-3" className="sidebar-sticky">
+                <div className="sidebar-sticky">
                     <ul className="nav flex-column">
                         <li className="nav-item">
                             <Link className="nav-link" to="/homeadmin/dashboard">

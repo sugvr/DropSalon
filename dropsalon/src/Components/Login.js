@@ -3,10 +3,10 @@ import './Login.css'
 import axios from 'axios'
 
 const Login = (props) => {
-  const [valueEmail, setValueEmail] = useState('')
+  const [valueEmail, setValueEmail] = useState('') //read the axios
   const [valuePassword, setValuePassword] = useState('')
 
-  function handleChangeEmail(e) {
+  function handleChangeEmail(e) { //read the label in html
       setValueEmail(e.target.value)
   }
 
@@ -14,7 +14,7 @@ const Login = (props) => {
     setValuePassword(e.target.value)
 }
 
-  function handleSubmit(e) {
+  function handleSubmit(e) { //do the request in axios
     e.preventDefault();
     // Hardcoded link BAD PRACTICE
     axios.post('http://localhost:4000/login', {
@@ -33,7 +33,7 @@ const Login = (props) => {
     })
   }
 
-  function handleLogin(jwt){
+  function handleLogin(jwt){ //read the user role to redirect for the corresponding page
     let payload = jwt.split('.')[1]
     // Decode Base64Url
     let payloadData = JSON.parse(window.atob(payload))

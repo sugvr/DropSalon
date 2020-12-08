@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react"
+import React, { Component} from "react"
 import './SignUp.css'
 import axios from 'axios'
 
 
 class SignUp extends Component {
-  state = {
+  state = { //get 
     name: "",
    last_name: "",
    email: "",
@@ -13,7 +13,7 @@ class SignUp extends Component {
   };
 
 
-  onNameChange = e => {
+  onNameChange = e => { //read the label in the html
     this.setState({
       name: e.target.value
     });
@@ -34,7 +34,7 @@ class SignUp extends Component {
       password: e.target.value
     });
   };
-  handleSubmit = e => {
+  handleSubmit = e => { //read the data
     e.preventDefault();
     const data = {
      name: this.state.name,
@@ -45,7 +45,7 @@ class SignUp extends Component {
     };
   
     axios
-      .post("http://localhost:4000/signup", data)
+      .post("http://localhost:4000/signup", data) //do the request in axios
       .then(function (res) {
       //If the response is 2xx the set cookie and redirect
       sessionStorage.setItem('jwt', res.data.jwt)
@@ -83,7 +83,7 @@ class SignUp extends Component {
         <div>
           <label >
             Email
-        <input  className= "inputemail" className= "inputemail" name="valueEmail" type="Email" placeholder="Email" onChange={this.onEmailChange} />
+        <input  className= "inputemail" name="valueEmail" type="Email" placeholder="Email" onChange={this.onEmailChange} />
           </label>
         </div>
 

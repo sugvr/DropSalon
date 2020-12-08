@@ -6,8 +6,8 @@ import './TitleUser.css'
 function TitleUser() {
     const jwt = sessionStorage.getItem('jwt')
     const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
-    const [name, setName] = useState('')
-    const [last_name, setLastName] = useState('')
+    const [name, setName] = useState([])
+    const [last_name, setLastName] = useState([])
 
     useEffect(() => {
         if (jwt === '' || jwt === null) {
@@ -30,7 +30,7 @@ function TitleUser() {
             console.log(jwtPayload.name)
             console.log(jwtPayload.last_name)
         }
-    }, )
+    }, [jwt, jwtPayload] );
     let history = useHistory()
     const handleLogout = () => {
         sessionStorage.clear()
@@ -47,7 +47,7 @@ function TitleUser() {
 
             <ul className="navbar-nav px-3 mt-0">
                     <li className="nav-item text-nowrap">
-                        <button className="buttonlogout" onClick={ () => handleLogout() } className="btn btn-danger">Sign out</button>
+                        <button onClick={ () => handleLogout() } className="btn btn-danger">Sign out</button>
                     </li>
                 </ul>
 

@@ -25,7 +25,7 @@ import facebooklogo from './../../Assets/facebook.png'
 import instagramlogo from './../../Assets/instagram.png'
 import AthmovilLogo from './../../Assets/Athmovil.png'
 
-function PrivateRoute({ children, ...rest }) {
+function PrivateRoute({ children, ...rest }) { //navigation
   return (
     <Route
       {...rest}
@@ -37,7 +37,7 @@ function PrivateRoute({ children, ...rest }) {
 function App() {
   return (
     <div>
-      <Router>
+      <Router> 
         <Switch>
           {/* User web app */}
           <PrivateRoute path="/homeuser">
@@ -68,10 +68,10 @@ function App() {
             <Separator />
 
       
-<footer className="footer">
+<footer className="footer"> 
   <div className="footer-container">
     <div>
-      <a href="#"><img src={logo} width="200px" alt="Logo Dropsalon"></img></a>
+      <a href="#header-section"><img src={logo} width="200px" alt="Logo Dropsalon"></img></a>
       <h1 className="sloganh1">Resaltando Tu Belleza</h1>
     </div>
     <div>

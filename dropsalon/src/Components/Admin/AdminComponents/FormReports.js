@@ -2,8 +2,10 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import './FormReports.css'
 
+
+
 class FormReports extends Component {
-    state = {
+    state = { //read data
       employee_name: "",
      service_total: "",
      gains_employee: "",
@@ -11,9 +13,10 @@ class FormReports extends Component {
      gains_admin:""
      
     };
+
   
   
-    onNameChange = e => {
+    onNameChange = e => { //get data from label in html
       this.setState({
         employee_name: e.target.value
       });
@@ -39,7 +42,7 @@ class FormReports extends Component {
           gains_admin: e.target.value
         });
       };
-    handleSubmit = e => {
+    handleSubmit = e => { //read the data
       e.preventDefault();
       const data = {
        employee_name: this.state.employee_name,
@@ -49,7 +52,7 @@ class FormReports extends Component {
        gains_admin: this.state.gains_admin
   
       };
-      axios
+      axios //do the request for axios
         .post("http://localhost:4000/reportes", data)
         .then(function (res) {
           //If the response is 2xx the set cookie and redirect

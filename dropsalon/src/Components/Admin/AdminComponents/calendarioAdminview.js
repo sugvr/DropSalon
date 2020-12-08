@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import './CalendarioAdminView.css'
 
+//url for the axios
 const URL = 'http://localhost:4000/citas'
 const URL2 = 'http://localhost:4000/user/role/employee'
 
 const CalendarioAdminView = () => {
-    const [cita, setCita] = useState([])
-    const [name, setName] = useState([])
+    const [cita, setCita] = useState([])//citas 
+    const [name, setName] = useState([])//employee name
 
-    useEffect(() => {
+    useEffect(() => { //get
         getData()
     }, [])
 
-    const getData = async () => {
+    const getData = async () => { //getData for /citas
         const response = await axios.get(URL, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
         setCita(response.data)
     }
@@ -21,7 +22,7 @@ const CalendarioAdminView = () => {
         getData2()
     }, [])
 
-    const getData2 = async () => {
+    const getData2 = async () => { //getData (name) for /users where role = 2
         const response = await axios.get(URL2, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } })
         setName(response.data)
     }
@@ -42,7 +43,7 @@ const CalendarioAdminView = () => {
         })
     }
 
-    const renderBody = () => {
+    const renderBody = () => { //receive the data and show in table
         return cita.map(({ id, date_rsvp, comments, user_name, employee_name, serviceType }) => {
             return (
                 <tr key={id}>

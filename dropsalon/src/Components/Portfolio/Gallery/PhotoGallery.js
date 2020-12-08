@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
-const photos = [
+const photos = [ //gallery slide
   {
     src: process.env.PUBLIC_URL + '/GalleryImages/pic1.jpg',
     width: 3,
