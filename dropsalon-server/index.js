@@ -314,7 +314,7 @@ app.post("/services", function (req, res) {
       $service_name: req.body.service_name,
       $service_description: req.body.service_description,
       $duration: req.body.duration,
-      $price: req.body.duration,
+      $price: req.body.price,
     },
     function (err, row) {
       if (err) {

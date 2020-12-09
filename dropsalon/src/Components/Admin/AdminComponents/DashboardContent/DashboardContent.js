@@ -5,7 +5,7 @@ const URL = 'http://localhost:4000/citas'
 
 const DashboardContent = () => {
     const [cita, setCita] = useState([])
-
+    
     useEffect(() => {
         getData()
     }, [])

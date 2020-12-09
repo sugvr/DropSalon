@@ -83,11 +83,11 @@ class ServicesList extends Component {
                 </label>
                 <label className="labels">
                     Precio
-        <input name="price" type="real" placeholder="Precio" onChange={this.onPriceChange} />
+        <input name="price" type="text" placeholder="Precio" onChange={this.onPriceChange} />
                 </label>
                 <label className="labels">
                     Duracion
-        <input name="duration" type="number" placeholder="Duracion" onChange={this.onDurationChange} />
+        <input name="duration" type="text" placeholder="Duracion" onChange={this.onDurationChange} />
                 </label>
 
                 <button className="submit-service" type="submit">Añadir servicio</button>
