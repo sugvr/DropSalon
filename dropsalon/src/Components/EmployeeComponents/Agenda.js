@@ -39,7 +39,6 @@ const Agenda = () => {
 }
     return (
         <div className="TableServices">
-            <h2 className = "cl_plan">Plan de trabajo</h2>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>{renderHeader()}</tr>

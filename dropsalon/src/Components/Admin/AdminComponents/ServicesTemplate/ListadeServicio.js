@@ -17,10 +17,11 @@ const ListadeServicio = () => {
         setService(response.data)
     }
 
-    const removeData = (id) => {
-        axios.delete(`${URL}/${id}`).then(res => {
+    const removeData = (id) => { //delete data in the backend
+        axios.delete(`http://localhost:4000/services/${id}`, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } }).then(res => {
             const del = services.filter(services => id !== services.id)
             setService(del)
+            console.log(res)
         })
     }
 
@@ -63,75 +64,3 @@ const ListadeServicio = () => {
 
 
  export default ListadeServicio
-
-// const serverURL ='http://localhost:4000/services';
-// const http = axios.create({
-//    baseURL:serverURL,
-// });
-// export default class ListadeServicio extends Component {
-//     constructor(props){
-//       super(props);
-//       this.state = {
-//         service_name:'',
-//         service_description:'',
-//         duration:'',
-//         price: '',
-//         rslt:[],
-//       };
-//     }
-  
-  
-//     onCalculate(){
-//       const{service_name, service_description,duration, price ,rslt} = this.state;
-  
-//       http.get('/services',{
-//         service_name:service_name,
-//         service_description:service_description,
-//         duration:duration,
-//         price: price
-//       })
-//       .then(function (response) {
-//         rslt.push(response.data);
-//         this.setState({rslt}); // or this.forceUpdate();
-//         alert("Response :", response.data);
-//         console.log(response.data);
-//         console.log(rslt);
-//     }.bind(this))
-//     .catch(function (error) {
-//         alert("Error", error);
-//     }); 
-  
-//     }
-  
-  
-//     render() {
-//       return (
-//         <View >
-      
-//           <Button title='Calculate' onPress={()=>this.onCalculate()}/>
-  
-//           <FlatList
-//             data={this.state.rslt}
-//             renderItem={({item}) => <Text>{item}</Text>}
-//           />
-//         </View>
-//       );
-//     }
-//   }
-// function ListadeServicio(props) {
-//     return (
-//         <div className="TableServices">
-//             <div>
-//                 <h2 className="Servicio">{props.servicio}</h2>
-//             </div>
-//             <div>
-//                 <h2 className="Precio">{props.Precio}</h2>
-//             </div>
-//             <div>
-//                 <h2 className="Duracion">{props.Duracion}</h2>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default ListadeServicio

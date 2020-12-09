@@ -1,28 +1,35 @@
 import React, {useState,useEffect} from 'react'
 import './Clientesview.css'
 import axios from 'axios';
-// import SignUp from './../../../SignUp'
 const URL = 'http://localhost:4000/user'
 
 const ClientesView = () => {
     const [user, setUser] = useState([])
+   
 
     useEffect(() => {
         getData()
     }, [])
 
     const getData = async () => {
-
         const response = await axios.get(URL)
         setUser(response.data)
     }
 
-    const removeData = (id) => {
-
-        axios.delete(`http://localhost:4000/user/${id}`).then(res => {
+    const removeData = (id) => { //delete data in the backend
+        axios.delete(`http://localhost:4000/user/${id}`, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } }).then(res => {
             const del = user.filter(user => id !== user.id)
             setUser(del)
             console.log(res)
+            
+        })
+    }
+    const upgrade = (id) => { //update user role 2 in the backend
+        axios.put(`http://localhost:4000/user/role/${id}`, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } }).then(res => {
+            
+            console.log(res)
+            alert("upgrated")
+           
         })
     }
 
@@ -46,6 +53,9 @@ const ClientesView = () => {
                     <td className='opration'>
                         <button className='button' onClick={() => removeData(id)}>Delete</button>
                     </td>
+                    <td className='opration'>
+                        <button className='button' onClick={() => upgrade(id)}>upgrade</button>
+                    </td>
                 </tr>
             )
         })
@@ -54,6 +64,7 @@ const ClientesView = () => {
     return (
        
             <div className="TableClients">
+         
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>{renderHeader()}</tr>
@@ -73,78 +84,3 @@ const ClientesView = () => {
 
 
 export default ClientesView
-// export default class ClientesView extends React.Component {
-//     state = {
-//         name: [],
-//     }
-
-  
-//     componentDidMount() {
-//         axios.get(`http://localhost:4000/user`)
-//             .then(res => {
-//                 const name = res.data;
-//                 this.setState({ name });
-
-
-//             })
-         
-        
-//     }
-  
-//     render() {
-       
-//         return (
-//             <div className="TableClients">
-//                 <table class="table table-striped table-sm">
-//                     <thead>
-//                         <tr>
-//                             <th>Nombre</th>
-//                             <th>Apellido</th>
-//                             <th>Email</th>
-//                             <th>Role</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-                       
-//                         <tr>
-//                             {this.state.name.map(name => <td > {name.name}</td>)}
-//                         </tr>
-//                         <tr>
-//                             {this.state.name.map(name => <td > {name.last_name}</td>)}
-//                         </tr>
-//                         <tr>
-//                             {this.state.name.map(name => <td > {name.email}</td>)}
-//                         </tr>
-//                         <tr>
-//                             {this.state.name.map(name => <td > {name.role}</td>)}
-//                         </tr>
-//                     </tbody>
-//                 </table>
-//             </div>
-
-//         )
-//     }
-// }
-
-
-
-/* // function ClientesView(props) {
-//     return (
-//         <div className="TableClients">
-//             <div>
-//                 <h2 className="nameUser">{props.nameUser}</h2>
-//             </div>
-//             <div>
-//                 <h2 className="lastnameUser">{props.lastnameUser}</h2>
-//             </div>
-//             <div>
-//                 <h2 className="Username">{props.Username}</h2>
-//             </div>
-//             <div>
-//                 <h2 className="Role">{props.Role}</h2>
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default ClientesView; */

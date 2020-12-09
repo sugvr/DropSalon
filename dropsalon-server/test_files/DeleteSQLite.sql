@@ -1,1 +1,1 @@
-DELETE FROM users WHere id between 40 and 47;
+DELETE FROM reportes WHere id between 11 and 12;

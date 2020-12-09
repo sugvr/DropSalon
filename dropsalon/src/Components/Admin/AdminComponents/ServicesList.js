@@ -9,7 +9,6 @@ class ServicesList extends Component {
    service_description: "",
    duration: "",
    price:""
-   
   };
 
   onServiceChange = e => {
@@ -38,9 +37,8 @@ class ServicesList extends Component {
     const data = {
      service_name: this.state.service_name,
      service_description: this.state.service_description,
-     durationl: this.state.duration,
-     price:this.state.price
-
+     duration: this.state.duration,
+     price: this.state.price
     };
     axios
       .post("http://localhost:4000/services", data )
@@ -61,9 +59,9 @@ class ServicesList extends Component {
 
     return (
         <div className="ServicesSpace">
-            <div className="Services-title">
-                <div className="ServicesTitle">
-                    <h3>Servicios</h3>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Servicios</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
                 </div>
             </div>
             <ListadeServicio/>
@@ -85,7 +83,7 @@ class ServicesList extends Component {
                 </label>
                 <label className="labels">
                     Precio
-        <input name="price" type="number" placeholder="Precio" onChange={this.onPriceChange} />
+        <input name="price" type="real" placeholder="Precio" onChange={this.onPriceChange} />
                 </label>
                 <label className="labels">
                     Duracion

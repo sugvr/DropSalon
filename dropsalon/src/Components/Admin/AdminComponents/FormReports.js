@@ -70,34 +70,39 @@ class FormReports extends Component {
   
     render() {
     return (
+      <><div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Reportar</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+      </div>
+  </div>
 
         <div className="FormReports">
-            <h1>Reportar</h1>
             <form className="Reports-containt" onSubmit ={this.handleSubmit}>
                 <label>
                     Nombre de empleado
-        <input className="ReportsInput" name="" type="name" placeholder="Nombre de cliente" onChange={this.onNameChange}/>
+        <input className="ReportsInput" name="" type="name" placeholder="Nombre de empleado" onChange={this.onNameChange}/>
                 </label>
                 <label>
                     Total de los servicios
-                    <input className="ReportsInput" name="" type="name" placeholder="Servicio" onChange={this.onTotalChange}/>
+                    <input className="ReportsInput" name="" type="name" placeholder="Total de servicios semanal" onChange={this.onTotalChange}/>
                 </label>
                 <label>
                     Ganancias de empleado
-                    <input className="ReportsInput" name="" type="number" placeholder="Costo de servicio" onChange={this.onEmployeeChange} />
+                    <input className="ReportsInput" name="" type="number" placeholder="Ganacias para empleado" onChange={this.onEmployeeChange} />
                 </label>
                 <label>
                     Ganancias del salon
-                     <input className="ReportsInput" name="" type="text" placeholder="Comentarios" onChange={this.onSalonChange}/>
+                     <input className="ReportsInput" name="" type="text" placeholder="Ganancias para el salon" onChange={this.onSalonChange}/>
                 </label>
                 <label>
                    Ganancias del administrador
-                     <input className="ReportsInput" name="" type="name" placeholder="Tipo de pago" onChange={this.onAdminChange}/>
+                     <input className="ReportsInput" name="" type="name" placeholder="Ganacias para administrador" onChange={this.onAdminChange}/>
                 </label>
 
                 <button className="submit-Report" type="submit">Registrar Reporte</button>
             </form>
         </div>
+        </>
 
     )
 }

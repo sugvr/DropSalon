@@ -116,13 +116,9 @@ app.get("/citas/:EmployeeName", function (req, res) {
           res.sendStatus(404);
         } else {
           console.log(row);
-          res.status(200).send({
-            date_rsvp: row.role,
-            comments: row.created_at,
-            user_name: row.name,
-            employee_name: row.last_name,
-            serviceType: row.email
-          });
+          res.status(200).send(
+           row
+          );
         }
       }
     }
@@ -395,7 +391,7 @@ app.delete("/services/:serviceID", function (req, res) {
           if (decoded.role == 1) {
             db.run(
               "DELETE FROM services WHERE id = ?",
-              req.params.servicesID,
+              req.params.serviceID,
               function (err, row) {
                 if (err) {
                   console.error(err.message);
@@ -455,7 +451,7 @@ app.delete("/user/:userID", function (req, res) {
 });
 app.delete("/citas/:citaID", function (req, res) {
   db.run(
-    "DELETE FROM users WHERE id = ?",
+    "DELETE FROM citas WHERE id = ?",
     req.params.citaID,
     function (err, row) {
       if (err) {
@@ -471,11 +467,9 @@ app.delete("/citas/:citaID", function (req, res) {
       }
     }
   );
-
 });
 
-/*Rest Api Put Methods*/
-app.put("/user/role/:userID", function (req, res) {
+app.delete("/reportes/:reporteID", function (req, res) {
   if (!req.headers.authorization) {
     return res.json({ error: "No credentials sent!" });
   } else {
@@ -489,9 +483,8 @@ app.put("/user/role/:userID", function (req, res) {
           console.log(decoded);
           if (decoded.role == 1) {
             db.run(
-              "UPDATE users SET role = ? WHERE id = ?",
-              req.body.role,
-              req.params.userID,
+              "DELETE FROM reportes WHERE id = ?",
+              req.params.reporteID,
               function (err, row) {
                 if (err) {
                   console.error(err.message);
@@ -511,6 +504,29 @@ app.put("/user/role/:userID", function (req, res) {
       }
     );
   }
+});
+
+/*Rest Api Put Methods*/
+app.put("/user/role/:userID", function (req, res) {
+ 
+            db.run(
+              "UPDATE users SET role = 2 WHERE id = ?",
+              req.params.userID,
+              function (err, row) {
+                if (err) {
+                  console.error(err.message);
+                  res.sendStatus(500);
+                } else {
+                  if (row === []) {
+                    res.sendStatus(404);
+                  } else {
+                    console.log(row);
+                    res.sendStatus(200);
+                  }
+                }
+              }
+            );
+          
 });
 
 

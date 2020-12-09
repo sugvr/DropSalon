@@ -51,6 +51,7 @@ class SignUp extends Component {
       sessionStorage.setItem('jwt', res.data.jwt)
       console.log(res)
       alert(res.data)
+      window.location.reload();
     }).catch(function (err) {
       //Set msg to user from the following response 
       if (err) {

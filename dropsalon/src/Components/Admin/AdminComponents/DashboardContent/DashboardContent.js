@@ -16,15 +16,15 @@ const DashboardContent = () => {
     }
     const removeData = (id) => {
 
-        axios.delete(`${URL}/${id}`).then(res => {
+        axios.delete(`http://localhost:4000/citas/${id}`, { headers: { Authorization: "jwt " + sessionStorage.getItem("jwt") } }).then(res => {
             const del = cita.filter(cita => id !== cita.id)
             setCita(del)
+            console.log(res)
         })
     }
 
     const renderHeader = () => {
         let headerElement = ['id', 'Fecha', 'Comentarios', 'Nombre de cliente', 'Nombre de empleado', 'Servicio']
-
         return headerElement.map((key, index) => {
             return <th key={index}>{key.toUpperCase()}</th>
         })
@@ -52,12 +52,8 @@ const DashboardContent = () => {
     return (
         <>
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Dashboard</h1>
+                <h1 class="h2">Inicio </h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                    </div>
                 </div>
             </div>
 
