@@ -13,6 +13,7 @@ const SelectPage = () => {
   const [user_name, setUsername] = useState('') //for the post in axios 
   const [employee_name, setEmployeeame] = useState('')
   const [date_rsvp, setDate] = useState('')
+  const [hour, setHour] = useState('')
   const [comments, setComments] = useState('')
   const [serviceType, setServiceType] = useState('')
 
@@ -58,6 +59,9 @@ const SelectPage = () => {
   function handleChangeDate(e) {
     setDate(e.target.value)
   }
+  function handleChangeHour(e) {
+    setHour(e.target.value)
+  }
 
   function handleChangeComments(e) {
     setComments(e.target.value)
@@ -72,6 +76,7 @@ const SelectPage = () => {
       user_name: user_name,
       employee_name: employee_name,
       date_rsvp: date_rsvp,
+      hour: hour,
       comments: comments,
       serviceType: serviceType
 
@@ -157,22 +162,23 @@ const SelectPage = () => {
 
         <div className="SelectView2" >
           <label> Comentarios
-      <input className="inputemail" name="comments" type="text" placeholder="Comentarios" onChange={handleChangeComments} />
+      <input  className="inputemail" name="comments" type="text" placeholder="Comentarios" onChange={handleChangeComments} />
           </label>
         </div>
 
         <div className="SelectView2" >
           <label> Seleccione la fecha
-      <input className="inputemail" name="date_rsvp" type="date" onChange={handleChangeDate} />
+      <input  className="inputemail" name="date_rsvp" type="date" onChange={handleChangeDate} />
           </label>
         </div>
 
         <div className="SelectView2" >
           <TextField
+          onChange={handleChangeHour}
             id="time"
             label="Hora"
             type="time"
-            defaultValue="09:00"
+            defaultValue=" "
             className="textField"
             InputLabelProps={{
               shrink: true,

@@ -3,4 +3,4 @@ Authorization: jwt yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaXNhaSIsImxhc
 Content-Type: application/json
 
 
-{"id": 40, "role": 2}
+{"id": 1, "role": 1}

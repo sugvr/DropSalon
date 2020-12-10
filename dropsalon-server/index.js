@@ -117,7 +117,7 @@ app.get("/citas/:EmployeeName", function (req, res) {
         } else {
           console.log(row);
           res.status(200).send(
-           row
+            row
           );
         }
       }
@@ -168,21 +168,21 @@ app.get("/user/:userID", function (req, res) {
   );
 });
 app.get("/services", function (req, res) {
- 
-            db.all("SELECT * FROM services;", function (err, row) {
-              if (err) {
-                console.error(err.message);
-                res.sendStatus(500);
-              } else {
-                if (row === []) {
-                  res.sendStatus(404);
-                } else {
-                  console.log(row);
-                  res.status(200).send(row);
-                }
-              }
-            });
-          
+
+  db.all("SELECT * FROM services;", function (err, row) {
+    if (err) {
+      console.error(err.message);
+      res.sendStatus(500);
+    } else {
+      if (row === []) {
+        res.sendStatus(404);
+      } else {
+        console.log(row);
+        res.status(200).send(row);
+      }
+    }
+  });
+
 });
 
 app.get("/services/:servicesID", function (req, res) {
@@ -219,15 +219,16 @@ app.post("/signup", function (req, res) {
     req.body.password === "" ||
     !validator.validate(req.body.email)
   ) {
-    res.status(400).send({ error: "Fields cannot be empty" });
+    console.error({ error: "Fields cannot be empty" });
+    res.status(500).send({error: "Fields cannot be empty"})
   } else {
     db.run(
-      "SELECT email FROM users WHERE email = ?;",
-      [req.body.email],
+      "SELECT email FROM users WHERE email = $email;",
+      [req.params.email],
+     [req.body.email],
       function (err, row) {
         if (err) {
-          console.error(err.message);
-          res.sendStatus(500);
+          console.log({ error: "Email already taken" });
         } else {
           if (row === undefined) {
             db.run(
@@ -259,9 +260,11 @@ app.post("/signup", function (req, res) {
 });
 app.post("/login", function (req, res) {
   if (req.body.email === "" || req.body.password === "") {
+    console.log(400)
     res.status(400).send({ error: "Credential fields cannot be empty" });
   } else if (!validator.validate(req.body.email)) {
-    res.status(400).send({ error: "Wrong email address format" });
+    console.log(err.message);
+    console.log({ error: "Wrong email address format" });
   } else {
     db.get(
       "SELECT name, last_name, email, password, role FROM users WHERE email = ?;",
@@ -332,9 +335,10 @@ app.post("/services", function (req, res) {
 app.post("/citas", function (req, res) {
 
   db.run(
-    "INSERT INTO citas (date_rsvp, comments, user_name, employee_name, serviceType) VALUES ($date_rsvp, $comments, $user_name, $employee_name, $serviceType);",
+    "INSERT INTO citas (date_rsvp, hour, comments, user_name, employee_name, serviceType) VALUES ($date_rsvp, $hour, $comments, $user_name, $employee_name, $serviceType);",
     {
       $date_rsvp: req.body.date_rsvp,
+      $hour:req.body.hour,
       $comments: req.body.comments,
       $user_name: req.body.user_name,
       $employee_name: req.body.employee_name,
@@ -508,25 +512,25 @@ app.delete("/reportes/:reporteID", function (req, res) {
 
 /*Rest Api Put Methods*/
 app.put("/user/role/:userID", function (req, res) {
- 
-            db.run(
-              "UPDATE users SET role = 2 WHERE id = ?",
-              req.params.userID,
-              function (err, row) {
-                if (err) {
-                  console.error(err.message);
-                  res.sendStatus(500);
-                } else {
-                  if (row === []) {
-                    res.sendStatus(404);
-                  } else {
-                    console.log(row);
-                    res.sendStatus(200);
-                  }
-                }
-              }
-            );
-          
+
+  db.run(
+    "UPDATE users SET role = 2 WHERE id = ?",
+    req.params.userID,
+    function (err, row) {
+      if (err) {
+        console.error(err.message);
+        res.sendStatus(500);
+      } else {
+        if (row === []) {
+          res.sendStatus(404);
+        } else {
+          console.log(row);
+          res.sendStatus(200);
+        }
+      }
+    }
+  );
+
 });
 
 

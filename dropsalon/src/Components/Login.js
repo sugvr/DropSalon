@@ -5,6 +5,7 @@ import axios from 'axios'
 const Login = (props) => {
   const [valueEmail, setValueEmail] = useState('') //read the axios
   const [valuePassword, setValuePassword] = useState('')
+  const [Error, setError] = useState(" ")
 
   function handleChangeEmail(e) { //read the label in html
       setValueEmail(e.target.value)
@@ -28,7 +29,7 @@ const Login = (props) => {
       //Set msg to user from the following response 
       if (reason) {
         console.log(reason)
-        alert(reason.response.data.error)
+        setError(reason.response.data.error)
       }
     })
   }
@@ -51,6 +52,7 @@ const Login = (props) => {
   return (
     <div >
       <h1 className = "login-title">Entra a tu cuenta</h1>
+      <div style={{color: 'red'}}>{Error}</div>
       <form className="flex-login" onSubmit={handleSubmit}>
         <div >
           <label>
