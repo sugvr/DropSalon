@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react"
 import './SignUp.css'
-import axios from 'axios'
+import axios from '../Components/Login/node_modules/axios'
 
 
 

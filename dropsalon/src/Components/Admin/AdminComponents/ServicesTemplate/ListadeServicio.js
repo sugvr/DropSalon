@@ -1,5 +1,5 @@
 import React, {useState,useEffect}  from 'react';
-import axios from 'axios';
+import axios from '../../../Login/node_modules/axios';
 // import {StyleSheet, Text, View, TextInput, Button, FlatList} from 'react';
 import './ListadeServicio.css'
 

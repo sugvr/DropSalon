@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './SelectPro.css'
-import axios from 'axios';
+import axios from '../Login/node_modules/axios';
 import TextField from '@material-ui/core/TextField';
 
 const URL = 'http://localhost:4000/services'

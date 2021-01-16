@@ -6,7 +6,6 @@ import {
   Route,
   Redirect
 } from 'react-router-dom'
-
 import Nav from '../Nav/Nav'
 import Header from '../Header/Header'
 import About from '../About/About'

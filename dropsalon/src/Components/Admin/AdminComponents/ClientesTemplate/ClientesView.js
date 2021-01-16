@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import './Clientesview.css'
-import axios from 'axios';
+import axios from '../../../Login/node_modules/axios';
 const URL = 'http://localhost:4000/user'
 
 const ClientesView = () => {

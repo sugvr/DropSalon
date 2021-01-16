@@ -1,7 +1,7 @@
 import React from 'react'
 import './Citas.css'
-import Login from '../Login'
-import SignUp from '../SignUp'
+import Login from './../Login/Login'
+import SignUp from './../Signup/SignUp'
 
 function Citas() {
  
