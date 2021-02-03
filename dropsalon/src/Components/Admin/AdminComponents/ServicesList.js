@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ListadeServicio from './ServicesTemplate/ListadeServicio'
 import './ServicesList.css'
-import axios from '../../Login/node_modules/axios'
+import axios from 'axios'
 
 class ServicesList extends Component {
   state = {

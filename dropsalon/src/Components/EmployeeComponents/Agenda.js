@@ -1,5 +1,5 @@
 import React, {useState,useEffect}  from 'react';
-import axios from '../Login/node_modules/axios';
+import axios from 'axios';
 import './Agenda.css'
 
 const URL = 'http://localhost:4000/citas' //url for the axios

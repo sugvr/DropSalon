@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from '../../Login/node_modules/axios';
+import axios from 'axios';
 import './SeeReports.css'
 
 const URL = 'http://localhost:4000/reportes'

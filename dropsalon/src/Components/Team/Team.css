@@ -2,7 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-around;
+ justify-content: space-around;
+ padding: 100px;
+  background-image: url(./../../Assets/cardsback.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
 }
 
 .team-header {

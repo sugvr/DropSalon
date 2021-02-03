@@ -4,7 +4,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding: 100px;
- 
 }
 .about-title1 {
   text-align: center;
@@ -16,23 +15,26 @@
   font-family: "Satisfy", sans-serif;
   font-size: 1.8em;
   margin: 1em 0;
-  text-align: center;
+  text-align: justify;
 
 }
 .container div {
-  padding: 20px;
+  padding: 10px;
 }
 .about-caja1{
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: center;
-
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
 }
 .about-caja1 img{
    height: 50%;
-  
+   border-radius: 50%;
+ 
+}
+
+.about-caja1 div{
+  padding: 10px;
 }
 .about-list{
   padding: 10px;

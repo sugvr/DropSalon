@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import axios from '../../Login/node_modules/axios'
+import axios from 'axios'
 import './FormReports.css'
 
 

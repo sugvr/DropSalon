@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Agenda from './EmployeeComponents/Agenda'
-import axios from './Login/node_modules/axios'
+import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import './HomeEmployee.css'
 

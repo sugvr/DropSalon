@@ -8,12 +8,12 @@ const Login = (props) => {
   const [Error, setError] = useState(" ")
 
   function handleChangeEmail(e) { //read the label in html
-      setValueEmail(e.target.value)
+    setValueEmail(e.target.value)
   }
 
   function handleChangePassword(e) {
     setValuePassword(e.target.value)
-}
+  }
 
   function handleSubmit(e) { //do the request in axios
     e.preventDefault();
@@ -34,7 +34,7 @@ const Login = (props) => {
     })
   }
 
-  function handleLogin(jwt){ //read the user role to redirect for the corresponding page
+  function handleLogin(jwt) { //read the user role to redirect for the corresponding page
     let payload = jwt.split('.')[1]
     // Decode Base64Url
     let payloadData = JSON.parse(window.atob(payload))
@@ -51,13 +51,13 @@ const Login = (props) => {
 
   return (
     <div >
-      <h1 className = "login-title">Entra a tu cuenta</h1>
-      <div style={{color: 'red'}}>{Error}</div>
+      <h1 className="login-title">Entra a tu cuenta</h1>
+      <div style={{ color: 'red' }}>{Error}</div>
       <form className="flex-login" onSubmit={handleSubmit}>
         <div >
           <label>
             Email
-        <input className= "inputemail" name="valueEmail" type="email" placeholder="Email" onChange={handleChangeEmail} />
+        <input className="inputemail" name="valueEmail" type="email" placeholder="Email" onChange={handleChangeEmail} />
           </label>
         </div>
         <div >
@@ -70,7 +70,10 @@ const Login = (props) => {
           <button className="Submit-login" type="submit">Entrar</button>
         </div>
       </form>
-    </div>
+
+
+    
+        </div>
   )
 } 
 export default Login

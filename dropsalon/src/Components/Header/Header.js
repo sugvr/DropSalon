@@ -1,14 +1,17 @@
 import React from 'react'
 import './Header.css'
 
+
+import Drop from './../../Assets/drop.png'
+
 function Header() {
    return (
-      <>
+      <div class="Loader">
 
          <div className="header" id="header-section">
             <div>
-            <h1 className="Headertitle">Drop Salon</h1>
-            <p className="subtext">Resaltando tu belleza</p>
+            <h1 className="Headertitle"><img src={Drop} width="300px" alt="logo"/></h1>
+            {/* <p className="subtext">Resaltando tu belleza</p> */}
             </div>
             
 
@@ -25,7 +28,7 @@ function Header() {
          </div>
 
 
-      </>
+      </div>
 
    )
 }

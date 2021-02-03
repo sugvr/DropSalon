@@ -3,19 +3,27 @@
   display: flex;
   flex-wrap: wrap;
   font-family: "Satisfy", sans-serif;
-  height: 600px;
+  height: 800px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  margin: 40px;
   color:white;
-  border-radius: 50px;
-  width:90%;
-  background-image: linear-gradient(-222deg,black, white);
-  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+  /* background-image: linear-gradient(-222deg,black, white); */
   padding:30px;
   color:#fff;
+  background-image: url("./../../Assets/coverpro.jpg");
+ 
+
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Headertitle {
@@ -23,6 +31,20 @@
   letter-spacing: 2px;
   padding: 0;
   margin: 0;
+  background-color: white; /* Fallback color */
+  background-color: rgba(255,255,255, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+
 }
 
 .subtext {
@@ -34,7 +56,7 @@
 .arrow {
   position: absolute;
   bottom: 10%;
-  right: 49%;
+  left: 47%;
 }
 
 #more-arrows {
@@ -42,7 +64,7 @@
   height: 65px;
 }
 #more-arrows:hover polygon {
-  fill:white;
+  fill: white;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
@@ -65,4 +87,16 @@ polygon.arrow-middle {
 }
 polygon.arrow-top {
   opacity: 0.5;
+}
+
+@media (max-width: 989px) {
+  .header{
+    background-image: url("./../../Assets/coverpro2.jpg");
+ 
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }

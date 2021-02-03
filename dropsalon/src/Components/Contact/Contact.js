@@ -1,28 +1,130 @@
-import React from 'react'
-import './Contact.css'
+import React from "react";
+import * as emailjs from "emailjs-com";
+import "./Contact.css";
 
-function Contact() {
+import contact from './../../Assets/contactphoto.jpg'
+
+class Contact extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetForm = this.resetForm.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    const { name, email, subject, message } = this.state;
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_name: "Isai",
+      subject,
+      message_html: message,
+    };
+    emailjs
+      .send(
+        "service_f56zfkj",
+        "template_hmn0xhe",
+        templateParams,
+        "user_7EOX95dc2S4QQcmkrPZY8"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          this.resetForm();
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+  }
+
+  resetForm() {
+    this.setState({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  }
+
+  handleChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  render() {
+    const { name, email, subject, message } = this.state;
     return (
-        <div className="Main">
-            <h1 className="contact-header">Contactanos</h1>
-            <div className="container">
+      <div className="Main">
+        <h1 className="contact-header">Contactanos</h1>
+        <div className="container">
+          <div>
+            <ul>
+              <h3 className="contact-title">¿Necesitas Comunicarte?</h3>
+              <li className="contact-list">787-783-2425 </li>
+              <li className="contact-list"><img src={contact} alt="contact"/></li>
+            </ul>
+          </div>
+
+          <div>
+            <div className="container-contact">
+              <form onSubmit={this.handleSubmit}>
+                <h2>Escribenos...</h2>
                 <div>
-                    <ul>
-                        <h3 className="contact-title">¿Necesitas Comunicarte?</h3>
-                        <li className="contact-list">787-783-2425 </li>
-                        <li className="contact-list">email.test@email.com</li>
-                    </ul>
+                  <input
+                    name="name"
+                    type="text"
+                    placeholder="Nombre y apellido"
+                    value={name}
+                    onChange={this.handleChange}
+                  />
                 </div>
+
                 <div>
-                    <iframe title="map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.548242887737!2d-66.6014396851651!3d17.999742987714395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c1cd5cdbd9102c5%3A0x8ddfd3ce3103cc59!2sDrop%20Salon!5e0!3m2!1ses!2spr!4v1600649118863!5m2!1ses!2spr"
-                        width="100%" height="100%" frameBorder="0" allowFullScreen="" aria-hidden="false" tabIndex="0"></iframe>
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={this.handleChange}
+                  />
                 </div>
+
+                <div>
+                  <input
+                    name="subject"
+                    type="text"
+                    placeholder="Razon"
+                    value={subject}
+                    onChange={this.handleChange}
+                  />
+                </div>
+
+                <div>
+                  <textarea
+                    name="message"
+                    placeholder="Escribe tu mensaje"
+                    value={message}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <button className="contact-button">Contactar</button>
+                <div></div>
+              </form>
             </div>
+          </div>
         </div>
-
-
-    )
+      </div>
+    );
+  }
 }
 
-export default Contact;
+export default Contact
