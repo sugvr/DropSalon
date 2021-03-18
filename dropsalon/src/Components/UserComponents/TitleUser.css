@@ -1,14 +1,26 @@
 .Title-user{
-    background-color: black;
-    color: white;
-    padding: 20px;
-    margin: 15px;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
     font-family: "Satisfy", sans-serif;
-   
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    color:white;
+    /* background-image: linear-gradient(-222deg,black, white); */
+    padding:30px;
+    color:#fff;
+    background-image: url("./../../Assets/coverpro.jpg");
+     /* Set a specific height */
+  min-height: 300px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Title-user div{
@@ -16,11 +28,34 @@
 }
 
 .divUserTitle h1{
-    font-size: 70px;
-    font-family: "Satisfy", sans-serif;
+    font-size: 6em;
+    letter-spacing: 2px;
+    padding: 0;
+    margin: 0;
+    background-color: white; /* Fallback color */
+    background-color: rgba(255,255,255, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  
 }
 .hello h1{
     font-size: 60px;
-    font-family: "Satisfy", sans-serif;
     text-align: center;
+}
+
+.btn{
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    width: 100px;
+    height: 70px;
 }

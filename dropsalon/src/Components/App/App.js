@@ -34,6 +34,14 @@ function PrivateRoute({ children, ...rest }) { //navigation
 }
 
 function App() {
+  const locale = "es";
+  const today = new Date();
+  const curTime= today.toLocaleTimeString(locale, {
+    hour: "numeric",
+    hour12: true,
+    minute: "numeric",
+  });
+  
   return (
     <div>
       <Router> 
@@ -54,6 +62,7 @@ function App() {
           <Route path="/">
             <Nav />
             <Header />
+            <p className="DayTime">{curTime}</p>
             <Separator id='dates-section' />
             <Citas />
             <Separator id='about-section' />

@@ -1,13 +1,29 @@
 .Employee-header{
-    background-color: black;
-    color: white;
-    padding: 20px;
-    margin: 15px;
+    text-align: center;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
     font-family: "Satisfy", sans-serif;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    color:white;
+    /* background-image: linear-gradient(-222deg,black, white); */
+    padding:30px;
+    color:#fff;
+    background-image: url("./../Assets/coverpro.jpg");
+     /* Set a specific height */
+  min-height: 300px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.EmployeeName{
+    text-align: center;
 }
 .Employee-header div{
     padding: 30px;

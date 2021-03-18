@@ -29,16 +29,6 @@ function SideBar() {
                                 Servicios
                             </Link>
                         </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/homeadmin/reportes">
-                                Reportar
-                            </Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/homeadmin/seereports">
-                                Ver Reportes
-                            </Link>
-                        </li>
                     </ul>
                 </div>
             </nav>

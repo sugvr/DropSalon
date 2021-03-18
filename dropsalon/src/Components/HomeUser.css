@@ -13,3 +13,6 @@
     justify-content:left;
     flex-wrap: wrap;
 }
+.hello p{
+    text-align: center;
+}

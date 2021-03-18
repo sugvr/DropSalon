@@ -17,35 +17,35 @@ const SelectPage = () => {
   const [comments, setComments] = useState('')
   const [serviceType, setServiceType] = useState('')
 
-  // const jwt = sessionStorage.getItem('jwt') //for the load name and lastname for the input in client name
-  // const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
+  const jwt = sessionStorage.getItem('jwt') //for the load name and lastname for the input in client name
+  const jwtPayload = JSON.parse(window.atob(sessionStorage.getItem('jwt').split('.')[1]))
 
-  // const [name2, setName2] = useState('')
-  // const [last_name, setLastName] = useState('')
+  const [name2, setName2] = useState('')
+  const [last_name, setLastName] = useState('')
 
   //load the name and last name for the client
-  // useEffect(() => {
-  //     if (jwt === '' || jwt === null) {
-  //         window.location.href = '/'
-  //     } else if (jwtPayload.role !== 3) {
-  //         sessionStorage.removeItem('jwt')
-  //         window.location.href = '/'
-  //     } else {
-  //         //Send token to verify
-  //         axios.post('http://localhost:4000/verify', { jwt: jwt })
-  //             .catch(function (reason) {
-  //                 console.log(reason)
-  //                 sessionStorage.removeItem('jwt')
-  //                 window.location.href = '/'
-  //             })
-  //         setName2(jwtPayload.name)
-  //         setLastName(jwtPayload.last_name)
-  //         console.log('JWT available')
-  //         console.log(jwtPayload)
-  //         console.log(jwtPayload.name)
-  //         console.log(jwtPayload.last_name)
-  //     }
-  // }, )
+  useEffect(() => {
+      if (jwt === '' || jwt === null) {
+          window.location.href = '/'
+      } else if (jwtPayload.role !== 3) {
+          sessionStorage.removeItem('jwt')
+          window.location.href = '/'
+      } else {
+          //Send token to verify
+          axios.post('http://localhost:4000/verify', { jwt: jwt })
+              .catch(function (reason) {
+                  console.log(reason)
+                  sessionStorage.removeItem('jwt')
+                  window.location.href = '/'
+              })
+          setName2(jwtPayload.name)
+          setLastName(jwtPayload.last_name)
+          console.log('JWT available')
+          console.log(jwtPayload)
+          console.log(jwtPayload.name)
+          console.log(jwtPayload.last_name)
+      }
+  }, )
 
   //handle the post 
   function handleChangeUsername(e) {
@@ -73,7 +73,7 @@ const SelectPage = () => {
   function handleSubmit(e) {
     e.preventDefault();
     const data = {
-      user_name: user_name,
+      user_name: name2 + " " + last_name,
       employee_name: employee_name,
       date_rsvp: date_rsvp,
       hour: hour,
@@ -138,11 +138,11 @@ const SelectPage = () => {
   return (
     <div className="SelectContainer" >
       <form onSubmit={handleSubmit}>
-        <div className="SelectView2" >
-          <label> Escribe tu nombre
+        {/* <div className="SelectView2" >
+          <label>
       <input className="inputemail" name="user_name" type="name" onChange={handleChangeUsername} />
           </label>
-        </div>
+        </div> */}
 
         <div className="SelectView2" >
           <h3>Selecciona el trabajo: </h3>
