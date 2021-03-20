@@ -10,7 +10,7 @@ const SelectPage = () => {
   const [services, setService] = useState([]) //const for the select in employee and service
   const [name, setName] = useState([])
 
-  const [user_name, setUsername] = useState('') //for the post in axios 
+  //for the post in axios 
   const [employee_name, setEmployeeame] = useState('')
   const [date_rsvp, setDate] = useState('')
   const [hour, setHour] = useState('')
@@ -48,10 +48,6 @@ const SelectPage = () => {
   }, )
 
   //handle the post 
-  function handleChangeUsername(e) {
-    setUsername(e.target.value)
-  }
-
   function handleChangeEmployeename(e) {
     setEmployeeame(e.target.value)
   }

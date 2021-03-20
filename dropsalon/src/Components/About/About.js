@@ -1,13 +1,14 @@
 import React from "react";
 import "./About.css";
+
 import logo from "../../Assets/Logo.jpg";
-import Hair from "../../Assets/hairAbout.jpg";
+
 function About() {
   return (
     <div>
       <h2 className="about-title1">Acerca de Nosotros</h2>
       <div className="container-about">
-      <img className="logoAbout"src={logo} alt="Logo del salon" />
+        <img className="logoAbout" src={logo} alt="Logo del salon" />
         <div className="about-caja1">
           <div>
             <p className="about-text">
@@ -19,9 +20,6 @@ function About() {
               Urbanización Constancia.
             </p>
           </div>
-          {/* <div>
-            <img className="SideAbout" src={Hair} alt="" />
-          </div> */}
         </div>
         <div>
           <ul className="list-group">

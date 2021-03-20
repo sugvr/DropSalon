@@ -333,7 +333,6 @@ app.post("/services", function (req, res) {
 });
 
 app.post("/citas", function (req, res) {
-
   db.run(
     "INSERT INTO citas (date_rsvp, hour, comments, user_name, employee_name, serviceType) VALUES ($date_rsvp, $hour, $comments, $user_name, $employee_name, $serviceType);",
     {

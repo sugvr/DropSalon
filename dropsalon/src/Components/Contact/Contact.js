@@ -39,7 +39,7 @@ class Contact extends React.PureComponent {
       .then(
         function (response) {
           console.log("SUCCESS!", response.status, response.text);
-          this.resetForm();
+          window.location.reload();
         },
         function (error) {
           console.log("FAILED...", error);
